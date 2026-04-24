@@ -11,6 +11,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from stemtune.benchmark_mcqa import run_benchmark
+from stemtune.posttrain_mcqa import run_posttrain_smoke
 from stemtune.scaffold import TASK_BLUEPRINTS, create_project_scaffold
 from stemtune.smoke_mcqa import run_smoke_test
 from stemtune.support_budget_mcqa import run_budget_study
@@ -427,6 +428,34 @@ def build_support_budget_mcqa_parser(subparsers: argparse._SubParsersAction) -> 
     parser.set_defaults(handler=handle_support_budget_mcqa)
 
 
+def build_posttrain_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser(
+        "posttrain-mcqa",
+        help="Train a tiny LoRA adapter on public MCQA data and compare baseline vs adapted contract behavior.",
+    )
+    parser.add_argument("--model-id", default="Qwen/Qwen2.5-0.5B-Instruct")
+    parser.add_argument("--train-limit", type=int, default=32)
+    parser.add_argument("--eval-limit", type=int, default=24)
+    parser.add_argument("--seed", type=int, default=7)
+    parser.add_argument("--device", choices=["cpu", "cuda", "mps"])
+    parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument("--epochs", type=int, default=2)
+    parser.add_argument("--learning-rate", type=float, default=5e-5)
+    parser.add_argument("--gradient-accumulation-steps", type=int, default=1)
+    parser.add_argument("--lora-rank", type=int, default=8)
+    parser.add_argument("--lora-alpha", type=int, default=16)
+    parser.add_argument("--lora-dropout", type=float, default=0.05)
+    parser.add_argument(
+        "--target-modules",
+        default="q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj",
+    )
+    parser.add_argument("--max-length", type=int, default=256)
+    parser.add_argument("--max-new-tokens", type=int, default=64)
+    parser.add_argument("--output-dir", default="docs/results/mcqa_posttrain_smoke")
+    parser.add_argument("--output", choices=["text", "json"], default="text")
+    parser.set_defaults(handler=handle_posttrain_mcqa)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Select open-source models and alignment recipes for STEMTune tasks."
@@ -441,6 +470,7 @@ def build_parser() -> argparse.ArgumentParser:
     build_benchmark_mcqa_parser(subparsers)
     build_study_mcqa_parser(subparsers)
     build_support_budget_mcqa_parser(subparsers)
+    build_posttrain_mcqa_parser(subparsers)
     return parser
 
 
@@ -611,6 +641,31 @@ def handle_support_budget_mcqa(args: argparse.Namespace) -> str:
     return "\n".join(lines)
 
 
+def handle_posttrain_mcqa(args: argparse.Namespace) -> str:
+    payload = run_posttrain_smoke(args)
+    if args.output == "json":
+        return json.dumps(payload, indent=2)
+
+    baseline = payload["summary"]["baseline"]
+    adapted = payload["summary"]["adapted"]
+    lines = [
+        "STEMTune MCQA post-training smoke test",
+        f"Model: {payload['model_id']}",
+        f"Device: {payload['device']}",
+        f"Train examples: {payload['train_limit']}",
+        f"Eval examples: {payload['eval_limit']}",
+        "",
+        f"Baseline strict accuracy: {baseline['accuracy']:.3f}",
+        f"Post-trained strict accuracy: {adapted['accuracy']:.3f}",
+        f"Strict accuracy gain: {adapted['accuracy'] - baseline['accuracy']:+.3f}",
+        f"Baseline valid rate: {baseline['valid_rate']:.3f}",
+        f"Post-trained valid rate: {adapted['valid_rate']:.3f}",
+        "",
+        f"Artifacts: {args.output_dir}",
+    ]
+    return "\n".join(lines)
+
+
 def normalize_argv(argv: list[str]) -> list[str]:
     commands = {
         "recommend",
@@ -622,6 +677,7 @@ def normalize_argv(argv: list[str]) -> list[str]:
         "benchmark-mcqa",
         "study-mcqa",
         "study-support-budget",
+        "posttrain-mcqa",
         "-h",
         "--help",
     }

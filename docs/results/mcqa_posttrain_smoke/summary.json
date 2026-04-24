@@ -1,0 +1,34 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dataset_id": "allenai/sciq",
+  "device": "cpu",
+  "train_limit": 32,
+  "eval_limit": 24,
+  "seed": 7,
+  "training_history": [
+    {
+      "epoch": 1,
+      "loss_mean": 0.26826165802776814
+    },
+    {
+      "epoch": 2,
+      "loss_mean": 0.04532565317640547
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "num_examples": 24,
+      "accuracy": 0.0,
+      "valid_rate": 0.0,
+      "avg_latency_s": 0.3136688263790954,
+      "median_latency_s": 0.2797241664957255
+    },
+    "adapted": {
+      "num_examples": 24,
+      "accuracy": 0.7083333333333334,
+      "valid_rate": 1.0,
+      "avg_latency_s": 1.7398442430809762,
+      "median_latency_s": 1.7384774794918485
+    }
+  }
+}

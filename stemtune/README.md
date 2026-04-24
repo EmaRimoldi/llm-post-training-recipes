@@ -19,6 +19,7 @@ python -m stemtune recommend --task dpo --gpu-memory-gb 24
 python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-context --prefer-tool-use
 python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
 python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
+python -m stemtune posttrain-mcqa --train-limit 32 --eval-limit 24 --epochs 2 --batch-size 4 --learning-rate 5e-5 --max-new-tokens 64
 python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 python -m stemtune study-mcqa --models Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 python -m stemtune study-support-budget --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
@@ -39,6 +40,7 @@ python -m stemtune study-support-budget --model-id Qwen/Qwen2.5-0.5B-Instruct --
 - `python -m stemtune list-models --task <task> --gpu-memory-gb <n>`: rank the curated model catalog for your constraints.
 - `python -m stemtune init-project ...`: generate a neutral workspace with your own manifests, configs, and Hub targets.
 - `python -m stemtune smoke-mcqa ...`: run a small public-dataset smoke test and emit metrics plus a comparison plot.
+- `python -m stemtune posttrain-mcqa ...`: run a tiny LoRA post-training smoke test and compare baseline vs adapted behavior.
 - `python -m stemtune benchmark-mcqa ...`: run a multi-seed MCQA benchmark and emit aggregate metrics plus a benchmark plot.
 - `python -m stemtune study-mcqa ...`: run the support relevance ablation with correct vs mismatched evidence.
 - `python -m stemtune study-support-budget ...`: measure how much support text is actually needed.
@@ -64,6 +66,19 @@ It writes:
 - `comparison.png`
 
 This is a fast way to verify model loading, dataset handling, evaluation, and artifact generation without launching a full training job.
+
+## Post-Training Smoke Test
+
+`posttrain-mcqa` is the smallest end-to-end post-training demo in the repo.
+
+It fine-tunes a tiny LoRA adapter on `allenai/sciq` and evaluates whether the adapted model can satisfy a strict machine-readable MCQA contract. The tracked run is here:
+
+- [docs/results/mcqa_posttrain_smoke](../docs/results/mcqa_posttrain_smoke/report.md)
+
+In the current tracked result:
+
+- strict accuracy moves from `0.000` to `0.708`
+- contract-valid rate moves from `0.000` to `1.000`
 
 ## Multi-Seed Benchmark
 

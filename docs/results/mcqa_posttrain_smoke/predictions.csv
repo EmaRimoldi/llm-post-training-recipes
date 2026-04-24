@@ -1,0 +1,121 @@
+phase,example_id,question,correct_letter,prediction,is_correct,is_valid,latency_s,raw_output
+baseline,0,Where do physical laws govern energy flow and chemical cycling?,B,,False,False,0.2998896660283208,B
+baseline,1,What does the bicoid protein activate?,A,,False,False,0.2752210830221884,B
+baseline,2,Compounds with aluminum and silicon are commonly found in the clay fractions of soils derived from what?,C,,False,False,0.2631509999628179,B
+baseline,3,"Receptors for what sense are located within sensory hairs on the feet of insects, as well as in mouthparts?",C,,False,False,0.26276162499561906,B
+baseline,4,Permanent dipole-dipole interactions are found in what kind of molecules?,A,,False,False,0.2779708750313148,A
+baseline,5,"What are the only decomposers that can break down tough plant substances, including lignin and cellulose?",C,,False,False,0.3033667500130832,C
+baseline,6,What is the main source of energy for your body?,D,,False,False,0.2696097080479376,D
+baseline,7,"Despite the season, what aspect of constellations never change?",D,,False,False,0.2822619169601239,D
+baseline,8,"What is a property of a system whose magnitude depends on only the present state of the system, not its previous history?",C,,False,False,0.3623817500192672,C
+baseline,9,"The scientific method deals with systematic investigation, reproducible results, the formation and testing of hypotheses, and what two categories of reasoning?",C,,False,False,0.6454366670222953,A. reduction and deduction
+baseline,10,"Changes to what that delete, disrupt, or rearrange many loci at once are usually harmful?",B,,False,False,0.2535317089641467,B
+baseline,11,Electron capture occurs when an inner shell electron combines with a proton and is converted into what?,A,,False,False,0.37159737502224743,A. neutron
+baseline,12,"The embryo sac consists of only a few cells, one of which is the what?",C,,False,False,0.23669362504733726,D
+baseline,13,Where does slime mold typically live?,B,,False,False,0.24372970801778138,B
+baseline,14,The earliest known mammal fossils are from which period?,C,,False,False,0.25472850003279746,B
+baseline,15,"Helices, spheres, and rods are examples of what distinguishing property of prokaryotic cells?",A,,False,False,0.3984345839708112,A. shape
+baseline,16,"What kind of mixture consists of two or more phases, exemplified when a combination of oil and water forms layers?",D,,False,False,0.2591881250264123,D
+baseline,17,Crossing-over is the exchange of genetic material between which chromosomes?,A,,False,False,0.5669033749727532,A. homologous
+baseline,18,What is the last step in scientific investigation?,C,,False,False,0.3124432920012623,D
+baseline,19,"The majority of species in the phylum chordata are found in what subphylum, which includes animals ranging from lampreys to mammals?",B,,False,False,0.2907619170146063,B
+baseline,20,What type of rocks form when magma cools and forms crystals?,D,,False,False,0.26996720797615126,D
+baseline,21,Where is the seafloor youngest?,D,,False,False,0.28147745796013623,D
+baseline,22,"The biggest drawback of what type of reproduction is lack of genetic variation, since all offspring are identical?",A,,False,False,0.28588974999729544,A
+baseline,23,Which trait of particles causes even cold objects to have some thermal energy?,D,,False,False,0.260654165991582,C
+adapted,0,Where do physical laws govern energy flow and chemical cycling?,B,B,True,True,1.6306162499822676,"<final>
+choice=B
+source=question_only
+</final>"
+adapted,1,What does the bicoid protein activate?,A,A,True,True,1.593946875014808,"<final>
+choice=A
+source=question_only
+</final>"
+adapted,2,Compounds with aluminum and silicon are commonly found in the clay fractions of soils derived from what?,C,D,False,True,1.6709211660199799,"<final>
+choice=D
+source=question_only
+</final>"
+adapted,3,"Receptors for what sense are located within sensory hairs on the feet of insects, as well as in mouthparts?",C,B,False,True,1.655409166996833,"<final>
+choice=B
+source=question_only
+</final>"
+adapted,4,Permanent dipole-dipole interactions are found in what kind of molecules?,A,A,True,True,1.6540578329586424,"<final>
+choice=A
+source=question_only
+</final>"
+adapted,5,"What are the only decomposers that can break down tough plant substances, including lignin and cellulose?",C,C,True,True,1.6804598339949735,"<final>
+choice=C
+source=question_only
+</final>"
+adapted,6,What is the main source of energy for your body?,D,D,True,True,1.7124706250033341,"<final>
+choice=D
+source=question_only
+</final>"
+adapted,7,"Despite the season, what aspect of constellations never change?",D,D,True,True,1.614470041997265,"<final>
+choice=D
+source=question_only
+</final>"
+adapted,8,"What is a property of a system whose magnitude depends on only the present state of the system, not its previous history?",C,C,True,True,1.6494867500150576,"<final>
+choice=C
+source=question_only
+</final>"
+adapted,9,"The scientific method deals with systematic investigation, reproducible results, the formation and testing of hypotheses, and what two categories of reasoning?",C,C,True,True,1.6906961249769665,"<final>
+choice=C
+source=question_only
+</final>"
+adapted,10,"Changes to what that delete, disrupt, or rearrange many loci at once are usually harmful?",B,B,True,True,1.6779242500197142,"<final>
+choice=B
+source=question_only
+</final>"
+adapted,11,Electron capture occurs when an inner shell electron combines with a proton and is converted into what?,A,D,False,True,1.7882617079885677,"<final>
+choice=D
+source=question_only
+</final>"
+adapted,12,"The embryo sac consists of only a few cells, one of which is the what?",C,C,True,True,1.741057917010039,"<final>
+choice=C
+source=question_only
+</final>"
+adapted,13,Where does slime mold typically live?,B,B,True,True,1.8321769580361433,"<final>
+choice=B
+source=question_only
+</final>"
+adapted,14,The earliest known mammal fossils are from which period?,C,D,False,True,2.0019446249934845,"<final>
+choice=D
+source=question_only
+</final>"
+adapted,15,"Helices, spheres, and rods are examples of what distinguishing property of prokaryotic cells?",A,A,True,True,1.8186523750191554,"<final>
+choice=A
+source=question_only
+</final>"
+adapted,16,"What kind of mixture consists of two or more phases, exemplified when a combination of oil and water forms layers?",D,D,True,True,1.8402377080055885,"<final>
+choice=D
+source=question_only
+</final>"
+adapted,17,Crossing-over is the exchange of genetic material between which chromosomes?,A,A,True,True,1.735897041973658,"<final>
+choice=A
+source=question_only
+</final>"
+adapted,18,What is the last step in scientific investigation?,C,C,True,True,1.7963903339696117,"<final>
+choice=C
+source=question_only
+</final>"
+adapted,19,"The majority of species in the phylum chordata are found in what subphylum, which includes animals ranging from lampreys to mammals?",B,C,False,True,1.8036676250048913,"<final>
+choice=C
+source=question_only
+</final>"
+adapted,20,What type of rocks form when magma cools and forms crystals?,D,D,True,True,1.7656402499997057,"<final>
+choice=D
+source=question_only
+</final>"
+adapted,21,Where is the seafloor youngest?,D,D,True,True,1.8637438329751603,"<final>
+choice=D
+source=question_only
+</final>"
+adapted,22,"The biggest drawback of what type of reproduction is lack of genetic variation, since all offspring are identical?",A,C,False,True,1.760645249974914,"<final>
+choice=C
+source=question_only
+</final>"
+adapted,23,Which trait of particles causes even cold objects to have some thermal energy?,D,C,False,True,1.7774872920126654,"<final>
+choice=C
+source=question_only
+</final>"
