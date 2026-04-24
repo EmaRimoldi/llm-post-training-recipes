@@ -60,9 +60,27 @@ python -m stemtune show-task mcqa
 python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-context
 python -m stemtune recommend --task sft --gpu-memory-gb 16
 python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
+python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
 ```
 
 This makes the repository usable as a lightweight framework rather than as a static code drop.
+
+## Runnable Smoke Test
+
+The repository now includes a public smoke test built around [allenai/sciq](https://hf.co/datasets/allenai/sciq).
+
+It compares the same open model under two conditions:
+
+- `plain`: answer from the question alone;
+- `grounded`: answer using the provided support passage.
+
+Run:
+
+```bash
+python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
+```
+
+The command emits structured results and a plot so you can quickly inspect whether grounding improved accuracy for that run.
 
 ## Bring Your Own Assets
 

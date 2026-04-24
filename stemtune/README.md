@@ -18,6 +18,7 @@ python -m stemtune --task mcqa --gpu-memory-gb 24 --prefer-multilingual
 python -m stemtune recommend --task dpo --gpu-memory-gb 24
 python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-context --prefer-tool-use
 python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
+python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
 ```
 
 ## What The Selector Returns
@@ -34,12 +35,29 @@ python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-mode
 - `python -m stemtune recommend --task <task> --gpu-memory-gb <n>`: recommend a model and repo path.
 - `python -m stemtune list-models --task <task> --gpu-memory-gb <n>`: rank the curated model catalog for your constraints.
 - `python -m stemtune init-project ...`: generate a neutral workspace with your own manifests, configs, and Hub targets.
+- `python -m stemtune smoke-mcqa ...`: run a small public-dataset smoke test and emit metrics plus a comparison plot.
 
 For compatibility, the original entrypoint still works:
 
 ```bash
 python stemtune/select_stack.py --task mcqa --gpu-memory-gb 24
 ```
+
+## Smoke Test
+
+`smoke-mcqa` is a runnable check that compares two conditions on the public `allenai/sciq` dataset:
+
+- `plain`: question and answer choices only;
+- `grounded`: question, answer choices, and the support passage.
+
+It writes:
+
+- `predictions.csv`
+- `summary.json`
+- `report.md`
+- `comparison.png`
+
+This is a fast way to verify model loading, dataset handling, evaluation, and artifact generation without launching a full training job.
 
 ## Project Bootstrap
 
