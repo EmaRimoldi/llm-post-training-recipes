@@ -37,8 +37,10 @@ generator = pipeline("text-generation", model=model, tokenizer=tokenizer, device
 # Your question
 
 prompt = (
-    "The following are multiple choice questions (with answers) about knowledge and skills in advanced master-level STEM courses.\n\nWhat is the domain of the function $f(x)=\frac{x+6}{\sqrt{x^2-3x-4}}$?\nA. (-4,4)\nB. [0,4]\nC. (-inf, -1) U (4, inf)\nD. (-inf, -1) U (-1, 4) U (4, inf)\nAnswer:"
-    
+    r"The following are multiple choice questions (with answers) about knowledge and skills in advanced "
+    r"master-level STEM courses.\n\nWhat is the domain of the function "
+    r"$f(x)=\frac{x+6}{\sqrt{x^2-3x-4}}$?\nA. (-4,4)\nB. [0,4]\nC. (-inf, -1) U (4, inf)\n"
+    r"D. (-inf, -1) U (-1, 4) U (4, inf)\nAnswer:"
 )
 
 # Generate answer
