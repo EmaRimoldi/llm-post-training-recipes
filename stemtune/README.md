@@ -19,6 +19,7 @@ python -m stemtune recommend --task dpo --gpu-memory-gb 24
 python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-context --prefer-tool-use
 python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
 python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
+python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 ```
 
 ## What The Selector Returns
@@ -36,6 +37,7 @@ python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
 - `python -m stemtune list-models --task <task> --gpu-memory-gb <n>`: rank the curated model catalog for your constraints.
 - `python -m stemtune init-project ...`: generate a neutral workspace with your own manifests, configs, and Hub targets.
 - `python -m stemtune smoke-mcqa ...`: run a small public-dataset smoke test and emit metrics plus a comparison plot.
+- `python -m stemtune benchmark-mcqa ...`: run a multi-seed MCQA benchmark and emit aggregate metrics plus a benchmark plot.
 
 For compatibility, the original entrypoint still works:
 
@@ -58,6 +60,20 @@ It writes:
 - `comparison.png`
 
 This is a fast way to verify model loading, dataset handling, evaluation, and artifact generation without launching a full training job.
+
+## Multi-Seed Benchmark
+
+`benchmark-mcqa` extends the same idea across multiple seeds so you can decide whether grounding is actually helping instead of trusting a single lucky run.
+
+It writes:
+
+- `predictions.csv`
+- `seed_summary.csv`
+- `summary.json`
+- `report.md`
+- `benchmark.png`
+
+The default benchmark in the repository uses `Qwen/Qwen2.5-0.5B-Instruct` on `allenai/sciq` and tracks the results under [docs/results/mcqa_grounding_qwen25_0p5b](../docs/results/mcqa_grounding_qwen25_0p5b/report.md).
 
 ## Project Bootstrap
 
@@ -87,4 +103,4 @@ It is not trying to be a benchmark oracle. It is a practical routing layer for:
 - open-source post-training workflows;
 - the specific task families covered by this repository.
 
-For the full playbook, see [open-source-alignment-playbook.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/open-source-alignment-playbook.md).
+For the full playbook, see [open-source-alignment-playbook.md](../docs/open-source-alignment-playbook.md).

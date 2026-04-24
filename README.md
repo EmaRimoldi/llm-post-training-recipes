@@ -1,6 +1,10 @@
 # STEMTune: LLM Post-Training Recipes
 
-Practical training recipes for adapting LLMs to STEM question-answering workloads with:
+Small open models often fail not because they are unusable, but because they are asked to answer blind.
+
+STEMTune packages a practical answer to that problem: select the right open model, scaffold a clean adaptation project, and verify that simple grounding or post-training moves the metric in the right direction before you spend serious GPU budget.
+
+The repository bundles reusable recipes for adapting LLMs to STEM question-answering workloads with:
 
 - supervised fine-tuning;
 - multiple-choice adaptation;
@@ -20,7 +24,21 @@ This codebase is useful if you want to study or reuse compact training pipelines
 - compressing or fine-tuning smaller Qwen-family models;
 - preparing corpora for retrieval-augmented training.
 
-The repository has been restructured into a single engineering-focused layout with a lightweight control layer on top of the original training recipes.
+The repository has been restructured into a single engineering-focused layout with a lightweight control layer on top of the underlying training recipes.
+
+## Evidence First
+
+The repository now includes a public benchmark that demonstrates a concrete improvement on a real task.
+
+With `Qwen/Qwen2.5-0.5B-Instruct` on `allenai/sciq`, the same model was evaluated in two conditions over `120` public MCQA examples:
+
+- question only: `73.3%` mean accuracy;
+- grounded with the support passage: `95.8%` mean accuracy;
+- mean improvement: `+22.5` accuracy points.
+
+Artifacts are tracked in [docs/results/mcqa_grounding_qwen25_0p5b/report.md](docs/results/mcqa_grounding_qwen25_0p5b/report.md), [docs/results/mcqa_grounding_qwen25_0p5b/summary.json](docs/results/mcqa_grounding_qwen25_0p5b/summary.json), and the plot below.
+
+![STEMTune MCQA Grounding Benchmark](docs/results/mcqa_grounding_qwen25_0p5b/benchmark.png)
 
 ## STEMTune
 
@@ -40,9 +58,10 @@ python -m stemtune --task dpo --gpu-memory-gb 24 --prefer-multilingual
 python -m stemtune --task rag --gpu-memory-gb 48 --prefer-long-context --prefer-tool-use
 python -m stemtune list-models --task mcqa --gpu-memory-gb 24
 python -m stemtune show-task quantization
+python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 ```
 
-See [stemtune/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/stemtune/README.md) and [docs/open-source-alignment-playbook.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/open-source-alignment-playbook.md).
+See [stemtune/README.md](stemtune/README.md) and [docs/open-source-alignment-playbook.md](docs/open-source-alignment-playbook.md).
 
 ## How To Use STEMTune
 
@@ -61,6 +80,7 @@ python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-conte
 python -m stemtune recommend --task sft --gpu-memory-gb 16
 python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
 python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
+python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 ```
 
 This makes the repository usable as a lightweight framework rather than as a static code drop.
@@ -81,6 +101,14 @@ python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
 ```
 
 The command emits structured results and a plot so you can quickly inspect whether grounding improved accuracy for that run.
+
+If you want a less noisy signal, run the multi-seed benchmark instead:
+
+```bash
+python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+```
+
+This emits an aggregate report, per-seed metrics, and a benchmark plot under `docs/results/` by default.
 
 ## Bring Your Own Assets
 
@@ -107,7 +135,7 @@ python -m stemtune init-project \
   --output-dir ./workspaces
 ```
 
-This creates a neutral workspace with config files and no dependency on repository-specific artifacts. See [docs/project-bootstrap.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/project-bootstrap.md).
+This creates a neutral workspace with config files and no dependency on repository-specific artifacts. See [docs/project-bootstrap.md](docs/project-bootstrap.md).
 
 ## Where STEMTune Fits
 
@@ -126,12 +154,13 @@ STEMTune should not try to outgrow those systems feature-for-feature. Its strong
 - project scaffolding that defines data, knowledge-base, training, evaluation, and publishing contracts;
 - promotion gates that decide when a model is good enough to publish, compress, or extend with retrieval.
 
-This is the direction that makes the framework more distinct than a generic recipe collection. A short positioning note is in [docs/landscape.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/landscape.md).
+This is the direction that makes the framework more distinct than a generic recipe collection. A short positioning note is in [docs/landscape.md](docs/landscape.md).
 
 ## Repository Layout
 
 ```text
 .
+├── cluster/      SLURM wrappers for GPU-backed benchmarks
 ├── configs/      model and submission-style configuration snapshots
 ├── datasets/     lightweight tracked datasets, calibration data, and data builders
 ├── docs/         usage notes, landscape analysis, and framework guidance
@@ -156,7 +185,7 @@ Contains small tracked assets and builder scripts:
 - `metadata/`: lightweight metadata snapshots for published datasets;
 - `builders/`: scripts for DPO data generation and MCQA dataset preparation.
 
-Large raw datasets are intentionally excluded from git. See [datasets/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/datasets/README.md) for the expected local layout.
+Large raw datasets are intentionally excluded from git. See [datasets/README.md](datasets/README.md) for the expected local layout.
 
 ### `training/`
 
@@ -168,7 +197,7 @@ Grouped by learning recipe instead of by assignment milestone:
 - `quantization/`: compression and QLoRA experiments;
 - `rag/`: retrieval-aware training recipes and alternative RAFT-style experiments.
 
-See [training/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/README.md).
+See [training/README.md](training/README.md).
 
 ### `retrieval/`
 
@@ -177,7 +206,7 @@ Preparation utilities for external corpora used in retrieval-oriented experiment
 - ArXiv filtering and upload workflows;
 - Wikipedia STEM corpus chunking and publication helpers.
 
-See [retrieval/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/retrieval/README.md).
+See [retrieval/README.md](retrieval/README.md).
 
 ### `stemtune/`
 
@@ -193,7 +222,11 @@ This is the shortest path from “I have a task” to “I know which recipe to 
 
 Structured configuration snapshots for different model variants and submission stages. These files are useful as a reference when reproducing model packaging or checking the exact Hugging Face repository naming used during experiments.
 
-See [configs/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/configs/README.md).
+See [configs/README.md](configs/README.md).
+
+### `cluster/`
+
+Minimal SLURM wrappers for sending the benchmark to a GPU queue. Start with [cluster/README.md](cluster/README.md).
 
 ### `reports/`
 
@@ -214,7 +247,7 @@ If your goal is to align an open-source model to one of the tasks covered here:
 5. Put your raw assets inside the generated project workspace rather than inside repository-specific folders.
 6. Start from the recommended recipe folder under `training/`.
 
-The practical playbook is in [docs/open-source-alignment-playbook.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/open-source-alignment-playbook.md).
+The practical playbook is in [docs/open-source-alignment-playbook.md](docs/open-source-alignment-playbook.md).
 
 ## Model Selection Heuristics
 
@@ -245,4 +278,4 @@ Not every script uses every variable, but the naming is consistent across the re
 
 This repository intentionally does not version large local datasets, intermediate Arrow files, model checkpoints, or generated artifacts.
 
-When a script expects local input such as `MathQA`, `GPQA`, or custom MCQA corpora, the expected paths are documented in [datasets/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/datasets/README.md). This keeps the repository lightweight while preserving reproducible code structure.
+When a script expects local input such as `MathQA`, `GPQA`, or custom MCQA corpora, the expected paths are documented in [datasets/README.md](datasets/README.md). This keeps the repository lightweight while preserving reproducible code structure.

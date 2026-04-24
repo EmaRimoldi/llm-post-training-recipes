@@ -10,6 +10,7 @@ from pathlib import Path
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from stemtune.benchmark_mcqa import run_benchmark
 from stemtune.scaffold import TASK_BLUEPRINTS, create_project_scaffold
 from stemtune.smoke_mcqa import run_smoke_test
 
@@ -376,6 +377,21 @@ def build_smoke_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
     parser.set_defaults(handler=handle_smoke_mcqa)
 
 
+def build_benchmark_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser(
+        "benchmark-mcqa",
+        help="Benchmark question-only vs grounded MCQA prompts across multiple seeds.",
+    )
+    parser.add_argument("--model-id", default="Qwen/Qwen2.5-0.5B-Instruct")
+    parser.add_argument("--limit", type=int, default=24)
+    parser.add_argument("--seeds", default="7,11,13,17,23")
+    parser.add_argument("--device", choices=["cpu", "cuda", "mps"])
+    parser.add_argument("--max-new-tokens", type=int, default=8)
+    parser.add_argument("--output-dir", default="docs/results/mcqa_grounding_qwen25_0p5b")
+    parser.add_argument("--output", choices=["text", "json"], default="text")
+    parser.set_defaults(handler=handle_benchmark_mcqa)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Select open-source models and alignment recipes for STEMTune tasks."
@@ -387,6 +403,7 @@ def build_parser() -> argparse.ArgumentParser:
     build_list_tasks_parser(subparsers)
     build_init_project_parser(subparsers)
     build_smoke_mcqa_parser(subparsers)
+    build_benchmark_mcqa_parser(subparsers)
     return parser
 
 
@@ -478,8 +495,43 @@ def handle_smoke_mcqa(args: argparse.Namespace) -> str:
     return "\n".join(lines)
 
 
+def handle_benchmark_mcqa(args: argparse.Namespace) -> str:
+    payload = run_benchmark(args)
+    if args.output == "json":
+        return json.dumps(payload, indent=2)
+
+    aggregate = payload["aggregate"]
+    lines = [
+        "STEMTune MCQA grounding benchmark",
+        f"Model: {payload['model_id']}",
+        f"Device: {payload['device']}",
+        f"Seeds: {', '.join(str(seed) for seed in payload['seeds'])}",
+        f"Examples per seed: {payload['limit']}",
+        f"Total examples: {payload['total_examples']}",
+        "",
+        f"Plain accuracy mean: {aggregate['plain']['accuracy_mean']:.3f}",
+        f"Grounded accuracy mean: {aggregate['grounded']['accuracy_mean']:.3f}",
+        f"Accuracy gain mean: {aggregate['accuracy_gain_mean']:+.3f}",
+        f"Plain latency mean: {aggregate['plain']['avg_latency_s_mean']:.3f}s",
+        f"Grounded latency mean: {aggregate['grounded']['avg_latency_s_mean']:.3f}s",
+        "",
+        f"Artifacts: {args.output_dir}",
+    ]
+    return "\n".join(lines)
+
+
 def normalize_argv(argv: list[str]) -> list[str]:
-    commands = {"recommend", "list-models", "show-task", "list-tasks", "init-project", "smoke-mcqa", "-h", "--help"}
+    commands = {
+        "recommend",
+        "list-models",
+        "show-task",
+        "list-tasks",
+        "init-project",
+        "smoke-mcqa",
+        "benchmark-mcqa",
+        "-h",
+        "--help",
+    }
     if not argv:
         return argv
     if argv[0] in commands:

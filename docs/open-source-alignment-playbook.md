@@ -33,8 +33,8 @@ Use when:
 
 Start in:
 
-- [training/sft/m2](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/sft/m2)
-- [training/sft/m3](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/sft/m3)
+- [training/sft/m2](../training/sft/m2)
+- [training/sft/m3](../training/sft/m3)
 
 ### MCQA
 
@@ -46,8 +46,8 @@ Use when:
 
 Start in:
 
-- [datasets/builders/mcqa](/Users/emanuelerimoldi/Documents/GitHub/MNLP/datasets/builders/mcqa)
-- [training/mcqa](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/mcqa)
+- [datasets/builders/mcqa](../datasets/builders/mcqa)
+- [training/mcqa](../training/mcqa)
 
 ### DPO
 
@@ -59,8 +59,8 @@ Use when:
 
 Start in:
 
-- [datasets/builders/dpo](/Users/emanuelerimoldi/Documents/GitHub/MNLP/datasets/builders/dpo)
-- [training/dpo](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/dpo)
+- [datasets/builders/dpo](../datasets/builders/dpo)
+- [training/dpo](../training/dpo)
 
 ### Quantization
 
@@ -72,9 +72,9 @@ Use when:
 
 Start in:
 
-- [datasets/calibration](/Users/emanuelerimoldi/Documents/GitHub/MNLP/datasets/calibration)
-- [training/quantization/m2](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/quantization/m2)
-- [training/quantization/m3](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/quantization/m3)
+- [datasets/calibration](../datasets/calibration)
+- [training/quantization/m2](../training/quantization/m2)
+- [training/quantization/m3](../training/quantization/m3)
 
 ### RAG / Retrieval-Aware Training
 
@@ -86,8 +86,8 @@ Use when:
 
 Start in:
 
-- [retrieval/knowledge_base](/Users/emanuelerimoldi/Documents/GitHub/MNLP/retrieval/knowledge_base)
-- [training/rag](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/rag)
+- [retrieval/knowledge_base](../retrieval/knowledge_base)
+- [training/rag](../training/rag)
 
 ## 3. Place Data In The Right Local Paths
 
@@ -137,10 +137,10 @@ For a new STEM MCQA project:
 
 1. Run `python -m stemtune show-task mcqa`.
 2. Run `python -m stemtune --task mcqa --gpu-memory-gb 24`.
-3. Normalize the dataset in [datasets/builders/mcqa](/Users/emanuelerimoldi/Documents/GitHub/MNLP/datasets/builders/mcqa).
-4. Fine-tune in [training/mcqa](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/mcqa).
-5. If answer accuracy is good but style/ranking is weak, move to [training/dpo](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/dpo).
-6. If serving cost is too high, continue in [training/quantization](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/quantization).
+3. Normalize the dataset in [datasets/builders/mcqa](../datasets/builders/mcqa).
+4. Fine-tune in [training/mcqa](../training/mcqa).
+5. If answer accuracy is good but style/ranking is weak, move to [training/dpo](../training/dpo).
+6. If serving cost is too high, continue in [training/quantization](../training/quantization).
 
 ## Model References
 
