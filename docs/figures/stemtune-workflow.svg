@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
-  <title id="title">STEMTune Practitioner Workflow</title>
-  <desc id="desc">A professional workflow figure showing how a practitioner moves from task selection to model publication with STEMTune.</desc>
+  <title id="title">STEMTune Workflow</title>
+  <desc id="desc">A professional workflow figure showing how a user moves from task selection to model publication with STEMTune.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stop-color="#f8fafc"/>
@@ -28,7 +28,7 @@
   <rect x="0" y="0" width="1600" height="980" fill="url(#bg)"/>
   <rect x="38" y="34" width="1524" height="912" rx="26" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
 
-  <text x="88" y="108" class="title">STEMTune Practitioner Workflow</text>
+  <text x="88" y="108" class="title">STEMTune Workflow</text>
   <text x="88" y="138" class="subtitle">End-to-end operating path from task framing to reusable artifacts and user-owned Hugging Face repositories.</text>
 
   <line x1="170" y1="430" x2="1430" y2="430" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
@@ -123,5 +123,5 @@
   <text x="1284" y="760" class="note">Published outputs</text>
 
   <text x="88" y="900" class="caption">FIGURE 2</text>
-  <text x="170" y="900" class="note">The workflow explicitly separates framework code from practitioner-owned decisions: task framing, base model, local assets, config manifests, and publication targets.</text>
+  <text x="170" y="900" class="note">The workflow explicitly separates framework code from user-owned decisions: task framing, base model, local assets, config manifests, and publication targets.</text>
 </svg>

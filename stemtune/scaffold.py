@@ -247,6 +247,37 @@ def build_publish_config(spec: dict) -> dict:
     }
 
 
+def build_evaluation_config(spec: dict) -> dict:
+    task = spec["project"]["task"]
+    base_metrics = {
+        "sft": ["exact_match", "rougeL", "manual_review"],
+        "mcqa": ["accuracy", "macro_f1"],
+        "dpo": ["win_rate", "judge_preference_rate", "manual_review"],
+        "quantization": ["accuracy_delta", "latency", "memory_footprint"],
+        "rag": ["answer_faithfulness", "context_recall", "answer_accuracy"],
+    }
+    return {
+        "project_slug": spec["project"]["slug"],
+        "task": task,
+        "eval_split_path": "data/processed/validation.jsonl",
+        "metrics": base_metrics[task],
+        "promotion_gates": {
+            "minimum_metrics": {
+                metric: "set-me"
+                for metric in base_metrics[task]
+            },
+            "notes": [
+                "Use promotion gates to decide whether the current model is good enough to publish or compress.",
+                "This file is meant to become the control point between training stages.",
+            ],
+        },
+        "artifacts": {
+            "predictions_path": "artifacts/evals/predictions.jsonl",
+            "report_path": "artifacts/evals/report.json",
+        },
+    }
+
+
 def render_project_readme(spec: dict) -> str:
     task = spec["project"]["task"]
     paths = spec["recipes"]["recommended_paths"]
@@ -264,7 +295,7 @@ def render_project_readme(spec: dict) -> str:
         "- `data/interim/`: normalized intermediate artifacts before training.",
         "- `data/processed/`: final train/eval assets consumed by training scripts.",
         "- `knowledge_base/`: raw documents, processed chunks, and retrieval indexes.",
-        "- `configs/`: practitioner-owned manifests for data, KB, training, and publishing.",
+        "- `configs/`: user-owned manifests for data, KB, training, evaluation, and publishing.",
         "- `artifacts/`: models and evaluation outputs produced by your runs.",
         "- `scripts/`: your custom conversion or orchestration scripts.",
         "",
@@ -273,8 +304,9 @@ def render_project_readme(spec: dict) -> str:
         "1. Edit `configs/dataset.json` with your source data layout.",
         "2. If retrieval matters, edit `configs/knowledge_base.json` with your document sources.",
         "3. Edit `configs/training.json` with your base model and training parameters.",
-        "4. Edit `configs/publish.json` and `.env.example` with your own Hub namespace.",
-        "5. Reuse the following recipe folders from STEMTune:",
+        "4. Edit `configs/evaluation.json` with your quality gates before publishing or compressing.",
+        "5. Edit `configs/publish.json` and `.env.example` with your own Hub namespace.",
+        "6. Reuse the following recipe folders from STEMTune:",
     ]
     lines.extend([f"- `{path}`" for path in paths])
     return "\n".join(lines) + "\n"
@@ -292,6 +324,7 @@ def render_scripts_readme() -> str:
             "- `prepare_dataset.py`: convert raw source records to `data/processed/`.",
             "- `build_kb.py`: chunk and index your document corpus.",
             "- `run_training.sh`: wrap the training recipe you chose from STEMTune.",
+            "- `evaluate_model.py`: compute metrics defined in `configs/evaluation.json`.",
         ]
     ) + "\n"
 
@@ -324,18 +357,20 @@ def render_runbook(spec: dict) -> str:
         lines.append("3. Build and index your document corpus using `configs/knowledge_base.json`.")
         lines.append("4. Select the model and recipe path with `python -m stemtune --task rag --gpu-memory-gb <budget>`.")
         lines.append("5. Run the selected retrieval/training recipe and save outputs in `artifacts/models/`.")
-        lines.append("6. Publish datasets, KB assets, and model artifacts using `configs/publish.json` and your own namespace.")
+        lines.append("6. Evaluate the run against `configs/evaluation.json` before promotion or publication.")
+        lines.append("7. Publish datasets, KB assets, and model artifacts using `configs/publish.json` and your own namespace.")
     else:
         lines.append(f"3. Select the model and recipe path with `python -m stemtune --task {task} --gpu-memory-gb <budget>`.")
         lines.append("4. Run the selected training recipe and save outputs in `artifacts/models/`.")
-        lines.append("5. Publish datasets and model artifacts using `configs/publish.json` and your own namespace.")
+        lines.append("5. Evaluate the run against `configs/evaluation.json` before promotion or publication.")
+        lines.append("6. Publish datasets and model artifacts using `configs/publish.json` and your own namespace.")
     lines.extend(
         [
             "",
             "## Why This Exists",
             "",
-            "This scaffold keeps your project separate from the original course assets.",
-            "You own the model choice, data sources, Hub namespace, and orchestration layer.",
+            "This scaffold keeps your project separate from any repository-specific assets or account assumptions.",
+            "You own the model choice, data sources, Hub namespace, evaluation gates, and orchestration layer.",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -370,6 +405,9 @@ def create_project_scaffold(args) -> tuple[Path, list[str]]:
 
     write_json(target_dir / "configs/publish.json", build_publish_config(spec))
     files_written.append("configs/publish.json")
+
+    write_json(target_dir / "configs/evaluation.json", build_evaluation_config(spec))
+    files_written.append("configs/evaluation.json")
 
     write_text(target_dir / "README.md", render_project_readme(spec))
     files_written.append("README.md")

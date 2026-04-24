@@ -340,7 +340,7 @@ def build_list_tasks_parser(subparsers: argparse._SubParsersAction) -> None:
 def build_init_project_parser(subparsers: argparse._SubParsersAction) -> None:
     parser = subparsers.add_parser(
         "init-project",
-        help="Generate a practitioner-owned project scaffold with configs, manifests, and runbook.",
+        help="Generate a project scaffold with configs, manifests, evaluation gates, and runbook.",
     )
     parser.add_argument("--name", required=True, help="Human-readable project name.")
     parser.add_argument("--task", choices=sorted(TASK_BLUEPRINTS.keys()), required=True)
@@ -429,6 +429,7 @@ def handle_init_project(args: argparse.Namespace) -> str:
             "Next steps:",
             "- Edit configs/dataset.json with your own source data.",
             "- Edit configs/training.json with your training settings and model choices.",
+            "- Edit configs/evaluation.json with the metrics and promotion thresholds you care about.",
             "- Edit configs/publish.json and .env.example with your own Hugging Face namespace.",
             "- Put project-specific conversion scripts under scripts/.",
         ]

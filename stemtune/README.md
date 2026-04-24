@@ -51,11 +51,12 @@ It generates:
 - `configs/dataset.json`: your input and normalization contract;
 - `configs/knowledge_base.json`: your corpus and chunking contract;
 - `configs/training.json`: your base model and training settings;
+- `configs/evaluation.json`: your metrics and promotion gates;
 - `configs/publish.json`: your own Hub namespace and target repos;
 - `.env.example`: environment variables with your own identifiers;
 - `runbook.md`: the end-to-end automation outline.
 
-This keeps the framework decoupled from the original course datasets and from any hardcoded Hugging Face profile.
+This keeps the framework decoupled from repository-specific datasets and from any hardcoded Hugging Face profile.
 
 ## Design Philosophy
 

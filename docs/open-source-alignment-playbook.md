@@ -91,7 +91,7 @@ Start in:
 
 ## 3. Place Data In The Right Local Paths
 
-Tracked data in git is intentionally lightweight. For new work, do not copy your project into the historical course folders.
+Tracked data in git is intentionally lightweight. For new work, do not copy your project into historical or repository-specific folders.
 
 Bootstrap a neutral workspace first:
 

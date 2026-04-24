@@ -8,7 +8,7 @@ Practical training recipes for adapting LLMs to STEM question-answering workload
 - quantization and QLoRA;
 - retrieval-oriented training and knowledge-base preparation.
 
-This repository is organized as a cohesive practitioner codebase rather than a course archive. The emphasis is on reusable scripts, clear folder boundaries, and explicit handling of large external datasets.
+This repository is organized as a cohesive engineering codebase. The emphasis is on reusable scripts, clear folder boundaries, and explicit handling of large external datasets.
 
 ## What This Repository Is For
 
@@ -20,7 +20,7 @@ This codebase is useful if you want to study or reuse compact training pipelines
 - compressing or fine-tuning smaller Qwen-family models;
 - preparing corpora for retrieval-augmented training.
 
-The scripts were originally developed in the context of a graduate NLP project, but the repository has been restructured into a single engineering-focused layout.
+The repository has been restructured into a single engineering-focused layout with a lightweight control layer on top of the original training recipes.
 
 ## STEMTune
 
@@ -44,7 +44,7 @@ python -m stemtune show-task quantization
 
 See [stemtune/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/stemtune/README.md) and [docs/open-source-alignment-playbook.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/open-source-alignment-playbook.md).
 
-## How Practitioners Use STEMTune
+## How To Use STEMTune
 
 `STEMTune` is meant to answer three operational questions quickly:
 
@@ -66,13 +66,14 @@ This makes the repository usable as a lightweight framework rather than as a sta
 
 ## Bring Your Own Assets
 
-The framework is no longer tied to the original course repositories, namespaces, or Hub profiles.
+The framework is not tied to any fixed repository namespace, dataset naming scheme, or Hub profile.
 
-Practitioners can now bootstrap a clean project scaffold that contains their own:
+You can now bootstrap a clean project scaffold that contains your own:
 
 - dataset manifest;
 - knowledge-base manifest;
 - training config;
+- evaluation and promotion config;
 - publishing config;
 - environment template;
 - project runbook.
@@ -88,7 +89,26 @@ python -m stemtune init-project \
   --output-dir ./workspaces
 ```
 
-This creates a practitioner-owned workspace with neutral config files and no dependency on the original MNLP course artifacts. See [docs/practitioner-automation.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/practitioner-automation.md).
+This creates a neutral workspace with config files and no dependency on repository-specific artifacts. See [docs/project-bootstrap.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/project-bootstrap.md).
+
+## Where STEMTune Fits
+
+There are strong adjacent projects in the ecosystem, but they solve different slices of the problem:
+
+- [alignment-handbook](https://github.com/huggingface/alignment-handbook): alignment-focused recipes for preference training and evaluation.
+- [torchtune](https://github.com/meta-pytorch/torchtune): a PyTorch-native post-training library.
+- [LitGPT](https://github.com/Lightning-AI/litgpt): broad pretrain, finetune, evaluate, and deploy workflows with config-driven recipes.
+- [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF): scalable RLHF and agentic RL infrastructure.
+- [Axolotl](https://github.com/axolotl-ai-cloud/axolotl): general fine-tuning stack for many open models.
+
+STEMTune should not try to outgrow those systems feature-for-feature. Its stronger direction is:
+
+- task-aware routing from problem type to the right adaptation path;
+- model selection under explicit hardware and deployment constraints;
+- project scaffolding that defines data, knowledge-base, training, evaluation, and publishing contracts;
+- promotion gates that decide when a model is good enough to publish, compress, or extend with retrieval.
+
+This is the direction that makes the framework more distinct than a generic recipe collection. A short positioning note is in [docs/landscape.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/landscape.md).
 
 ## Repository Layout
 
@@ -96,7 +116,7 @@ This creates a practitioner-owned workspace with neutral config files and no dep
 .
 ├── configs/      model and submission-style configuration snapshots
 ├── datasets/     lightweight tracked datasets, calibration data, and data builders
-├── docs/         project notes and historical provenance
+├── docs/         usage notes, landscape analysis, and framework guidance
 ├── reports/      selected write-ups and deliverables
 ├── retrieval/    knowledge-base preparation scripts
 ├── stemtune/     model selection and operational guidance layer
@@ -163,7 +183,7 @@ Contains selected written artifacts that complement the code. The repository is 
 
 ## Example Workflow
 
-![STEMTune Practitioner Workflow](docs/figures/stemtune-workflow.svg)
+![STEMTune Workflow](docs/figures/stemtune-workflow.svg)
 
 ## Operational Quickstart
 
@@ -173,7 +193,7 @@ If your goal is to align an open-source model to one of the tasks covered here:
 2. Run `python -m stemtune show-task <task>` to confirm that the recipe matches your use case.
 3. Run `python -m stemtune --task <task> --gpu-memory-gb <budget>` to choose a model.
 4. Run `python -m stemtune init-project ...` to generate your own manifests and configs.
-5. Put your raw assets inside the generated project workspace rather than inside course-specific folders.
+5. Put your raw assets inside the generated project workspace rather than inside repository-specific folders.
 6. Start from the recommended recipe folder under `training/`.
 
 The practical playbook is in [docs/open-source-alignment-playbook.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/open-source-alignment-playbook.md).
@@ -208,7 +228,3 @@ Not every script uses every variable, but the naming is consistent across the re
 This repository intentionally does not version large local datasets, intermediate Arrow files, model checkpoints, or generated artifacts.
 
 When a script expects local input such as `MathQA`, `GPQA`, or custom MCQA corpora, the expected paths are documented in [datasets/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/datasets/README.md). This keeps the repository lightweight while preserving reproducible code structure.
-
-## Historical Provenance
-
-The repository was consolidated from three previously separate classroom repositories and restructured into this functional layout. Background notes are in [docs/project-origin.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/project-origin.md).

@@ -1,6 +1,6 @@
-# Practitioner Automation
+# Project Bootstrap
 
-This document explains how to use `STEMTune` as a reusable framework rather than as a frozen coursework repository.
+This document explains how to use `STEMTune` as a reusable framework rather than as a frozen repository snapshot.
 
 ## Core Principle
 
@@ -12,7 +12,7 @@ The training recipes in this repository are still useful, but they should no lon
 - your local folder layout;
 - your base model choice.
 
-The new `init-project` command creates a practitioner-owned workspace that isolates those decisions.
+The `init-project` command creates a neutral workspace that isolates those decisions.
 
 ## Bootstrap A New Project
 
@@ -34,6 +34,7 @@ This creates a new folder with:
 - `configs/dataset.json`
 - `configs/knowledge_base.json`
 - `configs/training.json`
+- `configs/evaluation.json`
 - `configs/publish.json`
 - `data/`, `knowledge_base/`, `artifacts/`, and `scripts/`
 
@@ -70,7 +71,17 @@ Defines:
 - output locations for model artifacts;
 - the recipe folders to inspect first.
 
-This keeps model selection and training settings under your control instead of under course-specific defaults.
+This keeps model selection and training settings under your control instead of under repository-specific defaults.
+
+### `configs/evaluation.json`
+
+Defines:
+
+- the evaluation split to run on;
+- the metrics that matter for the task;
+- the thresholds that gate promotion to the next stage.
+
+This is the main separation point between experimentation and controlled release.
 
 ### `configs/publish.json`
 
@@ -90,16 +101,18 @@ This is the separation line between the framework and any original author accoun
 4. Put your own raw assets inside the generated `data/` and `knowledge_base/` folders.
 5. Write the smallest possible project-specific converters in `scripts/`.
 6. Reuse the training and retrieval recipes from the main repository.
-7. Publish to your own Hub repos using the generated config files.
+7. Evaluate against `configs/evaluation.json`.
+8. Publish to your own Hub repos using the generated config files.
 
 ## Why This Matters
 
-Without this separation, the repository reads like a cleaned-up student project.
+Without this separation, the repository reads like a cleaned-up one-off project.
 
 With this separation, it reads like a reusable framework:
 
 - model selection is explicit;
 - automation is scaffolded;
-- data ownership is practitioner-controlled;
+- data ownership is user-controlled;
 - Hub publishing is namespace-agnostic;
-- the original repository becomes a recipe library rather than a one-off experiment dump.
+- stage promotion is evaluation-driven;
+- the repository becomes a recipe library plus a lightweight control plane.

@@ -29,7 +29,7 @@
   <rect x="38" y="34" width="1524" height="912" rx="26" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
 
   <text x="88" y="108" class="title">STEMTune Architecture</text>
-  <text x="88" y="138" class="subtitle">Operator-facing control layer for selecting models, scaffolding projects, and routing practitioners into reusable alignment recipes.</text>
+  <text x="88" y="138" class="subtitle">Operator-facing control layer for selecting models, scaffolding projects, and routing users into reusable alignment recipes.</text>
 
   <text x="110" y="198" class="section">OPERATOR LAYER</text>
   <text x="540" y="198" class="section">CONTROL PLANE</text>
@@ -64,8 +64,8 @@
   <text x="512" y="584" class="box-copy">`configs/knowledge_base.json`</text>
   <text x="512" y="616" class="box-copy">`configs/training.json`</text>
   <text x="512" y="648" class="box-copy">`configs/publish.json`</text>
-  <text x="512" y="694" class="small">Neutral, practitioner-owned manifests</text>
-  <text x="512" y="718" class="small">No dependency on course-specific HF accounts</text>
+  <text x="512" y="694" class="small">Neutral, user-owned manifests</text>
+  <text x="512" y="718" class="small">No dependency on repository-specific HF accounts</text>
 
   <rect x="924" y="226" width="552" height="530" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
   <text x="956" y="272" class="box-title">Reusable Recipe Families</text>
@@ -88,7 +88,7 @@
 
   <rect x="924" y="794" width="552" height="108" rx="22" fill="#f0fdf4" stroke="#86efac" stroke-width="2" filter="url(#shadow)"/>
   <text x="956" y="838" class="box-title">Outputs and Publication Targets</text>
-  <text x="956" y="870" class="box-copy">Processed datasets, indexed corpora, fine-tuned checkpoints, eval artifacts, and practitioner-owned Hub repositories.</text>
+  <text x="956" y="870" class="box-copy">Processed datasets, indexed corpora, fine-tuned checkpoints, eval artifacts, and user-owned Hub repositories.</text>
 
   <path d="M 408 334 C 438 334, 450 334, 480 334" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
   <path d="M 408 614 C 438 614, 450 614, 480 614" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
