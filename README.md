@@ -105,24 +105,7 @@ This creates a practitioner-owned workspace with neutral config files and no dep
 
 ## Training Surface
 
-```mermaid
-flowchart LR
-    A["datasets/"] --> B["training/sft"]
-    A --> C["training/mcqa"]
-    A --> D["training/dpo"]
-    A --> E["training/quantization"]
-    A --> F["training/rag"]
-    S["stemtune/"] --> B
-    S --> C
-    S --> D
-    S --> E
-    S --> F
-    G["retrieval/knowledge_base"] --> F
-    H["configs/model_configs"] --> B
-    H --> D
-    H --> E
-    H --> F
-```
+![STEMTune Architecture](docs/figures/stemtune-architecture.svg)
 
 ## Folder Guide
 
@@ -180,16 +163,7 @@ Contains selected written artifacts that complement the code. The repository is 
 
 ## Example Workflow
 
-```mermaid
-flowchart TD
-    A["External datasets<br/>MathQA / GPQA / SciQ / custom MCQA"] --> B["datasets/builders"]
-    S["python -m stemtune"] --> B
-    S --> C["training/sft or training/mcqa"]
-    C --> D["training/dpo or training/quantization"]
-    E["retrieval/knowledge_base"] --> F["training/rag"]
-    D --> G["Model artifacts and Hub-ready configs"]
-    F --> G
-```
+![STEMTune Practitioner Workflow](docs/figures/stemtune-workflow.svg)
 
 ## Operational Quickstart
 

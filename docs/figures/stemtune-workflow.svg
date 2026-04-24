@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">STEMTune Practitioner Workflow</title>
+  <desc id="desc">A professional workflow figure showing how a practitioner moves from task selection to model publication with STEMTune.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef2f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#475569"/>
+    </marker>
+    <style>
+      .title { font: 700 34px 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 500 16px 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .section { font: 700 20px 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .step-title { font: 700 20px 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .step-copy { font: 500 15px 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .caption { font: 600 13px 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; fill: #475569; letter-spacing: 0.06em; }
+      .note { font: 500 14px 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .mono { font: 600 14px 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace; fill: #0f172a; }
+      .num { font: 700 24px 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="980" fill="url(#bg)"/>
+  <rect x="38" y="34" width="1524" height="912" rx="26" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+
+  <text x="88" y="108" class="title">STEMTune Practitioner Workflow</text>
+  <text x="88" y="138" class="subtitle">End-to-end operating path from task framing to reusable artifacts and user-owned Hugging Face repositories.</text>
+
+  <line x1="170" y1="430" x2="1430" y2="430" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+
+  <g filter="url(#shadow)">
+    <circle cx="210" cy="430" r="42" fill="#2563eb"/>
+    <circle cx="430" cy="430" r="42" fill="#0284c7"/>
+    <circle cx="650" cy="430" r="42" fill="#0f766e"/>
+    <circle cx="870" cy="430" r="42" fill="#ea580c"/>
+    <circle cx="1090" cy="430" r="42" fill="#7c3aed"/>
+    <circle cx="1310" cy="430" r="42" fill="#16a34a"/>
+  </g>
+
+  <text x="201" y="438" class="num">1</text>
+  <text x="421" y="438" class="num">2</text>
+  <text x="641" y="438" class="num">3</text>
+  <text x="861" y="438" class="num">4</text>
+  <text x="1081" y="438" class="num">5</text>
+  <text x="1301" y="438" class="num">6</text>
+
+  <rect x="104" y="214" width="212" height="146" rx="20" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2" filter="url(#shadow)"/>
+  <text x="130" y="256" class="step-title">Choose Task</text>
+  <text x="130" y="288" class="step-copy">Use `list-tasks` and</text>
+  <text x="130" y="314" class="step-copy">`show-task` to frame</text>
+  <text x="130" y="340" class="step-copy">the alignment problem.</text>
+
+  <rect x="324" y="176" width="212" height="184" rx="20" fill="#f0f9ff" stroke="#bae6fd" stroke-width="2" filter="url(#shadow)"/>
+  <text x="350" y="218" class="step-title">Select Model</text>
+  <text x="350" y="250" class="step-copy">Run `recommend` or</text>
+  <text x="350" y="276" class="step-copy">rank the catalog by</text>
+  <text x="350" y="302" class="step-copy">VRAM, long-context,</text>
+  <text x="350" y="328" class="step-copy">tool-use, or language.</text>
+
+  <rect x="544" y="214" width="212" height="146" rx="20" fill="#ecfeff" stroke="#99f6e4" stroke-width="2" filter="url(#shadow)"/>
+  <text x="570" y="256" class="step-title">Scaffold Project</text>
+  <text x="570" y="288" class="step-copy">Generate a neutral</text>
+  <text x="570" y="314" class="step-copy">workspace with your</text>
+  <text x="570" y="340" class="step-copy">own configs and repos.</text>
+
+  <rect x="764" y="176" width="212" height="184" rx="20" fill="#fff7ed" stroke="#fdba74" stroke-width="2" filter="url(#shadow)"/>
+  <text x="790" y="218" class="step-title">Prepare Inputs</text>
+  <text x="790" y="250" class="step-copy">Normalize training data</text>
+  <text x="790" y="276" class="step-copy">and optionally build a</text>
+  <text x="790" y="302" class="step-copy">knowledge base under</text>
+  <text x="790" y="328" class="step-copy">the generated workspace.</text>
+
+  <rect x="984" y="214" width="212" height="146" rx="20" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1010" y="256" class="step-title">Run Recipe</text>
+  <text x="1010" y="288" class="step-copy">Reuse SFT, MCQA, DPO,</text>
+  <text x="1010" y="314" class="step-copy">quantization, or RAG</text>
+  <text x="1010" y="340" class="step-copy">from the recipe library.</text>
+
+  <rect x="1204" y="176" width="212" height="184" rx="20" fill="#f0fdf4" stroke="#86efac" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1230" y="218" class="step-title">Publish Assets</text>
+  <text x="1230" y="250" class="step-copy">Push processed data,</text>
+  <text x="1230" y="276" class="step-copy">indexes, checkpoints,</text>
+  <text x="1230" y="302" class="step-copy">and configs to your</text>
+  <text x="1230" y="328" class="step-copy">own namespace.</text>
+
+  <path d="M 210 472 L 210 598" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 430 472 L 430 598" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 650 472 L 650 598" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 870 472 L 870 598" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 1090 472 L 1090 598" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 1310 472 L 1310 598" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="86" y="618" width="1428" height="212" rx="24" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="118" y="664" class="section">ARTIFACTS AND OWNERSHIP BOUNDARIES</text>
+
+  <rect x="118" y="696" width="206" height="96" rx="18" fill="#ffffff" stroke="#dbeafe" stroke-width="1.6"/>
+  <text x="144" y="732" class="mono">task = mcqa | rag | dpo</text>
+  <text x="144" y="760" class="note">Problem framing</text>
+
+  <rect x="346" y="696" width="206" height="96" rx="18" fill="#ffffff" stroke="#bae6fd" stroke-width="1.6"/>
+  <text x="372" y="732" class="mono">base_model = your choice</text>
+  <text x="372" y="760" class="note">Model ownership</text>
+
+  <rect x="574" y="696" width="206" height="96" rx="18" fill="#ffffff" stroke="#99f6e4" stroke-width="1.6"/>
+  <text x="600" y="732" class="mono">configs/*.json</text>
+  <text x="600" y="760" class="note">Project contracts</text>
+
+  <rect x="802" y="696" width="206" height="96" rx="18" fill="#ffffff" stroke="#fdba74" stroke-width="1.6"/>
+  <text x="828" y="732" class="mono">data/ + knowledge_base/</text>
+  <text x="828" y="760" class="note">User-provided assets</text>
+
+  <rect x="1030" y="696" width="206" height="96" rx="18" fill="#ffffff" stroke="#ddd6fe" stroke-width="1.6"/>
+  <text x="1056" y="732" class="mono">training/* recipes</text>
+  <text x="1056" y="760" class="note">Reusable repository code</text>
+
+  <rect x="1258" y="696" width="224" height="96" rx="18" fill="#ffffff" stroke="#86efac" stroke-width="1.6"/>
+  <text x="1284" y="732" class="mono">your-hf-namespace/*</text>
+  <text x="1284" y="760" class="note">Published outputs</text>
+
+  <text x="88" y="900" class="caption">FIGURE 2</text>
+  <text x="170" y="900" class="note">The workflow explicitly separates framework code from practitioner-owned decisions: task framing, base model, local assets, config manifests, and publication targets.</text>
+</svg>
