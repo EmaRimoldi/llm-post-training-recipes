@@ -62,10 +62,14 @@ def make_plain_prompt(example: McqaExample) -> str:
 
 
 def make_grounded_prompt(example: McqaExample) -> str:
+    return make_support_prompt(example, example.support)
+
+
+def make_support_prompt(example: McqaExample, support_text: str) -> str:
     return (
         "Answer the following science multiple-choice question using the support passage.\n"
         "Return only the final answer letter: A, B, C, or D.\n\n"
-        f"Support passage:\n{example.support}\n\n"
+        f"Support passage:\n{support_text}\n\n"
         f"Question:\n{example.question}\n\n"
         f"Choices:\n{format_choices(example.choices)}\n"
     )
@@ -155,18 +159,17 @@ def generate_letter(tokenizer, model, device: str, prompt: str, max_new_tokens: 
     return text, parse_prediction(text), latency
 
 
-def evaluate_condition(
+def evaluate_prompts(
     condition_name: str,
     examples: list[McqaExample],
+    prompts: list[str],
     tokenizer,
     model,
     device: str,
     max_new_tokens: int,
 ):
     rows = []
-    prompt_builder = make_plain_prompt if condition_name == "plain" else make_grounded_prompt
-    for example in examples:
-        prompt = prompt_builder(example)
+    for example, prompt in zip(examples, prompts):
         raw_text, prediction, latency = generate_letter(tokenizer, model, device, prompt, max_new_tokens)
         rows.append(
             {
@@ -182,6 +185,19 @@ def evaluate_condition(
             }
         )
     return rows
+
+
+def evaluate_condition(
+    condition_name: str,
+    examples: list[McqaExample],
+    tokenizer,
+    model,
+    device: str,
+    max_new_tokens: int,
+):
+    prompt_builder = make_plain_prompt if condition_name == "plain" else make_grounded_prompt
+    prompts = [prompt_builder(example) for example in examples]
+    return evaluate_prompts(condition_name, examples, prompts, tokenizer, model, device, max_new_tokens)
 
 
 def summarize(condition_name: str, rows: list[dict]) -> dict:

@@ -1,0 +1,188 @@
+{
+  "dataset_id": "allenai/sciq",
+  "device": "mps",
+  "limit": 24,
+  "seeds": [
+    7,
+    11,
+    13,
+    17,
+    23
+  ],
+  "model_ids": [
+    "Qwen/Qwen2.5-0.5B-Instruct"
+  ],
+  "models": [
+    {
+      "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "per_seed": [
+        {
+          "seed": 7,
+          "plain": {
+            "condition": "plain",
+            "num_examples": 24,
+            "accuracy": 0.6666666666666666,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.21953732137869034,
+            "median_latency_s": 0.14004356251098216
+          },
+          "shuffled": {
+            "condition": "shuffled",
+            "num_examples": 24,
+            "accuracy": 0.75,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.1801005851254255,
+            "median_latency_s": 0.16691589597030543
+          },
+          "grounded": {
+            "condition": "grounded",
+            "num_examples": 24,
+            "accuracy": 1.0,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.16902496720285853,
+            "median_latency_s": 0.17341339602717198
+          }
+        },
+        {
+          "seed": 11,
+          "plain": {
+            "condition": "plain",
+            "num_examples": 24,
+            "accuracy": 0.7083333333333334,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.09418050874955952,
+            "median_latency_s": 0.08174114601570182
+          },
+          "shuffled": {
+            "condition": "shuffled",
+            "num_examples": 24,
+            "accuracy": 0.6666666666666666,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.16497105191713976,
+            "median_latency_s": 0.1743923960311804
+          },
+          "grounded": {
+            "condition": "grounded",
+            "num_examples": 24,
+            "accuracy": 1.0,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.16282763895530175,
+            "median_latency_s": 0.18012787500629202
+          }
+        },
+        {
+          "seed": 13,
+          "plain": {
+            "condition": "plain",
+            "num_examples": 24,
+            "accuracy": 0.7083333333333334,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.09356443583237706,
+            "median_latency_s": 0.0845669794944115
+          },
+          "shuffled": {
+            "condition": "shuffled",
+            "num_examples": 24,
+            "accuracy": 0.9166666666666666,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.16712767550294907,
+            "median_latency_s": 0.17910693751764484
+          },
+          "grounded": {
+            "condition": "grounded",
+            "num_examples": 24,
+            "accuracy": 0.9583333333333334,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.1383833697909722,
+            "median_latency_s": 0.1095657910045702
+          }
+        },
+        {
+          "seed": 17,
+          "plain": {
+            "condition": "plain",
+            "num_examples": 24,
+            "accuracy": 0.8333333333333334,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.0834092412017829,
+            "median_latency_s": 0.08336299998336472
+          },
+          "shuffled": {
+            "condition": "shuffled",
+            "num_examples": 24,
+            "accuracy": 0.6666666666666666,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.14127753299544565,
+            "median_latency_s": 0.10793110396480188
+          },
+          "grounded": {
+            "condition": "grounded",
+            "num_examples": 24,
+            "accuracy": 0.9166666666666666,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.153891619949718,
+            "median_latency_s": 0.12161331245442852
+          }
+        },
+        {
+          "seed": 23,
+          "plain": {
+            "condition": "plain",
+            "num_examples": 24,
+            "accuracy": 0.75,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.1025562377544702,
+            "median_latency_s": 0.08943360397825018
+          },
+          "shuffled": {
+            "condition": "shuffled",
+            "num_examples": 24,
+            "accuracy": 0.6666666666666666,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.1430846874936833,
+            "median_latency_s": 0.12216581296524964
+          },
+          "grounded": {
+            "condition": "grounded",
+            "num_examples": 24,
+            "accuracy": 0.9166666666666666,
+            "valid_rate": 1.0,
+            "avg_latency_s": 0.10956029337103246,
+            "median_latency_s": 0.08483949999208562
+          }
+        }
+      ],
+      "aggregate": {
+        "plain": {
+          "accuracy_mean": 0.7333333333333334,
+          "accuracy_stdev": 0.0631906287004296,
+          "valid_rate_mean": 1.0,
+          "valid_rate_stdev": 0.0,
+          "avg_latency_s_mean": 0.118649548983376,
+          "avg_latency_s_stdev": 0.05680495887135017
+        },
+        "shuffled": {
+          "accuracy_mean": 0.7333333333333333,
+          "accuracy_stdev": 0.10865337342004415,
+          "valid_rate_mean": 1.0,
+          "valid_rate_stdev": 0.0,
+          "avg_latency_s_mean": 0.15931230660692866,
+          "avg_latency_s_stdev": 0.016687140217329983
+        },
+        "grounded": {
+          "accuracy_mean": 0.9583333333333334,
+          "accuracy_stdev": 0.041666666666666685,
+          "valid_rate_mean": 1.0,
+          "valid_rate_stdev": 0.0,
+          "avg_latency_s_mean": 0.1467375778539766,
+          "avg_latency_s_stdev": 0.02376310892132172
+        }
+      },
+      "grounded_gain_mean": 0.22499999999999998,
+      "grounded_gain_stdev": 0.10034662148993582,
+      "shuffled_gain_mean": -4.4408920985006264e-17,
+      "shuffled_gain_stdev": 0.1473139127471974
+    }
+  ],
+  "total_examples": 120
+}

@@ -20,6 +20,8 @@ python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-conte
 python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
 python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
 python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+python -m stemtune study-mcqa --models Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+python -m stemtune study-support-budget --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 ```
 
 ## What The Selector Returns
@@ -38,6 +40,8 @@ python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 
 - `python -m stemtune init-project ...`: generate a neutral workspace with your own manifests, configs, and Hub targets.
 - `python -m stemtune smoke-mcqa ...`: run a small public-dataset smoke test and emit metrics plus a comparison plot.
 - `python -m stemtune benchmark-mcqa ...`: run a multi-seed MCQA benchmark and emit aggregate metrics plus a benchmark plot.
+- `python -m stemtune study-mcqa ...`: run the support relevance ablation with correct vs mismatched evidence.
+- `python -m stemtune study-support-budget ...`: measure how much support text is actually needed.
 
 For compatibility, the original entrypoint still works:
 
@@ -74,6 +78,18 @@ It writes:
 - `benchmark.png`
 
 The default benchmark in the repository uses `Qwen/Qwen2.5-0.5B-Instruct` on `allenai/sciq` and tracks the results under [docs/results/mcqa_grounding_qwen25_0p5b](../docs/results/mcqa_grounding_qwen25_0p5b/report.md).
+
+## Evidence Studies
+
+Two deeper studies are bundled as first-class commands:
+
+- `study-mcqa`: checks whether the gain comes from relevant evidence rather than from prompt length alone;
+- `study-support-budget`: checks how much support text is needed before returns flatten out.
+
+The tracked results live in:
+
+- [docs/results/mcqa_evidence_study](../docs/results/mcqa_evidence_study/report.md)
+- [docs/results/mcqa_support_budget_qwen25_0p5b](../docs/results/mcqa_support_budget_qwen25_0p5b/report.md)
 
 ## Project Bootstrap
 

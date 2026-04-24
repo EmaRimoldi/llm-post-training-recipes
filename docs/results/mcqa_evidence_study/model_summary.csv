@@ -1,0 +1,2 @@
+model_id,plain_accuracy_mean,shuffled_accuracy_mean,grounded_accuracy_mean,grounded_gain_mean,shuffled_gain_mean,plain_latency_mean,shuffled_latency_mean,grounded_latency_mean
+Qwen/Qwen2.5-0.5B-Instruct,0.7333333333333334,0.7333333333333333,0.9583333333333334,0.22499999999999998,-4.4408920985006264e-17,0.118649548983376,0.15931230660692866,0.1467375778539766

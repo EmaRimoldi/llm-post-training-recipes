@@ -40,6 +40,17 @@ Artifacts are tracked in [docs/results/mcqa_grounding_qwen25_0p5b/report.md](doc
 
 ![STEMTune MCQA Grounding Benchmark](docs/results/mcqa_grounding_qwen25_0p5b/benchmark.png)
 
+Two follow-up studies turn that benchmark into something operational:
+
+- relevance ablation: mismatched support does not improve the score, while correct support lifts the same model from `73.3%` to `95.8%`;
+- support-budget study: `48` support words recover the full-support accuracy of `95.8%` while cutting mean latency from `0.107s` to `0.091s`.
+
+Artifacts are tracked in [docs/results/mcqa_evidence_study/report.md](docs/results/mcqa_evidence_study/report.md) and [docs/results/mcqa_support_budget_qwen25_0p5b/report.md](docs/results/mcqa_support_budget_qwen25_0p5b/report.md).
+
+![STEMTune MCQA Evidence Study](docs/results/mcqa_evidence_study/study.png)
+
+![STEMTune MCQA Support Budget Study](docs/results/mcqa_support_budget_qwen25_0p5b/study.png)
+
 ## STEMTune
 
 `STEMTune` is the lightweight framework layer shipped with this repository.
@@ -59,6 +70,8 @@ python -m stemtune --task rag --gpu-memory-gb 48 --prefer-long-context --prefer-
 python -m stemtune list-models --task mcqa --gpu-memory-gb 24
 python -m stemtune show-task quantization
 python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+python -m stemtune study-mcqa --models Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+python -m stemtune study-support-budget --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 ```
 
 See [stemtune/README.md](stemtune/README.md) and [docs/open-source-alignment-playbook.md](docs/open-source-alignment-playbook.md).
@@ -81,6 +94,8 @@ python -m stemtune recommend --task sft --gpu-memory-gb 16
 python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
 python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
 python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+python -m stemtune study-mcqa --models Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+python -m stemtune study-support-budget --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 ```
 
 This makes the repository usable as a lightweight framework rather than as a static code drop.
@@ -109,6 +124,18 @@ python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 
 ```
 
 This emits an aggregate report, per-seed metrics, and a benchmark plot under `docs/results/` by default.
+
+If you want the more convincing ablations, run:
+
+```bash
+python -m stemtune study-mcqa --models Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+python -m stemtune study-support-budget --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+```
+
+These produce two additional tracked result folders:
+
+- `docs/results/mcqa_evidence_study/`: correct support vs mismatched support ablation;
+- `docs/results/mcqa_support_budget_qwen25_0p5b/`: context-budget sweep for the same model and task.
 
 ## Bring Your Own Assets
 

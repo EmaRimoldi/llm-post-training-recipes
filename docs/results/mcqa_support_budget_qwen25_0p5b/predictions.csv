@@ -1,0 +1,481 @@
+seed,condition,example_id,question,correct_letter,prediction,is_correct,is_valid,latency_s,raw_output
+7,plain,0,At what temperatures do crystals formed by covalent molecular solids melt at?,C,C,True,True,0.31872700003441423,C
+7,plain,1,Which glands produce milk after the birth of offspring?,D,D,True,True,0.06645537499571219,D
+7,plain,2,What are groups of skeletal muscle fibers wrapped in?,B,C,False,True,0.10726233298191801,C
+7,plain,3,What occurs when a population reaches the carrying capacity?,C,C,True,True,0.10627524997107685,C
+7,plain,4,"What are the tiny, negatively charged particles in an atom that move around the positive nucleus at the center?",B,B,True,True,0.11164762498810887,B
+7,plain,5,"What are clathrin, copi and copii types of?",C,C,True,True,0.12166095897555351,C
+7,plain,6,Organic acids such as acetic acid all contain a functional group called what?,D,D,True,True,0.05538195901317522,D
+7,plain,7,"An alpha particle, which is relatively large and easily stopped by matter, is a type of what?",B,A,False,True,0.055880416999571025,A
+7,plain,8,What two things limit primary production in aquatic ecosystems?,C,C,True,True,0.13015629205619916,C
+7,plain,9,"Name the missing type of light: ultraviolet, infrared, ___________.",D,D,True,True,0.11880449997261167,D
+7,plain,10,"For a scientific theory to be valid, in what way should it be verified?",B,B,True,True,0.05389133299468085,B
+7,plain,11,What is the process of soil dissolving in rain called?,D,C,False,True,0.05537170800380409,C
+7,plain,12,What is the term for particles composed of three quarks?,C,C,True,True,0.09561474999645725,C
+7,plain,13,The jejunum is about 0.9 meters (3 feet) long (in life) and runs from the duodenum to the ileum. jejunum means “empty” in latin and supposedly was so named by the ancient greeks who noticed it was always what?,C,C,True,True,0.1331517500220798,C
+7,plain,14,The hormones epinephrine and norepinephrine are associated with what rhyming mechanism?,D,D,True,True,0.13802345900330693,D
+7,plain,15,What two things are excess proteins converted into?,A,C,False,True,0.14542449999134988,C
+7,plain,16,Caffeine and alcohol are two examples of what type of drug?,A,A,True,True,0.06449579098261893,A
+7,plain,17,What is the main source of energy for your body?,B,A,False,True,0.11928583396365866,A
+7,plain,18,What is the name of the rigid layer that is found outside the cell membrane and surrounds the cell?,B,D,False,True,0.10327520896680653,D
+7,plain,19,How many steps are involved in blood clotting?,D,D,True,True,0.10491770796943456,D
+7,plain,20,What is the name for a fertilized cell that results from the uniting of two gametes?,A,D,False,True,0.12220337498001754,D
+7,plain,21,What do most of the noble gas elements have in common?,B,D,False,True,0.06558033399051055,D
+7,plain,22,Bacteria and archaea that survive under extreme conditions are called?,D,D,True,True,0.05995591700775549,D
+7,plain,23,Why is runoff from artificial fertilizer harmful to the chesapeake bay ecosystem?,B,B,True,True,0.05870429094647989,B
+7,support_24,0,At what temperatures do crystals formed by covalent molecular solids melt at?,C,C,True,True,0.1515616670367308,C
+7,support_24,1,Which glands produce milk after the birth of offspring?,D,D,True,True,0.11800675000995398,D
+7,support_24,2,What are groups of skeletal muscle fibers wrapped in?,B,B,True,True,0.114737875002902,B
+7,support_24,3,What occurs when a population reaches the carrying capacity?,C,C,True,True,0.15814679098548368,C
+7,support_24,4,"What are the tiny, negatively charged particles in an atom that move around the positive nucleus at the center?",B,B,True,True,0.1496258329716511,B
+7,support_24,5,"What are clathrin, copi and copii types of?",C,C,True,True,0.13505641598021612,C
+7,support_24,6,Organic acids such as acetic acid all contain a functional group called what?,D,D,True,True,0.05888904200401157,D
+7,support_24,7,"An alpha particle, which is relatively large and easily stopped by matter, is a type of what?",B,B,True,True,0.1030778749845922,B
+7,support_24,8,What two things limit primary production in aquatic ecosystems?,C,C,True,True,0.06284195900661871,C
+7,support_24,9,"Name the missing type of light: ultraviolet, infrared, ___________.",D,C,False,True,0.09459558402886614,C
+7,support_24,10,"For a scientific theory to be valid, in what way should it be verified?",B,B,True,True,0.05680525000207126,B
+7,support_24,11,What is the process of soil dissolving in rain called?,D,D,True,True,0.10979616595432162,D
+7,support_24,12,What is the term for particles composed of three quarks?,C,C,True,True,0.12574495800072327,C
+7,support_24,13,The jejunum is about 0.9 meters (3 feet) long (in life) and runs from the duodenum to the ileum. jejunum means “empty” in latin and supposedly was so named by the ancient greeks who noticed it was always what?,C,C,True,True,0.13945733301807195,C
+7,support_24,14,The hormones epinephrine and norepinephrine are associated with what rhyming mechanism?,D,D,True,True,0.12831500003812835,D
+7,support_24,15,What two things are excess proteins converted into?,A,A,True,True,0.12024937500245869,A
+7,support_24,16,Caffeine and alcohol are two examples of what type of drug?,A,A,True,True,0.06608683301601559,A
+7,support_24,17,What is the main source of energy for your body?,B,B,True,True,0.05631041701417416,B
+7,support_24,18,What is the name of the rigid layer that is found outside the cell membrane and surrounds the cell?,B,B,True,True,0.05794333398807794,B
+7,support_24,19,How many steps are involved in blood clotting?,D,D,True,True,0.06504304095869884,D
+7,support_24,20,What is the name for a fertilized cell that results from the uniting of two gametes?,A,A,True,True,0.05706858297344297,A
+7,support_24,21,What do most of the noble gas elements have in common?,B,B,True,True,0.05911495804321021,B
+7,support_24,22,Bacteria and archaea that survive under extreme conditions are called?,D,D,True,True,0.06390024995198473,D
+7,support_24,23,Why is runoff from artificial fertilizer harmful to the chesapeake bay ecosystem?,B,B,True,True,0.09529587504221126,B
+7,support_48,0,At what temperatures do crystals formed by covalent molecular solids melt at?,C,C,True,True,0.12350741698173806,C
+7,support_48,1,Which glands produce milk after the birth of offspring?,D,D,True,True,0.11766799999168143,D
+7,support_48,2,What are groups of skeletal muscle fibers wrapped in?,B,B,True,True,0.14617304102284834,B
+7,support_48,3,What occurs when a population reaches the carrying capacity?,C,C,True,True,0.14357158297207206,C
+7,support_48,4,"What are the tiny, negatively charged particles in an atom that move around the positive nucleus at the center?",B,B,True,True,0.11760587495518848,B
+7,support_48,5,"What are clathrin, copi and copii types of?",C,C,True,True,0.12412483297521248,C
+7,support_48,6,Organic acids such as acetic acid all contain a functional group called what?,D,D,True,True,0.07070724997902289,D
+7,support_48,7,"An alpha particle, which is relatively large and easily stopped by matter, is a type of what?",B,B,True,True,0.14474125002743676,B
+7,support_48,8,What two things limit primary production in aquatic ecosystems?,C,C,True,True,0.06660891702631488,C
+7,support_48,9,"Name the missing type of light: ultraviolet, infrared, ___________.",D,D,True,True,0.1522592919645831,D
+7,support_48,10,"For a scientific theory to be valid, in what way should it be verified?",B,B,True,True,0.17392187501536682,B
+7,support_48,11,What is the process of soil dissolving in rain called?,D,D,True,True,0.15110262500820681,D
+7,support_48,12,What is the term for particles composed of three quarks?,C,C,True,True,0.06904566701268777,C
+7,support_48,13,The jejunum is about 0.9 meters (3 feet) long (in life) and runs from the duodenum to the ileum. jejunum means “empty” in latin and supposedly was so named by the ancient greeks who noticed it was always what?,C,C,True,True,0.16012570803286508,C
+7,support_48,14,The hormones epinephrine and norepinephrine are associated with what rhyming mechanism?,D,D,True,True,0.1482191660325043,D
+7,support_48,15,What two things are excess proteins converted into?,A,A,True,True,0.11926875001518056,A
+7,support_48,16,Caffeine and alcohol are two examples of what type of drug?,A,A,True,True,0.0662083329516463,A
+7,support_48,17,What is the main source of energy for your body?,B,B,True,True,0.11013195797568187,B
+7,support_48,18,What is the name of the rigid layer that is found outside the cell membrane and surrounds the cell?,B,B,True,True,0.10863125004107133,B
+7,support_48,19,How many steps are involved in blood clotting?,D,D,True,True,0.06706245901295915,D
+7,support_48,20,What is the name for a fertilized cell that results from the uniting of two gametes?,A,A,True,True,0.10470220795832574,A
+7,support_48,21,What do most of the noble gas elements have in common?,B,B,True,True,0.11354837496764958,B
+7,support_48,22,Bacteria and archaea that survive under extreme conditions are called?,D,D,True,True,0.12454041704768315,D
+7,support_48,23,Why is runoff from artificial fertilizer harmful to the chesapeake bay ecosystem?,B,B,True,True,0.07452137500513345,B
+7,support_full,0,At what temperatures do crystals formed by covalent molecular solids melt at?,C,C,True,True,0.16006683302111924,C
+7,support_full,1,Which glands produce milk after the birth of offspring?,D,D,True,True,0.07085245801135898,D
+7,support_full,2,What are groups of skeletal muscle fibers wrapped in?,B,B,True,True,0.1299022079911083,B
+7,support_full,3,What occurs when a population reaches the carrying capacity?,C,C,True,True,0.15004820801550522,C
+7,support_full,4,"What are the tiny, negatively charged particles in an atom that move around the positive nucleus at the center?",B,B,True,True,0.15281958400737494,B
+7,support_full,5,"What are clathrin, copi and copii types of?",C,C,True,True,0.16381995799019933,C
+7,support_full,6,Organic acids such as acetic acid all contain a functional group called what?,D,D,True,True,0.07151895802235231,D
+7,support_full,7,"An alpha particle, which is relatively large and easily stopped by matter, is a type of what?",B,B,True,True,0.1521521249669604,B
+7,support_full,8,What two things limit primary production in aquatic ecosystems?,C,C,True,True,0.06362266599899158,C
+7,support_full,9,"Name the missing type of light: ultraviolet, infrared, ___________.",D,D,True,True,0.07646133296657354,D
+7,support_full,10,"For a scientific theory to be valid, in what way should it be verified?",B,B,True,True,0.13800341699970886,B
+7,support_full,11,What is the process of soil dissolving in rain called?,D,D,True,True,0.1500456250505522,D
+7,support_full,12,What is the term for particles composed of three quarks?,C,C,True,True,0.06851008400553837,C
+7,support_full,13,The jejunum is about 0.9 meters (3 feet) long (in life) and runs from the duodenum to the ileum. jejunum means “empty” in latin and supposedly was so named by the ancient greeks who noticed it was always what?,C,C,True,True,0.08144629094749689,C
+7,support_full,14,The hormones epinephrine and norepinephrine are associated with what rhyming mechanism?,D,D,True,True,0.13293637498281896,D
+7,support_full,15,What two things are excess proteins converted into?,A,A,True,True,0.16491787502309307,A
+7,support_full,16,Caffeine and alcohol are two examples of what type of drug?,A,A,True,True,0.06636599998455495,A
+7,support_full,17,What is the main source of energy for your body?,B,B,True,True,0.1369340000092052,B
+7,support_full,18,What is the name of the rigid layer that is found outside the cell membrane and surrounds the cell?,B,B,True,True,0.12178416701499373,B
+7,support_full,19,How many steps are involved in blood clotting?,D,D,True,True,0.13412720803171396,D
+7,support_full,20,What is the name for a fertilized cell that results from the uniting of two gametes?,A,A,True,True,0.14410141698317602,A
+7,support_full,21,What do most of the noble gas elements have in common?,B,B,True,True,0.1493767080246471,B
+7,support_full,22,Bacteria and archaea that survive under extreme conditions are called?,D,D,True,True,0.14569904195377603,D
+7,support_full,23,Why is runoff from artificial fertilizer harmful to the chesapeake bay ecosystem?,B,B,True,True,0.2302434160374105,B
+11,plain,0,What is considered to be the most common intrusive igneous rock?,A,C,False,True,0.08703083300497383,C
+11,plain,1,"Compared to a straight wire, a coiled wire has a stronger what?",B,B,True,True,0.1080434579635039,B
+11,plain,2,What disease-causing acellular entities containing either dna or rna replicate using the replication proteins of a host cell?,A,A,True,True,0.0668625840335153,A
+11,plain,3,"As the anterior end of the neural tube starts to develop into the brain, it undergoes a couple of enlargements; the result is the production of these?",C,C,True,True,0.13908387499395758,C
+11,plain,4,On what basis are the eras of the phanerozoic eon separated?,C,C,True,True,0.06820899999001995,C
+11,plain,5,If the area to which a force is applied is smaller then the pressure will be?,D,C,False,True,0.06334787496598437,C
+11,plain,6,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.13962537504266948,B
+11,plain,7,"Each parapodium has numerous chaetae, bristles made of what?",D,D,True,True,0.06954795803176239,D
+11,plain,8,A homogeneous mixture composed of two or more substances is called a what?,D,A,False,True,0.06752041599247605,A
+11,plain,9,What is the amount of product that may be produced by a reaction under specified conditions called?,B,B,True,True,0.10162020800635219,B
+11,plain,10,The energy released during an earthquake is called what?,A,A,True,True,0.06748695799615234,A
+11,plain,11,What type of organisms collect the energy from the sun and turn it into organic compounds?,B,B,True,True,0.06257229199400172,B
+11,plain,12,"Global sources of inexpensive fossil fuels, particularly oil, are rapidly being what?",B,B,True,True,0.06081837503006682,B
+11,plain,13,What forms when one substance dissolves into another?,D,D,True,True,0.05120620899833739,D
+11,plain,14,What are the physical properties of water and carbon dioxide affected by?,B,D,False,True,0.10486062499694526,D
+11,plain,15,What do ectotherms use to regulate body temperature?,B,B,True,True,0.05801258300198242,B
+11,plain,16,"Lens faces can generally either be concave, or what, which is the opposite of concave?",C,C,True,True,0.0637679590145126,C
+11,plain,17,The diploid sporophyte produces haploid spores by what process?,D,D,True,True,0.0561790419742465,D
+11,plain,18,"By maintaining a relatively constant internal environment even when the external environment changes significantly, an animal achieves what?",B,B,True,True,0.052266124985180795,B
+11,plain,19,Why do birds build nests?,D,D,True,True,0.06222662498475984,D
+11,plain,20,What do we call the microflora that aid in the digestion process?,C,B,False,True,0.05404591601109132,B
+11,plain,21,"Touching, coughing, or sneezing are examples of directly spreading what microorganisms, which cause diseases like tetanus?",A,B,False,True,0.06007120799040422,B
+11,plain,22,Each female of a particular species can produce millions of these per year?,C,D,False,True,0.05656995897879824,D
+11,plain,23,The trachea and bronchi are made of incomplete rings of this?,B,B,True,True,0.06156850000843406,B
+11,support_24,0,What is considered to be the most common intrusive igneous rock?,A,A,True,True,0.10515112499706447,A
+11,support_24,1,"Compared to a straight wire, a coiled wire has a stronger what?",B,B,True,True,0.07252979197073728,B
+11,support_24,2,What disease-causing acellular entities containing either dna or rna replicate using the replication proteins of a host cell?,A,A,True,True,0.13248820800799876,A
+11,support_24,3,"As the anterior end of the neural tube starts to develop into the brain, it undergoes a couple of enlargements; the result is the production of these?",C,C,True,True,0.07759908301522955,C
+11,support_24,4,On what basis are the eras of the phanerozoic eon separated?,C,C,True,True,0.11900462495395914,C
+11,support_24,5,If the area to which a force is applied is smaller then the pressure will be?,D,D,True,True,0.0670821670209989,D
+11,support_24,6,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.12176454096334055,B
+11,support_24,7,"Each parapodium has numerous chaetae, bristles made of what?",D,D,True,True,0.12550295901019126,D
+11,support_24,8,A homogeneous mixture composed of two or more substances is called a what?,D,D,True,True,0.07368833298096433,D
+11,support_24,9,What is the amount of product that may be produced by a reaction under specified conditions called?,B,B,True,True,0.06983141700038686,B
+11,support_24,10,The energy released during an earthquake is called what?,A,A,True,True,0.057554250000976026,A
+11,support_24,11,What type of organisms collect the energy from the sun and turn it into organic compounds?,B,B,True,True,0.07284245797200128,B
+11,support_24,12,"Global sources of inexpensive fossil fuels, particularly oil, are rapidly being what?",B,B,True,True,0.06315354205435142,B
+11,support_24,13,What forms when one substance dissolves into another?,D,D,True,True,0.06776454200735316,D
+11,support_24,14,What are the physical properties of water and carbon dioxide affected by?,B,B,True,True,0.14770729199517518,B
+11,support_24,15,What do ectotherms use to regulate body temperature?,B,B,True,True,0.07351712498348206,B
+11,support_24,16,"Lens faces can generally either be concave, or what, which is the opposite of concave?",C,C,True,True,0.06250654102768749,C
+11,support_24,17,The diploid sporophyte produces haploid spores by what process?,D,D,True,True,0.1398422920028679,D
+11,support_24,18,"By maintaining a relatively constant internal environment even when the external environment changes significantly, an animal achieves what?",B,B,True,True,0.12626820796867833,B
+11,support_24,19,Why do birds build nests?,D,D,True,True,0.05533008399652317,D
+11,support_24,20,What do we call the microflora that aid in the digestion process?,C,B,False,True,0.06693283299682662,B
+11,support_24,21,"Touching, coughing, or sneezing are examples of directly spreading what microorganisms, which cause diseases like tetanus?",A,A,True,True,0.057287625037133694,A
+11,support_24,22,Each female of a particular species can produce millions of these per year?,C,C,True,True,0.05479008401744068,C
+11,support_24,23,The trachea and bronchi are made of incomplete rings of this?,B,B,True,True,0.10290570801589638,B
+11,support_48,0,What is considered to be the most common intrusive igneous rock?,A,A,True,True,0.06794999999692664,A
+11,support_48,1,"Compared to a straight wire, a coiled wire has a stronger what?",B,B,True,True,0.07734391698613763,B
+11,support_48,2,What disease-causing acellular entities containing either dna or rna replicate using the replication proteins of a host cell?,A,A,True,True,0.1426770419930108,A
+11,support_48,3,"As the anterior end of the neural tube starts to develop into the brain, it undergoes a couple of enlargements; the result is the production of these?",C,C,True,True,0.08017333300085738,C
+11,support_48,4,On what basis are the eras of the phanerozoic eon separated?,C,C,True,True,0.14618674997473136,C
+11,support_48,5,If the area to which a force is applied is smaller then the pressure will be?,D,D,True,True,0.11445325001841411,D
+11,support_48,6,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.10957758402219042,B
+11,support_48,7,"Each parapodium has numerous chaetae, bristles made of what?",D,D,True,True,0.07485462498152629,D
+11,support_48,8,A homogeneous mixture composed of two or more substances is called a what?,D,D,True,True,0.14455862500471994,D
+11,support_48,9,What is the amount of product that may be produced by a reaction under specified conditions called?,B,B,True,True,0.07938841596478596,B
+11,support_48,10,The energy released during an earthquake is called what?,A,A,True,True,0.071118124993518,A
+11,support_48,11,What type of organisms collect the energy from the sun and turn it into organic compounds?,B,B,True,True,0.07450912502827123,B
+11,support_48,12,"Global sources of inexpensive fossil fuels, particularly oil, are rapidly being what?",B,B,True,True,0.06387887499295175,B
+11,support_48,13,What forms when one substance dissolves into another?,D,D,True,True,0.12220841698581353,D
+11,support_48,14,What are the physical properties of water and carbon dioxide affected by?,B,B,True,True,0.0654680419829674,B
+11,support_48,15,What do ectotherms use to regulate body temperature?,B,B,True,True,0.07578741596080363,B
+11,support_48,16,"Lens faces can generally either be concave, or what, which is the opposite of concave?",C,C,True,True,0.06595958297839388,C
+11,support_48,17,The diploid sporophyte produces haploid spores by what process?,D,D,True,True,0.06777212501037866,D
+11,support_48,18,"By maintaining a relatively constant internal environment even when the external environment changes significantly, an animal achieves what?",B,B,True,True,0.06818237499101087,B
+11,support_48,19,Why do birds build nests?,D,D,True,True,0.06818500004010275,D
+11,support_48,20,What do we call the microflora that aid in the digestion process?,C,C,True,True,0.07307729200692847,C
+11,support_48,21,"Touching, coughing, or sneezing are examples of directly spreading what microorganisms, which cause diseases like tetanus?",A,A,True,True,0.13938574999338016,A
+11,support_48,22,Each female of a particular species can produce millions of these per year?,C,C,True,True,0.06430308404378593,C
+11,support_48,23,The trachea and bronchi are made of incomplete rings of this?,B,B,True,True,0.0687357920105569,B
+11,support_full,0,What is considered to be the most common intrusive igneous rock?,A,A,True,True,0.06767879199469462,A
+11,support_full,1,"Compared to a straight wire, a coiled wire has a stronger what?",B,B,True,True,0.12436083302600309,B
+11,support_full,2,What disease-causing acellular entities containing either dna or rna replicate using the replication proteins of a host cell?,A,A,True,True,0.17665174999274313,A
+11,support_full,3,"As the anterior end of the neural tube starts to develop into the brain, it undergoes a couple of enlargements; the result is the production of these?",C,C,True,True,0.18195562495384365,C
+11,support_full,4,On what basis are the eras of the phanerozoic eon separated?,C,C,True,True,0.07872504199622199,C
+11,support_full,5,If the area to which a force is applied is smaller then the pressure will be?,D,D,True,True,0.1462619169615209,D
+11,support_full,6,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.1695070419809781,B
+11,support_full,7,"Each parapodium has numerous chaetae, bristles made of what?",D,D,True,True,0.07071179203921929,D
+11,support_full,8,A homogeneous mixture composed of two or more substances is called a what?,D,D,True,True,0.1540227910154499,D
+11,support_full,9,What is the amount of product that may be produced by a reaction under specified conditions called?,B,B,True,True,0.15366324997739866,B
+11,support_full,10,The energy released during an earthquake is called what?,A,A,True,True,0.07058554096147418,A
+11,support_full,11,What type of organisms collect the energy from the sun and turn it into organic compounds?,B,B,True,True,0.14728858304442838,B
+11,support_full,12,"Global sources of inexpensive fossil fuels, particularly oil, are rapidly being what?",B,B,True,True,0.06870966701535508,B
+11,support_full,13,What forms when one substance dissolves into another?,D,D,True,True,0.08115812501637265,D
+11,support_full,14,What are the physical properties of water and carbon dioxide affected by?,B,B,True,True,0.06696595903486013,B
+11,support_full,15,What do ectotherms use to regulate body temperature?,B,B,True,True,0.1615330419735983,B
+11,support_full,16,"Lens faces can generally either be concave, or what, which is the opposite of concave?",C,C,True,True,0.06820108398096636,C
+11,support_full,17,The diploid sporophyte produces haploid spores by what process?,D,D,True,True,0.0677992919809185,D
+11,support_full,18,"By maintaining a relatively constant internal environment even when the external environment changes significantly, an animal achieves what?",B,B,True,True,0.06726674997480586,B
+11,support_full,19,Why do birds build nests?,D,D,True,True,0.14937795797595754,D
+11,support_full,20,What do we call the microflora that aid in the digestion process?,C,C,True,True,0.1342184590175748,C
+11,support_full,21,"Touching, coughing, or sneezing are examples of directly spreading what microorganisms, which cause diseases like tetanus?",A,A,True,True,0.131456250033807,A
+11,support_full,22,Each female of a particular species can produce millions of these per year?,C,C,True,True,0.062438666995149106,C
+11,support_full,23,The trachea and bronchi are made of incomplete rings of this?,B,B,True,True,0.06959895900217816,B
+13,plain,0,"In a position-time graph, what does the slope of the line represent?",B,B,True,True,0.08845654199831188,B
+13,plain,1,Compound machines tend to have a greater mechanical advantage than what other machines?,B,B,True,True,0.07712575001642108,B
+13,plain,2,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.07623133395100012,B
+13,plain,3,What is the result of a reaction between sulfur trioxide and water?,C,D,False,True,0.05831795796984807,D
+13,plain,4,"Sponges are part of what phylum, which gets its name from the latin for ""having pores""?",C,A,False,True,0.14498237502994016,A
+13,plain,5,What stimulates milk production in mammals?,B,B,True,True,0.06931083300150931,B
+13,plain,6,What is mollusks complete digestive system called?,C,C,True,True,0.06241145799867809,C
+13,plain,7,A long strip of sand is referred to as what?,A,D,False,True,0.06384383299155161,D
+13,plain,8,"When heat moves out of a system, what is the sign of the enthalpy?",A,B,False,True,0.06407695799134672,B
+13,plain,9,The trachea and bronchi are made of incomplete rings of this?,A,A,True,True,0.0568896250333637,A
+13,plain,10,Which law predicts increasing entropy based on living systems?,A,A,True,True,0.06865633395500481,A
+13,plain,11,"Manganin is made up of metals that include copper, manganese and nickel - what do you generally call a metal of this type?",D,D,True,True,0.128242458042223,D
+13,plain,12,"During exercise, the rate of blood returning to the heart does this?",B,B,True,True,0.054472125018946826,B
+13,plain,13,"During unfavorable conditions, mature seeds may enter a period of inactivity or extremely low metabolic activity called what?",A,A,True,True,0.07284966699080542,A
+13,plain,14,"Because arthropod appendages are jointed, they can do what?",B,B,True,True,0.06420854199677706,B
+13,plain,15,Which one of newton's laws describes the direct relationship between force and acceleration?,A,D,False,True,0.07608245802111924,D
+13,plain,16,Sweating and panting are methods mammals use for what purpose?,A,D,False,True,0.05960558296646923,D
+13,plain,17,What do we use to keep track of electric potential energy?,A,A,True,True,0.05414354201639071,A
+13,plain,18,The atmospheric concentration of carbon dioxide on earth has been regulated by the concentration of what form of life?,C,C,True,True,0.06268791697220877,C
+13,plain,19,Which biomes are determined mainly by sunlight and concentrations of dissolved oxygen and nutrients in the water?,B,B,True,True,0.05293741700006649,B
+13,plain,20,"Although helper t cells do not destroy infected or damaged body cells, they are still necessary for what?",A,A,True,True,0.06969974999083206,A
+13,plain,21,Destructive interference occurs when two identical waves are superimposed exactly out of phase. a standing wave is one in which two waves superimpose to produce a wave that varies in amplitude but does not do this?,C,A,False,True,0.15851012500934303,A
+13,plain,22,Oxygen and glucose are both reactants in the process of,B,B,True,True,0.06262845895253122,B
+13,plain,23,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.059772083011921495,C
+13,support_24,0,"In a position-time graph, what does the slope of the line represent?",B,B,True,True,0.07405649998690933,B
+13,support_24,1,Compound machines tend to have a greater mechanical advantage than what other machines?,B,B,True,True,0.15009141701739281,B
+13,support_24,2,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.08004687499487773,B
+13,support_24,3,What is the result of a reaction between sulfur trioxide and water?,C,C,True,True,0.08089987502899021,C
+13,support_24,4,"Sponges are part of what phylum, which gets its name from the latin for ""having pores""?",C,C,True,True,0.06928108300780877,C
+13,support_24,5,What stimulates milk production in mammals?,B,B,True,True,0.0709934159531258,B
+13,support_24,6,What is mollusks complete digestive system called?,C,C,True,True,0.06928691698703915,C
+13,support_24,7,A long strip of sand is referred to as what?,A,A,True,True,0.06747845804784447,A
+13,support_24,8,"When heat moves out of a system, what is the sign of the enthalpy?",A,B,False,True,0.058092791005037725,B
+13,support_24,9,The trachea and bronchi are made of incomplete rings of this?,A,A,True,True,0.06679499999154359,A
+13,support_24,10,Which law predicts increasing entropy based on living systems?,A,A,True,True,0.0650958750047721,A
+13,support_24,11,"Manganin is made up of metals that include copper, manganese and nickel - what do you generally call a metal of this type?",D,D,True,True,0.05730379099259153,D
+13,support_24,12,"During exercise, the rate of blood returning to the heart does this?",B,B,True,True,0.06343183404533193,B
+13,support_24,13,"During unfavorable conditions, mature seeds may enter a period of inactivity or extremely low metabolic activity called what?",A,A,True,True,0.07126116700237617,A
+13,support_24,14,"Because arthropod appendages are jointed, they can do what?",B,B,True,True,0.07339283300098032,B
+13,support_24,15,Which one of newton's laws describes the direct relationship between force and acceleration?,A,A,True,True,0.06400883296737447,A
+13,support_24,16,Sweating and panting are methods mammals use for what purpose?,A,A,True,True,0.10550779098412022,A
+13,support_24,17,What do we use to keep track of electric potential energy?,A,A,True,True,0.11026458302512765,A
+13,support_24,18,The atmospheric concentration of carbon dioxide on earth has been regulated by the concentration of what form of life?,C,C,True,True,0.06170816603116691,C
+13,support_24,19,Which biomes are determined mainly by sunlight and concentrations of dissolved oxygen and nutrients in the water?,B,B,True,True,0.07672224997077137,B
+13,support_24,20,"Although helper t cells do not destroy infected or damaged body cells, they are still necessary for what?",A,A,True,True,0.07714841701090336,A
+13,support_24,21,Destructive interference occurs when two identical waves are superimposed exactly out of phase. a standing wave is one in which two waves superimpose to produce a wave that varies in amplitude but does not do this?,C,D,False,True,0.08584304101532325,D
+13,support_24,22,Oxygen and glucose are both reactants in the process of,B,B,True,True,0.15018454199889675,B
+13,support_24,23,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.1296229159925133,C
+13,support_48,0,"In a position-time graph, what does the slope of the line represent?",B,B,True,True,0.07560012501198798,B
+13,support_48,1,Compound machines tend to have a greater mechanical advantage than what other machines?,B,B,True,True,0.07370091695338488,B
+13,support_48,2,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.07745041698217392,B
+13,support_48,3,What is the result of a reaction between sulfur trioxide and water?,C,C,True,True,0.07246079097967595,C
+13,support_48,4,"Sponges are part of what phylum, which gets its name from the latin for ""having pores""?",C,C,True,True,0.15136316698044538,C
+13,support_48,5,What stimulates milk production in mammals?,B,B,True,True,0.06923216598806903,B
+13,support_48,6,What is mollusks complete digestive system called?,C,C,True,True,0.07355558301787823,C
+13,support_48,7,A long strip of sand is referred to as what?,A,A,True,True,0.06981862499378622,A
+13,support_48,8,"When heat moves out of a system, what is the sign of the enthalpy?",A,B,False,True,0.07631504198070616,B
+13,support_48,9,The trachea and bronchi are made of incomplete rings of this?,A,A,True,True,0.06720308400690556,A
+13,support_48,10,Which law predicts increasing entropy based on living systems?,A,A,True,True,0.06397770799230784,A
+13,support_48,11,"Manganin is made up of metals that include copper, manganese and nickel - what do you generally call a metal of this type?",D,D,True,True,0.0786053339834325,D
+13,support_48,12,"During exercise, the rate of blood returning to the heart does this?",B,B,True,True,0.07492545899003744,B
+13,support_48,13,"During unfavorable conditions, mature seeds may enter a period of inactivity or extremely low metabolic activity called what?",A,A,True,True,0.11940779199358076,A
+13,support_48,14,"Because arthropod appendages are jointed, they can do what?",B,B,True,True,0.07534724997822195,B
+13,support_48,15,Which one of newton's laws describes the direct relationship between force and acceleration?,A,A,True,True,0.07139158295467496,A
+13,support_48,16,Sweating and panting are methods mammals use for what purpose?,A,A,True,True,0.06685883301543072,A
+13,support_48,17,What do we use to keep track of electric potential energy?,A,A,True,True,0.07660770905204117,A
+13,support_48,18,The atmospheric concentration of carbon dioxide on earth has been regulated by the concentration of what form of life?,C,C,True,True,0.11884483299218118,C
+13,support_48,19,Which biomes are determined mainly by sunlight and concentrations of dissolved oxygen and nutrients in the water?,B,B,True,True,0.0706647919723764,B
+13,support_48,20,"Although helper t cells do not destroy infected or damaged body cells, they are still necessary for what?",A,A,True,True,0.07401979202404618,A
+13,support_48,21,Destructive interference occurs when two identical waves are superimposed exactly out of phase. a standing wave is one in which two waves superimpose to produce a wave that varies in amplitude but does not do this?,C,C,True,True,0.13828537502558902,C
+13,support_48,22,Oxygen and glucose are both reactants in the process of,B,B,True,True,0.06932266603689641,B
+13,support_48,23,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.06424641603371128,C
+13,support_full,0,"In a position-time graph, what does the slope of the line represent?",B,B,True,True,0.0798004160169512,B
+13,support_full,1,Compound machines tend to have a greater mechanical advantage than what other machines?,B,B,True,True,0.07579704205272719,B
+13,support_full,2,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.09862541704205796,B
+13,support_full,3,What is the result of a reaction between sulfur trioxide and water?,C,C,True,True,0.07092725002439693,C
+13,support_full,4,"Sponges are part of what phylum, which gets its name from the latin for ""having pores""?",C,C,True,True,0.08181437500752509,C
+13,support_full,5,What stimulates milk production in mammals?,B,B,True,True,0.06378091702936217,B
+13,support_full,6,What is mollusks complete digestive system called?,C,C,True,True,0.06608270801370963,C
+13,support_full,7,A long strip of sand is referred to as what?,A,A,True,True,0.07035950000863522,A
+13,support_full,8,"When heat moves out of a system, what is the sign of the enthalpy?",A,B,False,True,0.16172924998681992,B
+13,support_full,9,The trachea and bronchi are made of incomplete rings of this?,A,A,True,True,0.07207675004610792,A
+13,support_full,10,Which law predicts increasing entropy based on living systems?,A,A,True,True,0.073174667020794,A
+13,support_full,11,"Manganin is made up of metals that include copper, manganese and nickel - what do you generally call a metal of this type?",D,D,True,True,0.13759120798204094,D
+13,support_full,12,"During exercise, the rate of blood returning to the heart does this?",B,B,True,True,0.16947245795745403,B
+13,support_full,13,"During unfavorable conditions, mature seeds may enter a period of inactivity or extremely low metabolic activity called what?",A,A,True,True,0.1760452919988893,A
+13,support_full,14,"Because arthropod appendages are jointed, they can do what?",B,B,True,True,0.15259820799110457,B
+13,support_full,15,Which one of newton's laws describes the direct relationship between force and acceleration?,A,A,True,True,0.07577587501145899,A
+13,support_full,16,Sweating and panting are methods mammals use for what purpose?,A,A,True,True,0.0701298339990899,A
+13,support_full,17,What do we use to keep track of electric potential energy?,A,A,True,True,0.15068958298070356,A
+13,support_full,18,The atmospheric concentration of carbon dioxide on earth has been regulated by the concentration of what form of life?,C,C,True,True,0.07820904202526435,C
+13,support_full,19,Which biomes are determined mainly by sunlight and concentrations of dissolved oxygen and nutrients in the water?,B,B,True,True,0.07059029204538092,B
+13,support_full,20,"Although helper t cells do not destroy infected or damaged body cells, they are still necessary for what?",A,A,True,True,0.07749754103133455,A
+13,support_full,21,Destructive interference occurs when two identical waves are superimposed exactly out of phase. a standing wave is one in which two waves superimpose to produce a wave that varies in amplitude but does not do this?,C,C,True,True,0.15628529095556587,C
+13,support_full,22,Oxygen and glucose are both reactants in the process of,B,B,True,True,0.06940804101759568,B
+13,support_full,23,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.1595987090258859,C
+17,plain,0,Some products contain iron filings that will react with air to release what type of energy?,A,A,True,True,0.07504366600187495,A
+17,plain,1,What does our solar system orbit over the course of hundreds of millions of years?,C,C,True,True,0.06604345899540931,C
+17,plain,2,"In myasthenia gravis, antibodies bind to and block certain receptors on muscle cells, preventing what?",D,D,True,True,0.06872816599206999,D
+17,plain,3,What everyday beverage commodity is second only to oil in worldwide trade?,A,D,False,True,0.06483299995306879,D
+17,plain,4,"What phylum includes sponges, which are aquatic invertebrates?",A,D,False,True,0.053871417010668665,D
+17,plain,5,Purkinje fibers have a fast inherent what?,C,C,True,True,0.06402424996485934,C
+17,plain,6,"What are the elements of group 17 (fluorine, chlorine, bromine, iodine, and astatine) called?",C,C,True,True,0.13522674998966977,C
+17,plain,7,"When electrons from two atoms are each attracted to the nucleus of the other atom, what type of bond is formed?",B,B,True,True,0.1264111670316197,B
+17,plain,8,Hormones that share what usually perform the same function?,D,D,True,True,0.053857167018577456,D
+17,plain,9,"Active transport mechanisms require the use of the cell’s energy, usually in the form of what?",D,D,True,True,0.06914279196644202,D
+17,plain,10,"Changes to what that delete, disrupt, or rearrange many loci at once are usually harmful?",A,A,True,True,0.06335870799375698,A
+17,plain,11,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.06502266600728035,C
+17,plain,12,Energy resources can be put into two categories — renewable or?,B,B,True,True,0.06617058295523748,B
+17,plain,13,Which are the three most important temperature scales?,C,B,False,True,0.06690149998757988,B
+17,plain,14,"Each hemisphere of the cerebrum consists of four parts, called what?",B,B,True,True,0.06077704200288281,B
+17,plain,15,The top of the saturated rock layer is called what?,C,D,False,True,0.054726166010368615,D
+17,plain,16,Heterotrophs get food by eating what?,C,C,True,True,0.061560792033560574,C
+17,plain,17,What organelles do animal cells use to convert food into energy?,D,D,True,True,0.06284095800947398,D
+17,plain,18,What is a short band of tough connective tissue that connects bones together to form a joint?,C,C,True,True,0.06243287498364225,C
+17,plain,19,"What is a property of a system whose magnitude depends on only the present state of the system, not its previous history?",A,A,True,True,0.06602162501076236,A
+17,plain,20,Ragweed and poison ivy are common causes of what?,B,B,True,True,0.05751195800257847,B
+17,plain,21,"The solubility of gases, liquids, and solids are affected by changes in what?",C,C,True,True,0.06914666597731411,C
+17,plain,22,Comets that have periods of 200 years or less are knows as what-period comets?,C,C,True,True,0.06497579102870077,C
+17,plain,23,What is the name of the effect that causes air masses to move on a diagonal?,C,C,True,True,0.06548570899758488,C
+17,support_24,0,Some products contain iron filings that will react with air to release what type of energy?,A,A,True,True,0.07054879196221009,A
+17,support_24,1,What does our solar system orbit over the course of hundreds of millions of years?,C,C,True,True,0.13719029095955193,C
+17,support_24,2,"In myasthenia gravis, antibodies bind to and block certain receptors on muscle cells, preventing what?",D,D,True,True,0.07035891700070351,D
+17,support_24,3,What everyday beverage commodity is second only to oil in worldwide trade?,A,A,True,True,0.05624287499813363,A
+17,support_24,4,"What phylum includes sponges, which are aquatic invertebrates?",A,D,False,True,0.07608916697790846,D
+17,support_24,5,Purkinje fibers have a fast inherent what?,C,C,True,True,0.11846687499200925,C
+17,support_24,6,"What are the elements of group 17 (fluorine, chlorine, bromine, iodine, and astatine) called?",C,C,True,True,0.07626041601179168,C
+17,support_24,7,"When electrons from two atoms are each attracted to the nucleus of the other atom, what type of bond is formed?",B,B,True,True,0.06955354200908914,B
+17,support_24,8,Hormones that share what usually perform the same function?,D,C,False,True,0.06898333301069215,C
+17,support_24,9,"Active transport mechanisms require the use of the cell’s energy, usually in the form of what?",D,D,True,True,0.06213708303403109,D
+17,support_24,10,"Changes to what that delete, disrupt, or rearrange many loci at once are usually harmful?",A,A,True,True,0.06279429199639708,A
+17,support_24,11,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.07096662500407547,C
+17,support_24,12,Energy resources can be put into two categories — renewable or?,B,B,True,True,0.07211716700112447,B
+17,support_24,13,Which are the three most important temperature scales?,C,B,False,True,0.07324645802145824,B
+17,support_24,14,"Each hemisphere of the cerebrum consists of four parts, called what?",B,B,True,True,0.05605737498262897,B
+17,support_24,15,The top of the saturated rock layer is called what?,C,C,True,True,0.06934124999679625,C
+17,support_24,16,Heterotrophs get food by eating what?,C,C,True,True,0.07201599999098107,C
+17,support_24,17,What organelles do animal cells use to convert food into energy?,D,D,True,True,0.14003750000847504,D
+17,support_24,18,What is a short band of tough connective tissue that connects bones together to form a joint?,C,C,True,True,0.06128895899746567,C
+17,support_24,19,"What is a property of a system whose magnitude depends on only the present state of the system, not its previous history?",A,A,True,True,0.0710895000374876,A
+17,support_24,20,Ragweed and poison ivy are common causes of what?,B,B,True,True,0.06832333299098536,B
+17,support_24,21,"The solubility of gases, liquids, and solids are affected by changes in what?",C,C,True,True,0.1079731669742614,C
+17,support_24,22,Comets that have periods of 200 years or less are knows as what-period comets?,C,B,False,True,0.056114875013008714,B
+17,support_24,23,What is the name of the effect that causes air masses to move on a diagonal?,C,C,True,True,0.065773457987234,C
+17,support_48,0,Some products contain iron filings that will react with air to release what type of energy?,A,A,True,True,0.07814929203595966,A
+17,support_48,1,What does our solar system orbit over the course of hundreds of millions of years?,C,C,True,True,0.07682904199464247,C
+17,support_48,2,"In myasthenia gravis, antibodies bind to and block certain receptors on muscle cells, preventing what?",D,D,True,True,0.07277495798189193,D
+17,support_48,3,What everyday beverage commodity is second only to oil in worldwide trade?,A,A,True,True,0.07427416701102629,A
+17,support_48,4,"What phylum includes sponges, which are aquatic invertebrates?",A,A,True,True,0.07616795902140439,A
+17,support_48,5,Purkinje fibers have a fast inherent what?,C,C,True,True,0.1178764589712955,C
+17,support_48,6,"What are the elements of group 17 (fluorine, chlorine, bromine, iodine, and astatine) called?",C,C,True,True,0.14872008404927328,C
+17,support_48,7,"When electrons from two atoms are each attracted to the nucleus of the other atom, what type of bond is formed?",B,B,True,True,0.07788354204967618,B
+17,support_48,8,Hormones that share what usually perform the same function?,D,C,False,True,0.06541483296314254,C
+17,support_48,9,"Active transport mechanisms require the use of the cell’s energy, usually in the form of what?",D,D,True,True,0.0851150419912301,D
+17,support_48,10,"Changes to what that delete, disrupt, or rearrange many loci at once are usually harmful?",A,A,True,True,0.07396233303006738,A
+17,support_48,11,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.07490062498254701,C
+17,support_48,12,Energy resources can be put into two categories — renewable or?,B,B,True,True,0.07378312502987683,B
+17,support_48,13,Which are the three most important temperature scales?,C,C,True,True,0.07531924999784678,C
+17,support_48,14,"Each hemisphere of the cerebrum consists of four parts, called what?",B,B,True,True,0.07086599996546283,B
+17,support_48,15,The top of the saturated rock layer is called what?,C,C,True,True,0.0779048329568468,C
+17,support_48,16,Heterotrophs get food by eating what?,C,C,True,True,0.0817235839786008,C
+17,support_48,17,What organelles do animal cells use to convert food into energy?,D,D,True,True,0.08764558302937075,D
+17,support_48,18,What is a short band of tough connective tissue that connects bones together to form a joint?,C,C,True,True,0.0786850830190815,C
+17,support_48,19,"What is a property of a system whose magnitude depends on only the present state of the system, not its previous history?",A,A,True,True,0.08302800002275035,A
+17,support_48,20,Ragweed and poison ivy are common causes of what?,B,B,True,True,0.07927266601473093,B
+17,support_48,21,"The solubility of gases, liquids, and solids are affected by changes in what?",C,C,True,True,0.07604304200503975,C
+17,support_48,22,Comets that have periods of 200 years or less are knows as what-period comets?,C,B,False,True,0.0639759170007892,B
+17,support_48,23,What is the name of the effect that causes air masses to move on a diagonal?,C,C,True,True,0.06549299997277558,C
+17,support_full,0,Some products contain iron filings that will react with air to release what type of energy?,A,A,True,True,0.08476812503067777,A
+17,support_full,1,What does our solar system orbit over the course of hundreds of millions of years?,C,C,True,True,0.0901228339644149,C
+17,support_full,2,"In myasthenia gravis, antibodies bind to and block certain receptors on muscle cells, preventing what?",D,D,True,True,0.06934133300092071,D
+17,support_full,3,What everyday beverage commodity is second only to oil in worldwide trade?,A,A,True,True,0.08745370805263519,A
+17,support_full,4,"What phylum includes sponges, which are aquatic invertebrates?",A,A,True,True,0.0792831250000745,A
+17,support_full,5,Purkinje fibers have a fast inherent what?,C,C,True,True,0.20106287498492748,C
+17,support_full,6,"What are the elements of group 17 (fluorine, chlorine, bromine, iodine, and astatine) called?",C,C,True,True,0.15650587499840185,C
+17,support_full,7,"When electrons from two atoms are each attracted to the nucleus of the other atom, what type of bond is formed?",B,B,True,True,0.16378395800711587,B
+17,support_full,8,Hormones that share what usually perform the same function?,D,C,False,True,0.0762928330223076,C
+17,support_full,9,"Active transport mechanisms require the use of the cell’s energy, usually in the form of what?",D,D,True,True,0.18631374998949468,D
+17,support_full,10,"Changes to what that delete, disrupt, or rearrange many loci at once are usually harmful?",A,A,True,True,0.06857570901047438,A
+17,support_full,11,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.08156433299882337,C
+17,support_full,12,Energy resources can be put into two categories — renewable or?,B,B,True,True,0.0769598750048317,B
+17,support_full,13,Which are the three most important temperature scales?,C,C,True,True,0.1533301659510471,C
+17,support_full,14,"Each hemisphere of the cerebrum consists of four parts, called what?",B,B,True,True,0.06856004102155566,B
+17,support_full,15,The top of the saturated rock layer is called what?,C,C,True,True,0.11850499996216968,C
+17,support_full,16,Heterotrophs get food by eating what?,C,C,True,True,0.07294887502212077,C
+17,support_full,17,What organelles do animal cells use to convert food into energy?,D,D,True,True,0.14372195902979001,D
+17,support_full,18,What is a short band of tough connective tissue that connects bones together to form a joint?,C,C,True,True,0.07751983299385756,C
+17,support_full,19,"What is a property of a system whose magnitude depends on only the present state of the system, not its previous history?",A,A,True,True,0.18172541598323733,A
+17,support_full,20,Ragweed and poison ivy are common causes of what?,B,B,True,True,0.0675001249765046,B
+17,support_full,21,"The solubility of gases, liquids, and solids are affected by changes in what?",C,C,True,True,0.0681077089975588,C
+17,support_full,22,Comets that have periods of 200 years or less are knows as what-period comets?,C,B,False,True,0.05532049998873845,B
+17,support_full,23,What is the name of the effect that causes air masses to move on a diagonal?,C,C,True,True,0.08112533303210512,C
+23,plain,0,How many embryonic cell layers do flatworms have?,C,D,False,True,0.11911916598910466,D
+23,plain,1,"The insect reaches full size, acquires wings, and becomes sexually mature after what final stage?",A,B,False,True,0.06927900004666299,B
+23,plain,2,"In projectile motion, the horizontal displacement of an object is called its what?",C,C,True,True,0.06558179098647088,C
+23,plain,3,Slabs of continents moving around on earth's surface is called what?,B,B,True,True,0.06928499997593462,B
+23,plain,4,What term is defined as the preserved remains or traces of organisms that lived during earlier ages?,A,A,True,True,0.06995429197559133,A
+23,plain,5,What kind of waves are sound waves?,D,D,True,True,0.16900687501765788,D
+23,plain,6,How can one dimensional vectors be added?,B,A,False,True,0.05927737499587238,A
+23,plain,7,A double form of what reproductive process is unique to angiosperms?,B,B,True,True,0.05165166698861867,B
+23,plain,8,What is the volume of air inhaled and exhaled with each breath called?,C,C,True,True,0.05270316597307101,C
+23,plain,9,Energy contents of foods are often expressed in what?,B,B,True,True,0.06810037500690669,B
+23,plain,10,"Deer, rabbits and mice are an example of what link between producers and other consumers?",A,A,True,True,0.05420225003035739,A
+23,plain,11,Magnetic poles always occur in pairs - what are the names of each pole?,A,A,True,True,0.06684212503023446,A
+23,plain,12,"The burning of fossil fuels releases three major things - thermal energy, water vapor, and what pollutant?",D,D,True,True,0.06854687497252598,D
+23,plain,13,What kind of a reaction if peptide bond formation?,A,A,True,True,0.06961520796176046,A
+23,plain,14,What is the layman's term for a state in which external stimuli are received but not consciously perceived?,C,C,True,True,0.0686662079533562,C
+23,plain,15,"During an earthquake, the ground shakes as stored up energy is released from what?",B,D,False,True,0.06906129099661484,D
+23,plain,16,What is the layer outside the cell wall in a prokaryote?,D,D,True,True,0.061706457985565066,D
+23,plain,17,What type of tissue makes up the brain and the nerves that connect the brain to all parts of the body?,C,C,True,True,0.07722670899238437,C
+23,plain,18,Fluid in the pseudocoelom serves as a hydrostatic what?,A,C,False,True,0.0558317499817349,C
+23,plain,19,How often an allele occurs in a gene pool relative to the other alleles for that gene is known as _______,D,D,True,True,0.05410145904170349,D
+23,plain,20,What occurs when a sperm and an egg fuse?,B,B,True,True,0.06097229098668322,B
+23,plain,21,Which part of the brain is responsible for working memory?,C,C,True,True,0.05313891696278006,C
+23,plain,22,What is the name of the roundworms digestive organ?,D,D,True,True,0.05399916600435972,D
+23,plain,23,What is defined as the ability to cause changes in matter?,B,A,False,True,0.05400779197225347,A
+23,support_24,0,How many embryonic cell layers do flatworms have?,C,C,True,True,0.07386870897607878,C
+23,support_24,1,"The insect reaches full size, acquires wings, and becomes sexually mature after what final stage?",A,B,False,True,0.07040212501306087,B
+23,support_24,2,"In projectile motion, the horizontal displacement of an object is called its what?",C,C,True,True,0.07456758298212662,C
+23,support_24,3,Slabs of continents moving around on earth's surface is called what?,B,B,True,True,0.07601412496296689,B
+23,support_24,4,What term is defined as the preserved remains or traces of organisms that lived during earlier ages?,A,A,True,True,0.06729949999134988,A
+23,support_24,5,What kind of waves are sound waves?,D,D,True,True,0.07346445799339563,D
+23,support_24,6,How can one dimensional vectors be added?,B,B,True,True,0.06924083299236372,B
+23,support_24,7,A double form of what reproductive process is unique to angiosperms?,B,B,True,True,0.07264525000937283,B
+23,support_24,8,What is the volume of air inhaled and exhaled with each breath called?,C,C,True,True,0.06293141696369275,C
+23,support_24,9,Energy contents of foods are often expressed in what?,B,B,True,True,0.12320658401586115,B
+23,support_24,10,"Deer, rabbits and mice are an example of what link between producers and other consumers?",A,A,True,True,0.0740574580268003,A
+23,support_24,11,Magnetic poles always occur in pairs - what are the names of each pole?,A,A,True,True,0.06037895800545812,A
+23,support_24,12,"The burning of fossil fuels releases three major things - thermal energy, water vapor, and what pollutant?",D,D,True,True,0.06681858299998567,D
+23,support_24,13,What kind of a reaction if peptide bond formation?,A,A,True,True,0.06792304100235924,A
+23,support_24,14,What is the layman's term for a state in which external stimuli are received but not consciously perceived?,C,C,True,True,0.06586620799498633,C
+23,support_24,15,"During an earthquake, the ground shakes as stored up energy is released from what?",B,B,True,True,0.06897224998101592,B
+23,support_24,16,What is the layer outside the cell wall in a prokaryote?,D,D,True,True,0.0705779169802554,D
+23,support_24,17,What type of tissue makes up the brain and the nerves that connect the brain to all parts of the body?,C,C,True,True,0.07333241601008922,C
+23,support_24,18,Fluid in the pseudocoelom serves as a hydrostatic what?,A,C,False,True,0.07046091603115201,C
+23,support_24,19,How often an allele occurs in a gene pool relative to the other alleles for that gene is known as _______,D,D,True,True,0.0638012089766562,D
+23,support_24,20,What occurs when a sperm and an egg fuse?,B,B,True,True,0.0646511249942705,B
+23,support_24,21,Which part of the brain is responsible for working memory?,C,C,True,True,0.07337154203560203,C
+23,support_24,22,What is the name of the roundworms digestive organ?,D,B,False,True,0.07495095900958404,B
+23,support_24,23,What is defined as the ability to cause changes in matter?,B,A,False,True,0.057759541959967464,A
+23,support_48,0,How many embryonic cell layers do flatworms have?,C,C,True,True,0.12117716699140146,C
+23,support_48,1,"The insect reaches full size, acquires wings, and becomes sexually mature after what final stage?",A,B,False,True,0.06526574998861179,B
+23,support_48,2,"In projectile motion, the horizontal displacement of an object is called its what?",C,C,True,True,0.09707108401926234,C
+23,support_48,3,Slabs of continents moving around on earth's surface is called what?,B,B,True,True,0.08650895900791511,B
+23,support_48,4,What term is defined as the preserved remains or traces of organisms that lived during earlier ages?,A,A,True,True,0.09799562499392778,A
+23,support_48,5,What kind of waves are sound waves?,D,D,True,True,0.0975502910441719,D
+23,support_48,6,How can one dimensional vectors be added?,B,B,True,True,0.07540883298497647,B
+23,support_48,7,A double form of what reproductive process is unique to angiosperms?,B,B,True,True,0.10656066698720679,B
+23,support_48,8,What is the volume of air inhaled and exhaled with each breath called?,C,C,True,True,0.14049362501828,C
+23,support_48,9,Energy contents of foods are often expressed in what?,B,B,True,True,0.09730937500717118,B
+23,support_48,10,"Deer, rabbits and mice are an example of what link between producers and other consumers?",A,A,True,True,0.0847995409858413,A
+23,support_48,11,Magnetic poles always occur in pairs - what are the names of each pole?,A,A,True,True,0.12456162495072931,A
+23,support_48,12,"The burning of fossil fuels releases three major things - thermal energy, water vapor, and what pollutant?",D,D,True,True,0.0920976250199601,D
+23,support_48,13,What kind of a reaction if peptide bond formation?,A,A,True,True,0.08233016595477238,A
+23,support_48,14,What is the layman's term for a state in which external stimuli are received but not consciously perceived?,C,C,True,True,0.07285295805195346,C
+23,support_48,15,"During an earthquake, the ground shakes as stored up energy is released from what?",B,B,True,True,0.06966695800656453,B
+23,support_48,16,What is the layer outside the cell wall in a prokaryote?,D,D,True,True,0.07642741600284353,D
+23,support_48,17,What type of tissue makes up the brain and the nerves that connect the brain to all parts of the body?,C,C,True,True,0.06264254101552069,C
+23,support_48,18,Fluid in the pseudocoelom serves as a hydrostatic what?,A,C,False,True,0.06659574998775497,C
+23,support_48,19,How often an allele occurs in a gene pool relative to the other alleles for that gene is known as _______,D,D,True,True,0.07543520897161216,D
+23,support_48,20,What occurs when a sperm and an egg fuse?,B,B,True,True,0.07267137500457466,B
+23,support_48,21,Which part of the brain is responsible for working memory?,C,C,True,True,0.07197083299979568,C
+23,support_48,22,What is the name of the roundworms digestive organ?,D,D,True,True,0.07075104099931195,D
+23,support_48,23,What is defined as the ability to cause changes in matter?,B,B,True,True,0.07002708298387006,B
+23,support_full,0,How many embryonic cell layers do flatworms have?,C,C,True,True,0.07507600000826642,C
+23,support_full,1,"The insect reaches full size, acquires wings, and becomes sexually mature after what final stage?",A,B,False,True,0.06568670796696097,B
+23,support_full,2,"In projectile motion, the horizontal displacement of an object is called its what?",C,C,True,True,0.06901966599980369,C
+23,support_full,3,Slabs of continents moving around on earth's surface is called what?,B,B,True,True,0.15177370799938217,B
+23,support_full,4,What term is defined as the preserved remains or traces of organisms that lived during earlier ages?,A,A,True,True,0.1442606669734232,A
+23,support_full,5,What kind of waves are sound waves?,D,D,True,True,0.06680458300979808,D
+23,support_full,6,How can one dimensional vectors be added?,B,B,True,True,0.07489858299959451,B
+23,support_full,7,A double form of what reproductive process is unique to angiosperms?,B,B,True,True,0.07886662503005937,B
+23,support_full,8,What is the volume of air inhaled and exhaled with each breath called?,C,C,True,True,0.06584012502571568,C
+23,support_full,9,Energy contents of foods are often expressed in what?,B,B,True,True,0.07929204200627282,B
+23,support_full,10,"Deer, rabbits and mice are an example of what link between producers and other consumers?",A,A,True,True,0.07280675001675263,A
+23,support_full,11,Magnetic poles always occur in pairs - what are the names of each pole?,A,A,True,True,0.07488583301892504,A
+23,support_full,12,"The burning of fossil fuels releases three major things - thermal energy, water vapor, and what pollutant?",D,D,True,True,0.14377333299489692,D
+23,support_full,13,What kind of a reaction if peptide bond formation?,A,A,True,True,0.07171241694595665,A
+23,support_full,14,What is the layman's term for a state in which external stimuli are received but not consciously perceived?,C,C,True,True,0.06484887498663738,C
+23,support_full,15,"During an earthquake, the ground shakes as stored up energy is released from what?",B,B,True,True,0.06501029198989272,B
+23,support_full,16,What is the layer outside the cell wall in a prokaryote?,D,D,True,True,0.07138887501787394,D
+23,support_full,17,What type of tissue makes up the brain and the nerves that connect the brain to all parts of the body?,C,C,True,True,0.06358949997229502,C
+23,support_full,18,Fluid in the pseudocoelom serves as a hydrostatic what?,A,C,False,True,0.0656775829847902,C
+23,support_full,19,How often an allele occurs in a gene pool relative to the other alleles for that gene is known as _______,D,D,True,True,0.08493875002022833,D
+23,support_full,20,What occurs when a sperm and an egg fuse?,B,B,True,True,0.16248416702728719,B
+23,support_full,21,Which part of the brain is responsible for working memory?,C,C,True,True,0.2311937499907799,C
+23,support_full,22,What is the name of the roundworms digestive organ?,D,D,True,True,0.08097533299587667,D
+23,support_full,23,What is defined as the ability to cause changes in matter?,B,B,True,True,0.0763601660146378,B

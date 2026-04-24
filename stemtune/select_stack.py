@@ -13,6 +13,8 @@ if __package__ in {None, ""}:
 from stemtune.benchmark_mcqa import run_benchmark
 from stemtune.scaffold import TASK_BLUEPRINTS, create_project_scaffold
 from stemtune.smoke_mcqa import run_smoke_test
+from stemtune.support_budget_mcqa import run_budget_study
+from stemtune.study_mcqa import run_study
 
 
 CATALOG_PATH = Path(__file__).with_name("model_catalog.json")
@@ -392,6 +394,39 @@ def build_benchmark_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
     parser.set_defaults(handler=handle_benchmark_mcqa)
 
 
+def build_study_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser(
+        "study-mcqa",
+        help="Run a multi-model MCQA evidence study with plain, mismatched, and grounded prompts.",
+    )
+    parser.add_argument(
+        "--models",
+        default="Qwen/Qwen2.5-0.5B-Instruct,Qwen/Qwen2.5-1.5B-Instruct,HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    )
+    parser.add_argument("--limit", type=int, default=16)
+    parser.add_argument("--seeds", default="7,11,13")
+    parser.add_argument("--device", choices=["cpu", "cuda", "mps"])
+    parser.add_argument("--max-new-tokens", type=int, default=8)
+    parser.add_argument("--output-dir", default="docs/results/mcqa_evidence_study")
+    parser.add_argument("--output", choices=["text", "json"], default="text")
+    parser.set_defaults(handler=handle_study_mcqa)
+
+
+def build_support_budget_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser(
+        "study-support-budget",
+        help="Run an MCQA study across different support-length budgets.",
+    )
+    parser.add_argument("--model-id", default="Qwen/Qwen2.5-0.5B-Instruct")
+    parser.add_argument("--limit", type=int, default=24)
+    parser.add_argument("--seeds", default="7,11,13,17,23")
+    parser.add_argument("--device", choices=["cpu", "cuda", "mps"])
+    parser.add_argument("--max-new-tokens", type=int, default=8)
+    parser.add_argument("--output-dir", default="docs/results/mcqa_support_budget_qwen25_0p5b")
+    parser.add_argument("--output", choices=["text", "json"], default="text")
+    parser.set_defaults(handler=handle_support_budget_mcqa)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Select open-source models and alignment recipes for STEMTune tasks."
@@ -404,6 +439,8 @@ def build_parser() -> argparse.ArgumentParser:
     build_init_project_parser(subparsers)
     build_smoke_mcqa_parser(subparsers)
     build_benchmark_mcqa_parser(subparsers)
+    build_study_mcqa_parser(subparsers)
+    build_support_budget_mcqa_parser(subparsers)
     return parser
 
 
@@ -520,6 +557,60 @@ def handle_benchmark_mcqa(args: argparse.Namespace) -> str:
     return "\n".join(lines)
 
 
+def handle_study_mcqa(args: argparse.Namespace) -> str:
+    payload = run_study(args)
+    if args.output == "json":
+        return json.dumps(payload, indent=2)
+
+    lines = [
+        "STEMTune MCQA evidence study",
+        f"Device: {payload['device']}",
+        f"Models: {', '.join(payload['model_ids'])}",
+        f"Seeds: {', '.join(str(seed) for seed in payload['seeds'])}",
+        f"Examples per seed: {payload['limit']}",
+        "",
+    ]
+    for row in payload["models"]:
+        lines.extend(
+            [
+                f"{row['model_id']}:",
+                f"  Plain accuracy mean: {row['aggregate']['plain']['accuracy_mean']:.3f}",
+                f"  Shuffled support mean: {row['aggregate']['shuffled']['accuracy_mean']:.3f}",
+                f"  Grounded accuracy mean: {row['aggregate']['grounded']['accuracy_mean']:.3f}",
+                f"  Grounded gain mean: {row['grounded_gain_mean']:+.3f}",
+                f"  Shuffled gain mean: {row['shuffled_gain_mean']:+.3f}",
+            ]
+        )
+    lines.extend(["", f"Artifacts: {args.output_dir}"])
+    return "\n".join(lines)
+
+
+def handle_support_budget_mcqa(args: argparse.Namespace) -> str:
+    payload = run_budget_study(args)
+    if args.output == "json":
+        return json.dumps(payload, indent=2)
+
+    lines = [
+        "STEMTune MCQA support-budget study",
+        f"Model: {payload['model_id']}",
+        f"Device: {payload['device']}",
+        f"Seeds: {', '.join(str(seed) for seed in payload['seeds'])}",
+        f"Examples per seed: {payload['limit']}",
+        "",
+    ]
+    for condition, label in [
+        ("plain", "Question only"),
+        ("support_24", "24-word support"),
+        ("support_48", "48-word support"),
+        ("support_full", "Full support"),
+    ]:
+        lines.append(
+            f"{label}: accuracy {payload['aggregate'][condition]['accuracy_mean']:.3f}, latency {payload['aggregate'][condition]['avg_latency_s_mean']:.3f}s"
+        )
+    lines.extend(["", f"Artifacts: {args.output_dir}"])
+    return "\n".join(lines)
+
+
 def normalize_argv(argv: list[str]) -> list[str]:
     commands = {
         "recommend",
@@ -529,6 +620,8 @@ def normalize_argv(argv: list[str]) -> list[str]:
         "init-project",
         "smoke-mcqa",
         "benchmark-mcqa",
+        "study-mcqa",
+        "study-support-budget",
         "-h",
         "--help",
     }

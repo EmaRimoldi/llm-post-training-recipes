@@ -1,0 +1,361 @@
+model_id,seed,condition,example_id,question,correct_letter,prediction,is_correct,is_valid,latency_s,raw_output
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,0,At what temperatures do crystals formed by covalent molecular solids melt at?,C,C,True,True,0.3659212079946883,C
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,1,Which glands produce milk after the birth of offspring?,D,D,True,True,0.06320570898242295,D
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,2,What are groups of skeletal muscle fibers wrapped in?,B,C,False,True,0.1395384159986861,C
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,3,What occurs when a population reaches the carrying capacity?,C,C,True,True,0.11836625001160428,C
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,4,"What are the tiny, negatively charged particles in an atom that move around the positive nucleus at the center?",B,B,True,True,0.14406516699818894,B
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,5,"What are clathrin, copi and copii types of?",C,C,True,True,0.14308320899726823,C
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,6,Organic acids such as acetic acid all contain a functional group called what?,D,D,True,True,0.0645071659819223,D
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,7,"An alpha particle, which is relatively large and easily stopped by matter, is a type of what?",B,A,False,True,0.06884066702332348,A
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,8,What two things limit primary production in aquatic ecosystems?,C,C,True,True,0.14508095901692286,C
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,9,"Name the missing type of light: ultraviolet, infrared, ___________.",D,D,True,True,0.1405487090232782,D
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,10,"For a scientific theory to be valid, in what way should it be verified?",B,B,True,True,0.06282541702967137,B
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,11,What is the process of soil dissolving in rain called?,D,C,False,True,0.06162916700122878,C
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,12,What is the term for particles composed of three quarks?,C,C,True,True,0.9473234579782002,C
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,13,The jejunum is about 0.9 meters (3 feet) long (in life) and runs from the duodenum to the ileum. jejunum means “empty” in latin and supposedly was so named by the ancient greeks who noticed it was always what?,C,C,True,True,0.1538255829946138,C
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,14,The hormones epinephrine and norepinephrine are associated with what rhyming mechanism?,D,D,True,True,0.14791212504496798,D
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,15,What two things are excess proteins converted into?,A,C,False,True,1.3683035420253873,C
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,16,Caffeine and alcohol are two examples of what type of drug?,A,A,True,True,0.09546233399305493,A
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,17,What is the main source of energy for your body?,B,A,False,True,0.33820058300625533,A
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,18,What is the name of the rigid layer that is found outside the cell membrane and surrounds the cell?,B,D,False,True,0.13439604203449562,D
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,19,How many steps are involved in blood clotting?,D,D,True,True,0.15152379195205867,D
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,20,What is the name for a fertilized cell that results from the uniting of two gametes?,A,D,False,True,0.17966845899354666,D
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,21,What do most of the noble gas elements have in common?,B,D,False,True,0.08386216702638194,D
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,22,Bacteria and archaea that survive under extreme conditions are called?,D,D,True,True,0.07409912499133497,D
+Qwen/Qwen2.5-0.5B-Instruct,7,plain,23,Why is runoff from artificial fertilizer harmful to the chesapeake bay ecosystem?,B,B,True,True,0.07670645898906514,B
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,0,At what temperatures do crystals formed by covalent molecular solids melt at?,C,C,True,True,0.15143824997358024,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,1,Which glands produce milk after the birth of offspring?,D,D,True,True,0.16856270795688033,D
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,2,What are groups of skeletal muscle fibers wrapped in?,B,C,False,True,0.17163629201240838,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,3,What occurs when a population reaches the carrying capacity?,C,C,True,True,0.1647483329870738,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,4,"What are the tiny, negatively charged particles in an atom that move around the positive nucleus at the center?",B,C,False,True,0.19206466700416058,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,5,"What are clathrin, copi and copii types of?",C,C,True,True,0.1813165830099024,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,6,Organic acids such as acetic acid all contain a functional group called what?,D,D,True,True,0.16387024999130517,D
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,7,"An alpha particle, which is relatively large and easily stopped by matter, is a type of what?",B,B,True,True,0.14734775002580136,B
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,8,What two things limit primary production in aquatic ecosystems?,C,C,True,True,0.1398380000027828,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,9,"Name the missing type of light: ultraviolet, infrared, ___________.",D,D,True,True,0.13947441603522748,D
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,10,"For a scientific theory to be valid, in what way should it be verified?",B,B,True,True,0.15698225004598498,B
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,11,What is the process of soil dissolving in rain called?,D,C,False,True,0.0812459999579005,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,12,What is the term for particles composed of three quarks?,C,C,True,True,0.14877391699701548,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,13,The jejunum is about 0.9 meters (3 feet) long (in life) and runs from the duodenum to the ileum. jejunum means “empty” in latin and supposedly was so named by the ancient greeks who noticed it was always what?,C,C,True,True,0.16526908398373052,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,14,The hormones epinephrine and norepinephrine are associated with what rhyming mechanism?,D,D,True,True,0.2129681670339778,D
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,15,What two things are excess proteins converted into?,A,C,False,True,0.39848849998088554,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,16,Caffeine and alcohol are two examples of what type of drug?,A,A,True,True,0.2473102500080131,A
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,17,What is the main source of energy for your body?,B,B,True,True,0.21332949999487028,B
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,18,What is the name of the rigid layer that is found outside the cell membrane and surrounds the cell?,B,B,True,True,0.20789783302461728,B
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,19,How many steps are involved in blood clotting?,D,B,False,True,0.09084154199808836,B
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,20,What is the name for a fertilized cell that results from the uniting of two gametes?,A,A,True,True,0.17290962499100715,A
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,21,What do most of the noble gas elements have in common?,B,C,False,True,0.15646595897851512,C
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,22,Bacteria and archaea that survive under extreme conditions are called?,D,D,True,True,0.25916050001978874,D
+Qwen/Qwen2.5-0.5B-Instruct,7,shuffled,23,Why is runoff from artificial fertilizer harmful to the chesapeake bay ecosystem?,B,B,True,True,0.1904736669966951,B
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,0,At what temperatures do crystals formed by covalent molecular solids melt at?,C,C,True,True,0.2222224170109257,C
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,1,Which glands produce milk after the birth of offspring?,D,D,True,True,0.08407491695834324,D
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,2,What are groups of skeletal muscle fibers wrapped in?,B,B,True,True,0.17431091703474522,B
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,3,What occurs when a population reaches the carrying capacity?,C,C,True,True,0.1658517080359161,C
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,4,"What are the tiny, negatively charged particles in an atom that move around the positive nucleus at the center?",B,B,True,True,0.22896258404944092,B
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,5,"What are clathrin, copi and copii types of?",C,C,True,True,0.18649387499317527,C
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,6,Organic acids such as acetic acid all contain a functional group called what?,D,D,True,True,0.15095741697587073,D
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,7,"An alpha particle, which is relatively large and easily stopped by matter, is a type of what?",B,B,True,True,0.10994925000704825,B
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,8,What two things limit primary production in aquatic ecosystems?,C,C,True,True,0.07842279097530991,C
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,9,"Name the missing type of light: ultraviolet, infrared, ___________.",D,D,True,True,0.1535467499634251,D
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,10,"For a scientific theory to be valid, in what way should it be verified?",B,B,True,True,0.17440108297159895,B
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,11,What is the process of soil dissolving in rain called?,D,D,True,True,0.164782291976735,D
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,12,What is the term for particles composed of three quarks?,C,C,True,True,0.1632152089732699,C
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,13,The jejunum is about 0.9 meters (3 feet) long (in life) and runs from the duodenum to the ileum. jejunum means “empty” in latin and supposedly was so named by the ancient greeks who noticed it was always what?,C,C,True,True,0.1834933339850977,C
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,14,The hormones epinephrine and norepinephrine are associated with what rhyming mechanism?,D,D,True,True,0.21499162504915148,D
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,15,What two things are excess proteins converted into?,A,A,True,True,0.21843166695907712,A
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,16,Caffeine and alcohol are two examples of what type of drug?,A,A,True,True,0.08233408397063613,A
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,17,What is the main source of energy for your body?,B,B,True,True,0.16634150000754744,B
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,18,What is the name of the rigid layer that is found outside the cell membrane and surrounds the cell?,B,B,True,True,0.13837879203492776,B
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,19,How many steps are involved in blood clotting?,D,D,True,True,0.17251587501959875,D
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,20,What is the name for a fertilized cell that results from the uniting of two gametes?,A,A,True,True,0.18470699997851625,A
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,21,What do most of the noble gas elements have in common?,B,B,True,True,0.19565029197838157,B
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,22,Bacteria and archaea that survive under extreme conditions are called?,D,D,True,True,0.19376445899251848,D
+Qwen/Qwen2.5-0.5B-Instruct,7,grounded,23,Why is runoff from artificial fertilizer harmful to the chesapeake bay ecosystem?,B,B,True,True,0.24879937496734783,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,0,What is considered to be the most common intrusive igneous rock?,A,C,False,True,0.0913787090103142,C
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,1,"Compared to a straight wire, a coiled wire has a stronger what?",B,B,True,True,0.13543841702630743,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,2,What disease-causing acellular entities containing either dna or rna replicate using the replication proteins of a host cell?,A,A,True,True,0.08280075003858656,A
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,3,"As the anterior end of the neural tube starts to develop into the brain, it undergoes a couple of enlargements; the result is the production of these?",C,C,True,True,0.17311295797117054,C
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,4,On what basis are the eras of the phanerozoic eon separated?,C,C,True,True,0.0861823339946568,C
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,5,If the area to which a force is applied is smaller then the pressure will be?,D,C,False,True,0.0856037909979932,C
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,6,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.1875902499887161,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,7,"Each parapodium has numerous chaetae, bristles made of what?",D,D,True,True,0.0848900830023922,D
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,8,A homogeneous mixture composed of two or more substances is called a what?,D,A,False,True,0.08983870799420401,A
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,9,What is the amount of product that may be produced by a reaction under specified conditions called?,B,B,True,True,0.15441499999724329,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,10,The energy released during an earthquake is called what?,A,A,True,True,0.07839008298469707,A
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,11,What type of organisms collect the energy from the sun and turn it into organic compounds?,B,B,True,True,0.07872370799304917,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,12,"Global sources of inexpensive fossil fuels, particularly oil, are rapidly being what?",B,B,True,True,0.07663525000680238,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,13,What forms when one substance dissolves into another?,D,D,True,True,0.059569917037151754,D
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,14,What are the physical properties of water and carbon dioxide affected by?,B,D,False,True,0.13189899997087196,D
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,15,What do ectotherms use to regulate body temperature?,B,B,True,True,0.07662583398632705,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,16,"Lens faces can generally either be concave, or what, which is the opposite of concave?",C,C,True,True,0.07588112499797717,C
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,17,The diploid sporophyte produces haploid spores by what process?,D,D,True,True,0.07361383299576119,D
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,18,"By maintaining a relatively constant internal environment even when the external environment changes significantly, an animal achieves what?",B,B,True,True,0.06019241700414568,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,19,Why do birds build nests?,D,D,True,True,0.08068154199281707,D
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,20,What do we call the microflora that aid in the digestion process?,C,B,False,True,0.0641712499782443,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,21,"Touching, coughing, or sneezing are examples of directly spreading what microorganisms, which cause diseases like tetanus?",A,B,False,True,0.07513833401026204,B
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,22,Each female of a particular species can produce millions of these per year?,C,D,False,True,0.07422941701952368,D
+Qwen/Qwen2.5-0.5B-Instruct,11,plain,23,The trachea and bronchi are made of incomplete rings of this?,B,B,True,True,0.08332949999021366,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,0,What is considered to be the most common intrusive igneous rock?,A,C,False,True,0.17559845803771168,C
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,1,"Compared to a straight wire, a coiled wire has a stronger what?",B,B,True,True,0.21688108297530562,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,2,What disease-causing acellular entities containing either dna or rna replicate using the replication proteins of a host cell?,A,A,True,True,0.22975058300653473,A
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,3,"As the anterior end of the neural tube starts to develop into the brain, it undergoes a couple of enlargements; the result is the production of these?",C,C,True,True,0.18172716704430059,C
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,4,On what basis are the eras of the phanerozoic eon separated?,C,C,True,True,0.2150128330104053,C
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,5,If the area to which a force is applied is smaller then the pressure will be?,D,C,False,True,0.21686816698638722,C
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,6,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.09146979101933539,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,7,"Each parapodium has numerous chaetae, bristles made of what?",D,D,True,True,0.20361574995331466,D
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,8,A homogeneous mixture composed of two or more substances is called a what?,D,A,False,True,0.21359387499978766,A
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,9,What is the amount of product that may be produced by a reaction under specified conditions called?,B,B,True,True,0.19723362498916686,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,10,The energy released during an earthquake is called what?,A,C,False,True,0.1731863340246491,C
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,11,What type of organisms collect the energy from the sun and turn it into organic compounds?,B,B,True,True,0.15848720801295713,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,12,"Global sources of inexpensive fossil fuels, particularly oil, are rapidly being what?",B,B,True,True,0.19619858299847692,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,13,What forms when one substance dissolves into another?,D,D,True,True,0.06577495799865574,D
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,14,What are the physical properties of water and carbon dioxide affected by?,B,D,False,True,0.11385887500364333,D
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,15,What do ectotherms use to regulate body temperature?,B,B,True,True,0.1717078749788925,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,16,"Lens faces can generally either be concave, or what, which is the opposite of concave?",C,C,True,True,0.1999920830130577,C
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,17,The diploid sporophyte produces haploid spores by what process?,D,D,True,True,0.17304658296052366,D
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,18,"By maintaining a relatively constant internal environment even when the external environment changes significantly, an animal achieves what?",B,B,True,True,0.15359495801385492,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,19,Why do birds build nests?,D,B,False,True,0.11248087498825043,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,20,What do we call the microflora that aid in the digestion process?,C,B,False,True,0.14858654100680724,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,21,"Touching, coughing, or sneezing are examples of directly spreading what microorganisms, which cause diseases like tetanus?",A,B,False,True,0.08319258299889043,B
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,22,Each female of a particular species can produce millions of these per year?,C,C,True,True,0.18623316596494988,C
+Qwen/Qwen2.5-0.5B-Instruct,11,shuffled,23,The trachea and bronchi are made of incomplete rings of this?,B,B,True,True,0.08121329202549532,B
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,0,What is considered to be the most common intrusive igneous rock?,A,A,True,True,0.08252250001532957,A
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,1,"Compared to a straight wire, a coiled wire has a stronger what?",B,B,True,True,0.07954704202711582,B
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,2,What disease-causing acellular entities containing either dna or rna replicate using the replication proteins of a host cell?,A,A,True,True,0.21267554198857397,A
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,3,"As the anterior end of the neural tube starts to develop into the brain, it undergoes a couple of enlargements; the result is the production of these?",C,C,True,True,0.22626187501009554,C
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,4,On what basis are the eras of the phanerozoic eon separated?,C,C,True,True,0.09854249999625608,C
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,5,If the area to which a force is applied is smaller then the pressure will be?,D,D,True,True,0.17917329201009125,D
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,6,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.2129482920281589,B
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,7,"Each parapodium has numerous chaetae, bristles made of what?",D,D,True,True,0.08044270798563957,D
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,8,A homogeneous mixture composed of two or more substances is called a what?,D,D,True,True,0.20294158399337903,D
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,9,What is the amount of product that may be produced by a reaction under specified conditions called?,B,B,True,True,0.22727616701740772,B
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,10,The energy released during an earthquake is called what?,A,A,True,True,0.21537524997256696,A
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,11,What type of organisms collect the energy from the sun and turn it into organic compounds?,B,B,True,True,0.24166095798136666,B
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,12,"Global sources of inexpensive fossil fuels, particularly oil, are rapidly being what?",B,B,True,True,0.11013858299702406,B
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,13,What forms when one substance dissolves into another?,D,D,True,True,0.18130229198141024,D
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,14,What are the physical properties of water and carbon dioxide affected by?,B,B,True,True,0.20040812500519678,B
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,15,What do ectotherms use to regulate body temperature?,B,B,True,True,0.22349629102973267,B
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,16,"Lens faces can generally either be concave, or what, which is the opposite of concave?",C,C,True,True,0.09204374998807907,C
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,17,The diploid sporophyte produces haploid spores by what process?,D,D,True,True,0.17323079198831692,D
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,18,"By maintaining a relatively constant internal environment even when the external environment changes significantly, an animal achieves what?",B,B,True,True,0.0978653339552693,B
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,19,Why do birds build nests?,D,D,True,True,0.16325487499125302,D
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,20,What do we call the microflora that aid in the digestion process?,C,C,True,True,0.18197770899860188,C
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,21,"Touching, coughing, or sneezing are examples of directly spreading what microorganisms, which cause diseases like tetanus?",A,A,True,True,0.16981333296280354,A
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,22,Each female of a particular species can produce millions of these per year?,C,C,True,True,0.0738820830010809,C
+Qwen/Qwen2.5-0.5B-Instruct,11,grounded,23,The trachea and bronchi are made of incomplete rings of this?,B,B,True,True,0.18108245800249279,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,0,"In a position-time graph, what does the slope of the line represent?",B,B,True,True,0.09166979201836511,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,1,Compound machines tend to have a greater mechanical advantage than what other machines?,B,B,True,True,0.08345675002783537,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,2,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.08820583298802376,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,3,What is the result of a reaction between sulfur trioxide and water?,C,D,False,True,0.06682279100641608,D
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,4,"Sponges are part of what phylum, which gets its name from the latin for ""having pores""?",C,A,False,True,0.17471770901465788,A
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,5,What stimulates milk production in mammals?,B,B,True,True,0.09124966699164361,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,6,What is mollusks complete digestive system called?,C,C,True,True,0.07990416703978553,C
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,7,A long strip of sand is referred to as what?,A,D,False,True,0.08391579199815169,D
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,8,"When heat moves out of a system, what is the sign of the enthalpy?",A,B,False,True,0.09225758298998699,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,9,The trachea and bronchi are made of incomplete rings of this?,A,A,True,True,0.06724125001346692,A
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,10,Which law predicts increasing entropy based on living systems?,A,A,True,True,0.08206212503137067,A
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,11,"Manganin is made up of metals that include copper, manganese and nickel - what do you generally call a metal of this type?",D,D,True,True,0.17300900002010167,D
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,12,"During exercise, the rate of blood returning to the heart does this?",B,B,True,True,0.06235212495084852,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,13,"During unfavorable conditions, mature seeds may enter a period of inactivity or extremely low metabolic activity called what?",A,A,True,True,0.08906429103808478,A
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,14,"Because arthropod appendages are jointed, they can do what?",B,B,True,True,0.0852181669906713,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,15,Which one of newton's laws describes the direct relationship between force and acceleration?,A,D,False,True,0.08900229196297005,D
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,16,Sweating and panting are methods mammals use for what purpose?,A,D,False,True,0.07799291698029265,D
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,17,What do we use to keep track of electric potential energy?,A,A,True,True,0.06409245898248628,A
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,18,The atmospheric concentration of carbon dioxide on earth has been regulated by the concentration of what form of life?,C,C,True,True,0.08999258297262713,C
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,19,Which biomes are determined mainly by sunlight and concentrations of dissolved oxygen and nutrients in the water?,B,B,True,True,0.06851195899071172,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,20,"Although helper t cells do not destroy infected or damaged body cells, they are still necessary for what?",A,A,True,True,0.09186033299192786,A
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,21,Destructive interference occurs when two identical waves are superimposed exactly out of phase. a standing wave is one in which two waves superimpose to produce a wave that varies in amplitude but does not do this?,C,A,False,True,0.1922745409538038,A
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,22,Oxygen and glucose are both reactants in the process of,B,B,True,True,0.08078716701129451,B
+Qwen/Qwen2.5-0.5B-Instruct,13,plain,23,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.07988516701152548,C
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,0,"In a position-time graph, what does the slope of the line represent?",B,B,True,True,0.11196883401134983,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,1,Compound machines tend to have a greater mechanical advantage than what other machines?,B,B,True,True,0.2041193339973688,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,2,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.19163916702382267,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,3,What is the result of a reaction between sulfur trioxide and water?,C,C,True,True,0.21226962498622015,C
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,4,"Sponges are part of what phylum, which gets its name from the latin for ""having pores""?",C,C,True,True,0.10881516698282212,C
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,5,What stimulates milk production in mammals?,B,B,True,True,0.16568824998103082,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,6,What is mollusks complete digestive system called?,C,C,True,True,0.20408075000159442,C
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,7,A long strip of sand is referred to as what?,A,B,False,True,0.22018725000089034,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,8,"When heat moves out of a system, what is the sign of the enthalpy?",A,B,False,True,0.17275562504073605,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,9,The trachea and bronchi are made of incomplete rings of this?,A,A,True,True,0.07809408300090581,A
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,10,Which law predicts increasing entropy based on living systems?,A,A,True,True,0.11559512501116842,A
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,11,"Manganin is made up of metals that include copper, manganese and nickel - what do you generally call a metal of this type?",D,D,True,True,0.25912595802219585,D
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,12,"During exercise, the rate of blood returning to the heart does this?",B,B,True,True,0.2720644589862786,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,13,"During unfavorable conditions, mature seeds may enter a period of inactivity or extremely low metabolic activity called what?",A,A,True,True,0.20166599994990975,A
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,14,"Because arthropod appendages are jointed, they can do what?",B,B,True,True,0.1057069170055911,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,15,Which one of newton's laws describes the direct relationship between force and acceleration?,A,A,True,True,0.09273416601354256,A
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,16,Sweating and panting are methods mammals use for what purpose?,A,A,True,True,0.1681313329609111,A
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,17,What do we use to keep track of electric potential energy?,A,A,True,True,0.10429454204859212,A
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,18,The atmospheric concentration of carbon dioxide on earth has been regulated by the concentration of what form of life?,C,C,True,True,0.09510908398078755,C
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,19,Which biomes are determined mainly by sunlight and concentrations of dissolved oxygen and nutrients in the water?,B,B,True,True,0.1867825420340523,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,20,"Although helper t cells do not destroy infected or damaged body cells, they are still necessary for what?",A,A,True,True,0.19586679199710488,A
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,21,Destructive interference occurs when two identical waves are superimposed exactly out of phase. a standing wave is one in which two waves superimpose to produce a wave that varies in amplitude but does not do this?,C,C,True,True,0.17654462502105162,C
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,22,Oxygen and glucose are both reactants in the process of,B,B,True,True,0.18166925001423806,B
+Qwen/Qwen2.5-0.5B-Instruct,13,shuffled,23,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.18615533399861306,C
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,0,"In a position-time graph, what does the slope of the line represent?",B,B,True,True,0.11004366597626358,B
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,1,Compound machines tend to have a greater mechanical advantage than what other machines?,B,B,True,True,0.09971320803742856,B
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,2,"All of the chemical reactions that take place inside cells, including those that consume or generate energy, are referred to as what?",B,B,True,True,0.12713170796632767,B
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,3,What is the result of a reaction between sulfur trioxide and water?,C,C,True,True,0.08951675001299009,C
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,4,"Sponges are part of what phylum, which gets its name from the latin for ""having pores""?",C,C,True,True,0.10908791603287682,C
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,5,What stimulates milk production in mammals?,B,B,True,True,0.08740695897722617,B
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,6,What is mollusks complete digestive system called?,C,C,True,True,0.09281133400509134,C
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,7,A long strip of sand is referred to as what?,A,A,True,True,0.18359141697874293,A
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,8,"When heat moves out of a system, what is the sign of the enthalpy?",A,B,False,True,0.10730266699101776,B
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,9,The trachea and bronchi are made of incomplete rings of this?,A,A,True,True,0.09078958298778161,A
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,10,Which law predicts increasing entropy based on living systems?,A,A,True,True,0.08294587500859052,A
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,11,"Manganin is made up of metals that include copper, manganese and nickel - what do you generally call a metal of this type?",D,D,True,True,0.1878694170154631,D
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,12,"During exercise, the rate of blood returning to the heart does this?",B,B,True,True,0.2197562920046039,B
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,13,"During unfavorable conditions, mature seeds may enter a period of inactivity or extremely low metabolic activity called what?",A,A,True,True,0.23204924998572096,A
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,14,"Because arthropod appendages are jointed, they can do what?",B,B,True,True,0.18214895797427744,B
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,15,Which one of newton's laws describes the direct relationship between force and acceleration?,A,A,True,True,0.09364520898088813,A
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,16,Sweating and panting are methods mammals use for what purpose?,A,A,True,True,0.08891954104183242,A
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,17,What do we use to keep track of electric potential energy?,A,A,True,True,0.17695183301111683,A
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,18,The atmospheric concentration of carbon dioxide on earth has been regulated by the concentration of what form of life?,C,C,True,True,0.0957359159947373,C
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,19,Which biomes are determined mainly by sunlight and concentrations of dissolved oxygen and nutrients in the water?,B,B,True,True,0.08949829201446846,B
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,20,"Although helper t cells do not destroy infected or damaged body cells, they are still necessary for what?",A,A,True,True,0.19389450002927333,A
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,21,Destructive interference occurs when two identical waves are superimposed exactly out of phase. a standing wave is one in which two waves superimpose to produce a wave that varies in amplitude but does not do this?,C,C,True,True,0.22009112499654293,C
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,22,Oxygen and glucose are both reactants in the process of,B,B,True,True,0.1628613339853473,B
+Qwen/Qwen2.5-0.5B-Instruct,13,grounded,23,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.1974381249747239,C
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,0,Some products contain iron filings that will react with air to release what type of energy?,A,A,True,True,0.09124158398481086,A
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,1,What does our solar system orbit over the course of hundreds of millions of years?,C,C,True,True,0.08330404199659824,C
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,2,"In myasthenia gravis, antibodies bind to and block certain receptors on muscle cells, preventing what?",D,D,True,True,0.0848052499932237,D
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,3,What everyday beverage commodity is second only to oil in worldwide trade?,A,D,False,True,0.08021645800909027,D
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,4,"What phylum includes sponges, which are aquatic invertebrates?",A,D,False,True,0.06463237502612174,D
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,5,Purkinje fibers have a fast inherent what?,C,C,True,True,0.08599879097891971,C
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,6,"What are the elements of group 17 (fluorine, chlorine, bromine, iodine, and astatine) called?",C,C,True,True,0.13677754200762138,C
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,7,"When electrons from two atoms are each attracted to the nucleus of the other atom, what type of bond is formed?",B,B,True,True,0.08600987499812618,B
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,8,Hormones that share what usually perform the same function?,D,D,True,True,0.06943870795657858,D
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,9,"Active transport mechanisms require the use of the cell’s energy, usually in the form of what?",D,D,True,True,0.09162812499562278,D
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,10,"Changes to what that delete, disrupt, or rearrange many loci at once are usually harmful?",A,A,True,True,0.08149270800640807,A
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,11,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.07989358401391655,C
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,12,Energy resources can be put into two categories — renewable or?,B,B,True,True,0.085747083008755,B
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,13,Which are the three most important temperature scales?,C,B,False,True,0.08781579101923853,B
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,14,"Each hemisphere of the cerebrum consists of four parts, called what?",B,B,True,True,0.07192087499424815,B
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,15,The top of the saturated rock layer is called what?,C,D,False,True,0.06436545797623694,D
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,16,Heterotrophs get food by eating what?,C,C,True,True,0.07023349998053163,C
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,17,What organelles do animal cells use to convert food into energy?,D,D,True,True,0.07785912504186854,D
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,18,What is a short band of tough connective tissue that connects bones together to form a joint?,C,C,True,True,0.08236845798091963,C
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,19,"What is a property of a system whose magnitude depends on only the present state of the system, not its previous history?",A,A,True,True,0.08919612498721108,A
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,20,Ragweed and poison ivy are common causes of what?,B,B,True,True,0.0709493329632096,B
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,21,"The solubility of gases, liquids, and solids are affected by changes in what?",C,C,True,True,0.09101179096614942,C
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,22,Comets that have periods of 200 years or less are knows as what-period comets?,C,C,True,True,0.09149324998725206,C
+Qwen/Qwen2.5-0.5B-Instruct,17,plain,23,What is the name of the effect that causes air masses to move on a diagonal?,C,C,True,True,0.08342195797013119,C
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,0,Some products contain iron filings that will react with air to release what type of energy?,A,C,False,True,0.09647074999520555,C
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,1,What does our solar system orbit over the course of hundreds of millions of years?,C,C,True,True,0.08075200003804639,C
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,2,"In myasthenia gravis, antibodies bind to and block certain receptors on muscle cells, preventing what?",D,D,True,True,0.10688154102535918,D
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,3,What everyday beverage commodity is second only to oil in worldwide trade?,A,B,False,True,0.17677629203535616,B
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,4,"What phylum includes sponges, which are aquatic invertebrates?",A,D,False,True,0.2608409999520518,D
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,5,Purkinje fibers have a fast inherent what?,C,C,True,True,0.16734845901373774,C
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,6,"What are the elements of group 17 (fluorine, chlorine, bromine, iodine, and astatine) called?",C,C,True,True,0.16874100000131875,C
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,7,"When electrons from two atoms are each attracted to the nucleus of the other atom, what type of bond is formed?",B,B,True,True,0.08615895797265694,B
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,8,Hormones that share what usually perform the same function?,D,B,False,True,0.22033170895883814,B
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,9,"Active transport mechanisms require the use of the cell’s energy, usually in the form of what?",D,D,True,True,0.08944658300606534,D
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,10,"Changes to what that delete, disrupt, or rearrange many loci at once are usually harmful?",A,B,False,True,0.10771899996325374,B
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,11,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.10525424999650568,C
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,12,Energy resources can be put into two categories — renewable or?,B,B,True,True,0.10814320796635002,B
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,13,Which are the three most important temperature scales?,C,B,False,True,0.18953870801487938,B
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,14,"Each hemisphere of the cerebrum consists of four parts, called what?",B,B,True,True,0.19972899998538196,B
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,15,The top of the saturated rock layer is called what?,C,D,False,True,0.17077187495306134,D
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,16,Heterotrophs get food by eating what?,C,D,False,True,0.2075333750108257,D
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,17,What organelles do animal cells use to convert food into energy?,D,D,True,True,0.10201720899203792,D
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,18,What is a short band of tough connective tissue that connects bones together to form a joint?,C,C,True,True,0.263346207968425,C
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,19,"What is a property of a system whose magnitude depends on only the present state of the system, not its previous history?",A,A,True,True,0.09910337498877198,A
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,20,Ragweed and poison ivy are common causes of what?,B,B,True,True,0.0810309590306133,B
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,21,"The solubility of gases, liquids, and solids are affected by changes in what?",C,C,True,True,0.08933929103659466,C
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,22,Comets that have periods of 200 years or less are knows as what-period comets?,C,C,True,True,0.09295024996390566,C
+Qwen/Qwen2.5-0.5B-Instruct,17,shuffled,23,What is the name of the effect that causes air masses to move on a diagonal?,C,C,True,True,0.12043579202145338,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,0,Some products contain iron filings that will react with air to release what type of energy?,A,A,True,True,0.12229237495921552,A
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,1,What does our solar system orbit over the course of hundreds of millions of years?,C,C,True,True,0.11151858302764595,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,2,"In myasthenia gravis, antibodies bind to and block certain receptors on muscle cells, preventing what?",D,D,True,True,0.0960786669747904,D
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,3,What everyday beverage commodity is second only to oil in worldwide trade?,A,A,True,True,0.13692124997032806,A
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,4,"What phylum includes sponges, which are aquatic invertebrates?",A,A,True,True,0.11496949999127537,A
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,5,Purkinje fibers have a fast inherent what?,C,C,True,True,0.3222968750051223,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,6,"What are the elements of group 17 (fluorine, chlorine, bromine, iodine, and astatine) called?",C,C,True,True,0.19528454198734835,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,7,"When electrons from two atoms are each attracted to the nucleus of the other atom, what type of bond is formed?",B,B,True,True,0.14888150000479072,B
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,8,Hormones that share what usually perform the same function?,D,C,False,True,0.09592029196210206,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,9,"Active transport mechanisms require the use of the cell’s energy, usually in the form of what?",D,D,True,True,0.26190758403390646,D
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,10,"Changes to what that delete, disrupt, or rearrange many loci at once are usually harmful?",A,A,True,True,0.10670862498227507,A
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,11,"What term denotes lower levels of exposure, for instance to radiation, over a longer period of time?",C,C,True,True,0.13913933403091505,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,12,Energy resources can be put into two categories — renewable or?,B,B,True,True,0.12240908399689943,B
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,13,Which are the three most important temperature scales?,C,C,True,True,0.23477350000757724,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,14,"Each hemisphere of the cerebrum consists of four parts, called what?",B,B,True,True,0.10376762499799952,B
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,15,The top of the saturated rock layer is called what?,C,C,True,True,0.11501279199728742,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,16,Heterotrophs get food by eating what?,C,C,True,True,0.23682191700208932,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,17,What organelles do animal cells use to convert food into energy?,D,D,True,True,0.19572645897278562,D
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,18,What is a short band of tough connective tissue that connects bones together to form a joint?,C,C,True,True,0.12093424994964153,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,19,"What is a property of a system whose magnitude depends on only the present state of the system, not its previous history?",A,A,True,True,0.30453670799033716,A
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,20,Ragweed and poison ivy are common causes of what?,B,B,True,True,0.11011895898263901,B
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,21,"The solubility of gases, liquids, and solids are affected by changes in what?",C,C,True,True,0.1006374999997206,C
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,22,Comets that have periods of 200 years or less are knows as what-period comets?,C,B,False,True,0.07891783298691735,B
+Qwen/Qwen2.5-0.5B-Instruct,17,grounded,23,What is the name of the effect that causes air masses to move on a diagonal?,C,C,True,True,0.11782312497962266,C
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,0,How many embryonic cell layers do flatworms have?,C,D,False,True,0.16795683302916586,D
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,1,"The insect reaches full size, acquires wings, and becomes sexually mature after what final stage?",A,B,False,True,0.09224737499607727,B
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,2,"In projectile motion, the horizontal displacement of an object is called its what?",C,C,True,True,0.08523758302908391,C
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,3,Slabs of continents moving around on earth's surface is called what?,B,B,True,True,0.08837733295513317,B
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,4,What term is defined as the preserved remains or traces of organisms that lived during earlier ages?,A,A,True,True,0.08569920796435326,A
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,5,What kind of waves are sound waves?,D,D,True,True,0.24016225000377744,D
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,6,How can one dimensional vectors be added?,B,A,False,True,0.10214904102031142,A
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,7,A double form of what reproductive process is unique to angiosperms?,B,B,True,True,0.08818966697435826,B
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,8,What is the volume of air inhaled and exhaled with each breath called?,C,C,True,True,0.08797429100377485,C
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,9,Energy contents of foods are often expressed in what?,B,B,True,True,0.12510554201435298,B
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,10,"Deer, rabbits and mice are an example of what link between producers and other consumers?",A,A,True,True,0.09400612500030547,A
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,11,Magnetic poles always occur in pairs - what are the names of each pole?,A,A,True,True,0.12417937500867993,A
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,12,"The burning of fossil fuels releases three major things - thermal energy, water vapor, and what pollutant?",D,D,True,True,0.12475666601676494,D
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,13,What kind of a reaction if peptide bond formation?,A,A,True,True,0.12373920896789059,A
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,14,What is the layman's term for a state in which external stimuli are received but not consciously perceived?,C,C,True,True,0.11256070801755413,C
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,15,"During an earthquake, the ground shakes as stored up energy is released from what?",B,D,False,True,0.11312229203758761,D
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,16,What is the layer outside the cell wall in a prokaryote?,D,D,True,True,0.08778537501348183,D
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,17,What type of tissue makes up the brain and the nerves that connect the brain to all parts of the body?,C,C,True,True,0.09048987500136718,C
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,18,Fluid in the pseudocoelom serves as a hydrostatic what?,A,C,False,True,0.07013641600497067,C
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,19,How often an allele occurs in a gene pool relative to the other alleles for that gene is known as _______,D,D,True,True,0.07015045802108943,D
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,20,What occurs when a sperm and an egg fuse?,B,B,True,True,0.08004812500439584,B
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,21,Which part of the brain is responsible for working memory?,C,C,True,True,0.06952870800159872,C
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,22,What is the name of the roundworms digestive organ?,D,D,True,True,0.06848166702548042,D
+Qwen/Qwen2.5-0.5B-Instruct,23,plain,23,What is defined as the ability to cause changes in matter?,B,A,False,True,0.06926558399572968,A
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,0,How many embryonic cell layers do flatworms have?,C,D,False,True,0.07070041703991592,D
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,1,"The insect reaches full size, acquires wings, and becomes sexually mature after what final stage?",A,B,False,True,0.10227291600313038,B
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,2,"In projectile motion, the horizontal displacement of an object is called its what?",C,C,True,True,0.2179715420352295,C
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,3,Slabs of continents moving around on earth's surface is called what?,B,B,True,True,0.19702708395197988,B
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,4,What term is defined as the preserved remains or traces of organisms that lived during earlier ages?,A,A,True,True,0.16901458299253136,A
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,5,What kind of waves are sound waves?,D,D,True,True,0.09385958296479657,D
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,6,How can one dimensional vectors be added?,B,B,True,True,0.10799466597381979,B
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,7,A double form of what reproductive process is unique to angiosperms?,B,B,True,True,0.0938829579972662,B
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,8,What is the volume of air inhaled and exhaled with each breath called?,C,C,True,True,0.1320285419933498,C
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,9,Energy contents of foods are often expressed in what?,B,B,True,True,0.2684504999779165,B
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,10,"Deer, rabbits and mice are an example of what link between producers and other consumers?",A,D,False,True,0.11570591694908217,D
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,11,Magnetic poles always occur in pairs - what are the names of each pole?,A,A,True,True,0.12862570898141712,A
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,12,"The burning of fossil fuels releases three major things - thermal energy, water vapor, and what pollutant?",D,D,True,True,0.17842666700016707,D
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,13,What kind of a reaction if peptide bond formation?,A,C,False,True,0.0734190410003066,C
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,14,What is the layman's term for a state in which external stimuli are received but not consciously perceived?,C,B,False,True,0.08087066700682044,B
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,15,"During an earthquake, the ground shakes as stored up energy is released from what?",B,D,False,True,0.09504583297530189,D
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,16,What is the layer outside the cell wall in a prokaryote?,D,C,False,True,0.20192879100795835,C
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,17,What type of tissue makes up the brain and the nerves that connect the brain to all parts of the body?,C,C,True,True,0.09406387497438118,C
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,18,Fluid in the pseudocoelom serves as a hydrostatic what?,A,C,False,True,0.10352566704386845,C
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,19,How often an allele occurs in a gene pool relative to the other alleles for that gene is known as _______,D,D,True,True,0.1732119169901125,D
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,20,What occurs when a sperm and an egg fuse?,B,B,True,True,0.281373750010971,B
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,21,Which part of the brain is responsible for working memory?,C,C,True,True,0.19792858400614932,C
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,22,What is the name of the roundworms digestive organ?,D,D,True,True,0.16442254098365083,D
+Qwen/Qwen2.5-0.5B-Instruct,23,shuffled,23,What is defined as the ability to cause changes in matter?,B,B,True,True,0.09228074998827651,B
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,0,How many embryonic cell layers do flatworms have?,C,C,True,True,0.06928787496872246,C
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,1,"The insect reaches full size, acquires wings, and becomes sexually mature after what final stage?",A,B,False,True,0.07390849996590987,B
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,2,"In projectile motion, the horizontal displacement of an object is called its what?",C,C,True,True,0.07714220799971372,C
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,3,Slabs of continents moving around on earth's surface is called what?,B,B,True,True,0.17795829102396965,B
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,4,What term is defined as the preserved remains or traces of organisms that lived during earlier ages?,A,A,True,True,0.16203120799036697,A
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,5,What kind of waves are sound waves?,D,D,True,True,0.07673679100116715,D
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,6,How can one dimensional vectors be added?,B,B,True,True,0.06725774996448308,B
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,7,A double form of what reproductive process is unique to angiosperms?,B,B,True,True,0.08136841701343656,B
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,8,What is the volume of air inhaled and exhaled with each breath called?,C,C,True,True,0.07060229196213186,C
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,9,Energy contents of foods are often expressed in what?,B,B,True,True,0.08660833298927173,B
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,10,"Deer, rabbits and mice are an example of what link between producers and other consumers?",A,A,True,True,0.08307066699489951,A
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,11,Magnetic poles always occur in pairs - what are the names of each pole?,A,A,True,True,0.16176320798695087,A
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,12,"The burning of fossil fuels releases three major things - thermal energy, water vapor, and what pollutant?",D,D,True,True,0.08950233302311972,D
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,13,What kind of a reaction if peptide bond formation?,A,A,True,True,0.08190283400472254,A
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,14,What is the layman's term for a state in which external stimuli are received but not consciously perceived?,C,C,True,True,0.07926729100290686,C
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,15,"During an earthquake, the ground shakes as stored up energy is released from what?",B,B,True,True,0.0764421250205487,B
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,16,What is the layer outside the cell wall in a prokaryote?,D,D,True,True,0.17362858302658424,D
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,17,What type of tissue makes up the brain and the nerves that connect the brain to all parts of the body?,C,C,True,True,0.0641403750050813,C
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,18,Fluid in the pseudocoelom serves as a hydrostatic what?,A,C,False,True,0.1126272919937037,C
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,19,How often an allele occurs in a gene pool relative to the other alleles for that gene is known as _______,D,D,True,True,0.10238595894770697,D
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,20,What occurs when a sperm and an egg fuse?,B,B,True,True,0.19148000003769994,B
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,21,Which part of the brain is responsible for working memory?,C,C,True,True,0.28114541701506823,C
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,22,What is the name of the roundworms digestive organ?,D,D,True,True,0.0980883750016801,D
+Qwen/Qwen2.5-0.5B-Instruct,23,grounded,23,What is defined as the ability to cause changes in matter?,B,B,True,True,0.09110091696493328,B
