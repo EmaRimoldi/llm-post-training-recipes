@@ -6,9 +6,11 @@
 **/*.pyo
 **/*.log
 **/wandb/
-.nested-git-backups/
 
-# Large generated model and dataset artifacts
+.nested-git-backups/
+.legacy-local/
+
+# Generated model and dataset artifacts
 **/*.arrow
 **/*.safetensors
 **/*.pth
@@ -17,40 +19,20 @@
 **/*.whl
 **/*.zip
 
-# Local outputs
-**/qwen*/
-**/logs/
-**/output*.log
+# Training outputs
+training/**/qwen*/
+training/**/logs/
+training/**/output*.log
+training/**/processed_data_for_trainer/
+training/**/processed/
 
-# Classroom templates and artifacts that do not help the public portfolio
-project-m1-2025-veme/.github/
-project-m2-2025-veme/.github/
-project-m3-2025-veme/.github/
-project-m1-2025-veme/_tests/
-project-m2-2025-veme/_test/
-project-m3-2025-veme/_test/
-project-m1-2025-veme/_artifacts/
-project-m1-2025-veme/_docs/
-project-m1-2025-veme/_templates/
-project-m2-2025-veme/_template/
-project-m3-2025-veme/_template/
-project-m3-2025-veme/RAG/Adapters/
-project-m3-2025-veme/RAG/raft/_artifacts/
-project-m3-2025-veme/code/train_rag/_artifacts/
-project-m2-2025-veme/data/eval_data/
-project-m2-2025-veme/data/gpqa/
-project-m2-2025-veme/data/mathqa/
-project-m2-2025-veme/data/tuandunghcmut_coding-mcq-reasoning/
-project-m3-2025-veme/data/eval_data/
-project-m3-2025-veme/data/gpqa/
-project-m3-2025-veme/data/mathqa/
-project-m3-2025-veme/RAG/KB/*.zip
-project-m3-2025-veme/RAG/raft/raft_dataset_generated_with_gpt_wrapper.jsonl
-project-m3-2025-veme/code/train_rag/raft_dataset_generated_with_gpt_wrapper.jsonl
+# Local practitioner datasets not tracked in git
+datasets/external/*
+!datasets/external/README.md
+
+# Scratch notebooks and local exploratory material
+**/*.ipynb
+
+# Legacy placeholders
 **/.placeholder
 **/.placehoder
-
-# Exploratory notebooks and local scratch material
-project-m1-2025-veme/data/*.ipynb
-project-m2-2025-veme/**/*.ipynb
-project-m3-2025-veme/**/*.ipynb

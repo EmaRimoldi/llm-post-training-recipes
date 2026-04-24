@@ -1,94 +1,114 @@
-# Modern NLP Coursework Portfolio
+# LLM Post-Training Recipes
 
-This repository curates three micro-projects completed for the EPFL `CS-552` Modern NLP course into a single portfolio-oriented codebase.
+Practical training recipes for adapting LLMs to STEM question-answering workloads with:
 
-The work evolves across three milestones:
+- supervised fine-tuning;
+- multiple-choice adaptation;
+- direct preference optimization;
+- quantization and QLoRA;
+- retrieval-oriented training and knowledge-base preparation.
 
-1. `project-m1-2025-veme`: preference data collection, annotation support, and literature-review deliverables.
-2. `project-m2-2025-veme`: post-training experiments on STEM question-answering tasks, including supervised fine-tuning and quantization.
-3. `project-m3-2025-veme`: more advanced training workflows covering DPO, MCQA adaptation, RAFT/RAG data generation, and knowledge-base preparation.
+This repository is organized as a cohesive practitioner codebase rather than a course archive. The emphasis is on reusable scripts, clear folder boundaries, and explicit handling of large external datasets.
 
-## Why This Repo Exists
+## What This Repository Is For
 
-The original projects were created as separate GitHub Classroom repositories. That structure was fine for course submission, but weak for a public portfolio:
+This codebase is useful if you want to study or reuse compact training pipelines for:
 
-- the READMEs were course-instruction heavy rather than outcome focused;
-- several scripts assumed local machine paths or contained secrets that should never be published;
-- large artifacts and generated data would make the public repository noisy and heavy;
-- the technical story was fragmented across three different repos.
+- turning base models into task-specific QA models;
+- building MCQA training data and evaluation-ready prompts;
+- running DPO-style alignment experiments;
+- compressing or fine-tuning smaller Qwen-family models;
+- preparing corpora for retrieval-augmented training.
 
-This umbrella repository is meant to fix that by making the work readable, safer to publish, and easier to evaluate as an NLP/LLM engineering portfolio.
+The scripts were originally developed in the context of a graduate NLP project, but the repository has been restructured into a single engineering-focused layout.
 
-## Project Progression
+## Repository Layout
+
+```text
+.
+├── configs/      model and submission-style configuration snapshots
+├── datasets/     lightweight tracked datasets, calibration data, and data builders
+├── docs/         project notes and historical provenance
+├── reports/      selected write-ups and deliverables
+├── retrieval/    knowledge-base preparation scripts
+└── training/     SFT, DPO, MCQA, quantization, and RAG recipes
+```
+
+## Training Surface
 
 ```mermaid
 flowchart LR
-    A["Milestone 1<br/>Preference data collection"] --> B["Milestone 2<br/>SFT and quantization"]
-    B --> C["Milestone 3<br/>DPO, RAFT, and RAG workflows"]
-    A --> D["Data validation"]
-    B --> E["Model adaptation"]
-    C --> F["Retrieval-aware post-training"]
+    A["datasets/"] --> B["training/sft"]
+    A --> C["training/mcqa"]
+    A --> D["training/dpo"]
+    A --> E["training/quantization"]
+    A --> F["training/rag"]
+    G["retrieval/knowledge_base"] --> F
+    H["configs/model_configs"] --> B
+    H --> D
+    H --> E
+    H --> F
 ```
 
-## Repository Map
+## Folder Guide
 
-### Milestone 1: Data And Evaluation Setup
+### `datasets/`
 
-`project-m1-2025-veme` contains the earliest project work:
+Contains small tracked assets and builder scripts:
 
-- preference-data collection notebooks and JSON exports;
-- submission validators and report templates;
-- annotation assets used during the manual labeling workflow.
+- `preference/`: example preference data from the early annotation stage;
+- `calibration/`: small calibration data used by quantization workflows;
+- `metadata/`: lightweight metadata snapshots for published datasets;
+- `builders/`: scripts for DPO data generation and MCQA dataset preparation.
 
-From a portfolio perspective, this milestone shows data curation, annotation, and evaluation discipline more than model engineering.
+Large raw datasets are intentionally excluded from git. See [datasets/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/datasets/README.md) for the expected local layout.
 
-### Milestone 2: Post-Training And Quantization
+### `training/`
 
-`project-m2-2025-veme` focuses on model adaptation for STEM question answering:
+Grouped by learning recipe instead of by assignment milestone:
 
-- supervised fine-tuning scripts;
-- quantization and QLoRA experiments;
-- Hugging Face model configuration files;
-- evaluation-support datasets and report materials.
+- `sft/`: supervised fine-tuning variants;
+- `mcqa/`: multiple-choice QA specialization scripts;
+- `dpo/`: preference optimization training and evaluation;
+- `quantization/`: compression and QLoRA experiments;
+- `rag/`: retrieval-aware training recipes and alternative RAFT-style experiments.
 
-This milestone is the bridge from coursework infrastructure to actual model experimentation.
+See [training/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/training/README.md).
 
-### Milestone 3: DPO, RAG, And Data Generation
+### `retrieval/`
 
-`project-m3-2025-veme` is the most technically interesting section:
+Preparation utilities for external corpora used in retrieval-oriented experiments:
 
-- DPO training code;
-- MCQA training and dataset unification pipelines;
-- RAFT/RAG dataset generation;
-- retrieval knowledge-base preprocessing for ArXiv and Wikipedia STEM corpora;
-- model upload and Hugging Face integration utilities.
+- ArXiv filtering and upload workflows;
+- Wikipedia STEM corpus chunking and publication helpers.
 
-This is the part of the portfolio that most clearly signals LLM post-training, retrieval workflows, and data-pipeline work.
+See [retrieval/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/retrieval/README.md).
 
-## Example Advanced Workflow
+### `configs/`
 
-The most interesting engineering pattern in this repository is the milestone 3 retrieval-oriented training pipeline.
+Structured configuration snapshots for different model variants and submission stages. These files are useful as a reference when reproducing model packaging or checking the exact Hugging Face repository naming used during experiments.
+
+See [configs/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/configs/README.md).
+
+### `reports/`
+
+Contains selected written artifacts that complement the code. The repository is code-first, but keeping one representative report helps document the modeling choices and experimental context.
+
+## Example Workflow
 
 ```mermaid
 flowchart TD
-    A["External STEM corpora<br/>ArXiv / Wikipedia / MCQA datasets"] --> B["Preprocessing and filtering"]
-    B --> C["Knowledge-base or training-data generation"]
-    C --> D["RAFT / RAG / MCQA training scripts"]
-    D --> E["Fine-tuned model artifacts"]
-    E --> F["Hugging Face publication workflow"]
+    A["External datasets<br/>MathQA / GPQA / SciQ / custom MCQA"] --> B["datasets/builders"]
+    B --> C["training/sft or training/mcqa"]
+    C --> D["training/dpo or training/quantization"]
+    E["retrieval/knowledge_base"] --> F["training/rag"]
+    D --> G["Model artifacts and Hub-ready configs"]
+    F --> G
 ```
-
-## Key Improvements Applied In This Curated Version
-
-- Replaced hardcoded API tokens in Python scripts with environment-variable based configuration.
-- Removed reliance on machine-specific `os.chdir(...)` paths from the main quantization scripts.
-- Rewrote the milestone READMEs to explain what the code does instead of repeating course submission instructions.
-- Added a repository audit and publishing plan in [docs/repo-audit.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/repo-audit.md).
-- Added a root `.gitignore` tailored for turning this folder into a single public repository.
 
 ## Environment Variables
 
-Some scripts now expect credentials to come from the environment instead of source code:
+Several scripts use environment variables instead of hardcoded credentials:
 
 - `HF_TOKEN`
 - `HF_USERNAME`
@@ -98,17 +118,14 @@ Some scripts now expect credentials to come from the environment instead of sour
 - `HF_DATASET_REPO_NAME`
 - `MNLP_GPT_WRAPPER_API_KEY`
 
-Not every script uses every variable; the names are intentionally generic so the workflows are easier to reuse.
+Not every script uses every variable, but the naming is consistent across the repository.
 
-## Provenance
+## Notes On Data Availability
 
-The original work was produced across three separate GitHub Classroom repositories. This repository republishes the code in a unified structure so the technical progression is easier to evaluate. The detailed audit and consolidation notes are in [docs/repo-audit.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/repo-audit.md).
+This repository intentionally does not version large local datasets, intermediate Arrow files, model checkpoints, or generated artifacts.
 
-## What A Recruiter Should Notice
+When a script expects local input such as `MathQA`, `GPQA`, or custom MCQA corpora, the expected paths are documented in [datasets/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/datasets/README.md). This keeps the repository lightweight while preserving reproducible code structure.
 
-- practical experience with LLM post-training workflows, not only model usage;
-- hands-on work with dataset cleaning, annotation, and training data construction;
-- exposure to quantization, DPO, and retrieval-augmented training ideas;
-- familiarity with Hugging Face tooling and experiment-oriented scripting.
+## Historical Provenance
 
-The codebase still reflects its academic origin, but it now presents a much clearer narrative: from data creation, to fine-tuning, to more advanced preference and retrieval methods.
+The repository was consolidated from three previously separate classroom repositories and restructured into this functional layout. Background notes are in [docs/project-origin.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/project-origin.md).
