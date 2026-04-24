@@ -29,6 +29,8 @@ training/**/processed/
 # Local practitioner datasets not tracked in git
 datasets/external/*
 !datasets/external/README.md
+workspaces/
+generated-projects/
 
 # Scratch notebooks and local exploratory material
 **/*.ipynb

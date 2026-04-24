@@ -17,6 +17,7 @@ python -m stemtune --task sft --gpu-memory-gb 16
 python -m stemtune --task mcqa --gpu-memory-gb 24 --prefer-multilingual
 python -m stemtune recommend --task dpo --gpu-memory-gb 24
 python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-context --prefer-tool-use
+python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
 ```
 
 ## What The Selector Returns
@@ -32,12 +33,29 @@ python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-conte
 - `python -m stemtune show-task <task>`: explain when to use a recipe and where to start.
 - `python -m stemtune recommend --task <task> --gpu-memory-gb <n>`: recommend a model and repo path.
 - `python -m stemtune list-models --task <task> --gpu-memory-gb <n>`: rank the curated model catalog for your constraints.
+- `python -m stemtune init-project ...`: generate a neutral workspace with your own manifests, configs, and Hub targets.
 
 For compatibility, the original entrypoint still works:
 
 ```bash
 python stemtune/select_stack.py --task mcqa --gpu-memory-gb 24
 ```
+
+## Project Bootstrap
+
+`init-project` is the command that makes STEMTune usable beyond the original repository.
+
+It generates:
+
+- `stemtune.project.json`: top-level project metadata;
+- `configs/dataset.json`: your input and normalization contract;
+- `configs/knowledge_base.json`: your corpus and chunking contract;
+- `configs/training.json`: your base model and training settings;
+- `configs/publish.json`: your own Hub namespace and target repos;
+- `.env.example`: environment variables with your own identifiers;
+- `runbook.md`: the end-to-end automation outline.
+
+This keeps the framework decoupled from the original course datasets and from any hardcoded Hugging Face profile.
 
 ## Design Philosophy
 

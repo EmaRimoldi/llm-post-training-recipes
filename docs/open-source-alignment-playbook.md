@@ -91,16 +91,26 @@ Start in:
 
 ## 3. Place Data In The Right Local Paths
 
-Tracked data in git is intentionally lightweight.
+Tracked data in git is intentionally lightweight. For new work, do not copy your project into the historical course folders.
 
-Put large local corpora under:
+Bootstrap a neutral workspace first:
+
+```bash
+python -m stemtune init-project \
+  --name "Your Project Name" \
+  --task mcqa \
+  --base-model Qwen/Qwen3-8B \
+  --hf-namespace your-name \
+  --output-dir ./workspaces
+```
+
+Then put your large local corpora under the generated project directories, for example:
 
 ```text
-datasets/external/
-├── gpqa/
-├── mathqa/
-│   └── train.json
-└── tuandunghcmut_coding-mcq-reasoning/
+workspaces/your-project/
+├── data/raw/
+├── data/processed/
+└── knowledge_base/raw/
 ```
 
 ## 4. Practical Default Choices

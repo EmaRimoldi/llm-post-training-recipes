@@ -59,9 +59,36 @@ python -m stemtune list-tasks
 python -m stemtune show-task mcqa
 python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-context
 python -m stemtune recommend --task sft --gpu-memory-gb 16
+python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
 ```
 
 This makes the repository usable as a lightweight framework rather than as a static code drop.
+
+## Bring Your Own Assets
+
+The framework is no longer tied to the original course repositories, namespaces, or Hub profiles.
+
+Practitioners can now bootstrap a clean project scaffold that contains their own:
+
+- dataset manifest;
+- knowledge-base manifest;
+- training config;
+- publishing config;
+- environment template;
+- project runbook.
+
+Use:
+
+```bash
+python -m stemtune init-project \
+  --name "Your Project Name" \
+  --task rag \
+  --base-model meta-llama/Meta-Llama-3.1-8B-Instruct \
+  --hf-namespace your-name \
+  --output-dir ./workspaces
+```
+
+This creates a practitioner-owned workspace with neutral config files and no dependency on the original MNLP course artifacts. See [docs/practitioner-automation.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/practitioner-automation.md).
 
 ## Repository Layout
 
@@ -171,8 +198,9 @@ If your goal is to align an open-source model to one of the tasks covered here:
 1. Pick a task: `sft`, `mcqa`, `dpo`, `quantization`, or `rag`.
 2. Run `python -m stemtune show-task <task>` to confirm that the recipe matches your use case.
 3. Run `python -m stemtune --task <task> --gpu-memory-gb <budget>` to choose a model.
-4. Place large local datasets under `datasets/external/`.
-5. Start from the recommended recipe folder under `training/`.
+4. Run `python -m stemtune init-project ...` to generate your own manifests and configs.
+5. Put your raw assets inside the generated project workspace rather than inside course-specific folders.
+6. Start from the recommended recipe folder under `training/`.
 
 The practical playbook is in [docs/open-source-alignment-playbook.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/open-source-alignment-playbook.md).
 

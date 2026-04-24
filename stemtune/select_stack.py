@@ -7,6 +7,11 @@ import json
 import sys
 from pathlib import Path
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from stemtune.scaffold import TASK_BLUEPRINTS, create_project_scaffold
+
 
 CATALOG_PATH = Path(__file__).with_name("model_catalog.json")
 
@@ -332,6 +337,29 @@ def build_list_tasks_parser(subparsers: argparse._SubParsersAction) -> None:
     parser.set_defaults(handler=handle_list_tasks)
 
 
+def build_init_project_parser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser(
+        "init-project",
+        help="Generate a practitioner-owned project scaffold with configs, manifests, and runbook.",
+    )
+    parser.add_argument("--name", required=True, help="Human-readable project name.")
+    parser.add_argument("--task", choices=sorted(TASK_BLUEPRINTS.keys()), required=True)
+    parser.add_argument("--base-model", required=True, help="Any open-source base or instruct model ID.")
+    parser.add_argument(
+        "--output-dir",
+        default=".",
+        help="Directory where the new project folder should be created. Defaults to the current directory.",
+    )
+    parser.add_argument("--hf-namespace", help="Your own Hugging Face username or organization.")
+    parser.add_argument("--model-repo-name", help="Optional explicit model repo name.")
+    parser.add_argument("--dataset-repo-name", help="Optional explicit dataset repo name.")
+    parser.add_argument("--kb-repo-name", help="Optional explicit knowledge-base repo name.")
+    parser.add_argument("--private-hub-repos", action="store_true")
+    parser.add_argument("--force", action="store_true", help="Allow writing into an existing non-empty directory.")
+    parser.add_argument("--output", choices=["text", "json"], default="text")
+    parser.set_defaults(handler=handle_init_project)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Select open-source models and alignment recipes for STEMTune tasks."
@@ -341,6 +369,7 @@ def build_parser() -> argparse.ArgumentParser:
     build_list_models_parser(subparsers)
     build_show_task_parser(subparsers)
     build_list_tasks_parser(subparsers)
+    build_init_project_parser(subparsers)
     return parser
 
 
@@ -374,8 +403,41 @@ def handle_list_tasks(args: argparse.Namespace) -> str:
     return render_tasks(result)
 
 
+def handle_init_project(args: argparse.Namespace) -> str:
+    target_dir, files_written = create_project_scaffold(args)
+    result = {
+        "project_dir": str(target_dir),
+        "files_written": files_written,
+        "task": args.task,
+        "base_model": args.base_model,
+    }
+    if args.output == "json":
+        return json.dumps(result, indent=2)
+
+    lines = [
+        "STEMTune project scaffold created",
+        f"Project directory: {target_dir}",
+        f"Task: {args.task}",
+        f"Base model: {args.base_model}",
+        "",
+        "Generated files:",
+    ]
+    lines.extend([f"- {path}" for path in files_written])
+    lines.extend(
+        [
+            "",
+            "Next steps:",
+            "- Edit configs/dataset.json with your own source data.",
+            "- Edit configs/training.json with your training settings and model choices.",
+            "- Edit configs/publish.json and .env.example with your own Hugging Face namespace.",
+            "- Put project-specific conversion scripts under scripts/.",
+        ]
+    )
+    return "\n".join(lines)
+
+
 def normalize_argv(argv: list[str]) -> list[str]:
-    commands = {"recommend", "list-models", "show-task", "list-tasks", "-h", "--help"}
+    commands = {"recommend", "list-models", "show-task", "list-tasks", "init-project", "-h", "--help"}
     if not argv:
         return argv
     if argv[0] in commands:
