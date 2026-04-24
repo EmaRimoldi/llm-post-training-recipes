@@ -1,0 +1,14 @@
+model:
+  base_params:
+    model_args: "pretrained=MoroM02/MNLP_M2_dpo_model,revision=main,trust_remote_code=true" # Change <HF_USERNAME_team_member_DPO> to your own Huggingface username that holds the repo MNLP_M2_dpo_model
+    dtype: "float16"
+    compile: false
+    ref_free_norm: "none" # Set to "none" if you use reference model in your training, otherwise, specify the normalization type for your reference-free DPO inference: avg, sum, or norm
+
+  # Ignore this section, do not modify!
+  merged_weights:
+    delta_weights: false
+    adapter_weights: false
+    base_model: null
+  generation:
+    temperature: 0.0

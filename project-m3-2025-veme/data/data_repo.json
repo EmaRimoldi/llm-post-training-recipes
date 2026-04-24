@@ -1,0 +1,6 @@
+{
+    "dpo_dataset_repo_id": "MoroM02/MNLP_M3_dpo_dataset",
+    "mcqa_dataset_repo_id": "VinceEPFL/MNLP_M3_mcqa_dataset",
+    "quantized_mcqa_dataset_repo_id": "ema1234/MNLP_M3_quantized_dataset",
+    "rag_mcqa_dataset_repo_id": "EmaRimoldi/MNLP_M3_rag_dataset"
+}

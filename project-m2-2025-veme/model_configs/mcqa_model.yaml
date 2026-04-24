@@ -1,0 +1,13 @@
+model:
+  base_params:
+    model_args: "pretrained=VinceEPFL/MNLP_M2_mcqa_model,revision=main,trust_remote_code=true" # Change <HF_USERNAME_team_member_MCQA> to your own Huggingface username that holds the repo MNLP_M2_mcqa_model
+    dtype: "float16"
+    compile: false
+
+  # Ignore this section, do not modify!
+  merged_weights:
+    delta_weights: false
+    adapter_weights: false
+    base_model: null
+  generation:
+    temperature: 0.0

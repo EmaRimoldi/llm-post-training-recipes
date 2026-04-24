@@ -1,0 +1,18 @@
+model:
+  base_params:
+    model_args: "pretrained=EmaRimoldi/MNLP_M2_rag_model,revision=main,trust_remote_code=true" # Change <HF_USERNAME_team_member_RAG> to your own Huggingface username that holds the repo MNLP_M2_rag_model
+    dtype: "float16"
+    compile: false
+  rag_params:
+    embedding_model: "EmaRimoldi/MNLP_M2_document_encoder" # Change <HF_USERNAME_team_member_RAG> to your own Huggingface username that holds the repo MNLP_M2_document_encoder
+    docs_name_or_path: "EmaRimoldi/MNLP_M2_documents" # Change this to your own repo name for the RAG document on huggingface hub
+    similarity_fn: cosine # Select the similarity function to use, options are: cosine, dot_product, max_inner_product, jaccard
+    top_k: 10 # Choose the number of documents to retrieve
+
+  # Ignore this section, do not modify!
+  merged_weights:
+    delta_weights: false
+    adapter_weights: false
+    base_model: null
+  generation:
+    temperature: 0.0
