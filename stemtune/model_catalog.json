@@ -1,0 +1,46 @@
+[
+  {
+    "id": "Qwen/Qwen3-0.6B",
+    "family": "Qwen3",
+    "variant": "base",
+    "params_b": 0.6,
+    "min_vram_gb": 6,
+    "strengths": ["low_cost_experiments", "multilingual", "reasoning_modes"],
+    "good_for": ["sft", "mcqa", "quantization", "smoke_tests"],
+    "not_ideal_for": ["high_quality_rag", "strong_dpo_quality"],
+    "reference_url": "https://huggingface.co/docs/transformers/main/en/model_doc/qwen3"
+  },
+  {
+    "id": "Qwen/Qwen3-8B",
+    "family": "Qwen3",
+    "variant": "base",
+    "params_b": 8,
+    "min_vram_gb": 24,
+    "strengths": ["multilingual", "reasoning", "general_post_training"],
+    "good_for": ["sft", "mcqa", "dpo", "quantization"],
+    "not_ideal_for": ["very_low_vram"],
+    "reference_url": "https://huggingface.co/Qwen/Qwen3-8B"
+  },
+  {
+    "id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "family": "Llama 3.1",
+    "variant": "instruct",
+    "params_b": 8,
+    "min_vram_gb": 24,
+    "strengths": ["strong_ecosystem", "128k_context", "long_context", "tool_use"],
+    "good_for": ["sft", "dpo", "rag", "local_assistants"],
+    "not_ideal_for": ["very_low_vram"],
+    "reference_url": "https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct"
+  },
+  {
+    "id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "family": "Mistral Small 3.1",
+    "variant": "instruct",
+    "params_b": 24,
+    "min_vram_gb": 48,
+    "strengths": ["long_context", "tool_use", "math_reasoning", "knowledge_dense"],
+    "good_for": ["rag", "domain_adaptation", "local_service"],
+    "not_ideal_for": ["budget_experiments", "very_low_vram"],
+    "reference_url": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503"
+  }
+]

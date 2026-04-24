@@ -1,4 +1,4 @@
-# LLM Post-Training Recipes
+# STEMTune: LLM Post-Training Recipes
 
 Practical training recipes for adapting LLMs to STEM question-answering workloads with:
 
@@ -22,6 +22,47 @@ This codebase is useful if you want to study or reuse compact training pipelines
 
 The scripts were originally developed in the context of a graduate NLP project, but the repository has been restructured into a single engineering-focused layout.
 
+## STEMTune
+
+`STEMTune` is the lightweight framework layer shipped with this repository.
+
+Its goal is simple:
+
+- help you choose a credible open-source starting model;
+- map a task to the right alignment recipe in this repo;
+- keep the workflow practical for single-GPU or small multi-GPU setups.
+
+If you want the fastest way to operate the repository, start here:
+
+```bash
+python -m stemtune --task mcqa --gpu-memory-gb 24
+python -m stemtune --task dpo --gpu-memory-gb 24 --prefer-multilingual
+python -m stemtune --task rag --gpu-memory-gb 48 --prefer-long-context --prefer-tool-use
+python -m stemtune list-models --task mcqa --gpu-memory-gb 24
+python -m stemtune show-task quantization
+```
+
+See [stemtune/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/stemtune/README.md) and [docs/open-source-alignment-playbook.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/open-source-alignment-playbook.md).
+
+## How Practitioners Use STEMTune
+
+`STEMTune` is meant to answer three operational questions quickly:
+
+1. Which open-source model should I start from?
+2. Which alignment recipe matches my task?
+3. Which folder do I open first?
+
+The command surface is intentionally small:
+
+```bash
+python -m stemtune list-tasks
+python -m stemtune show-task mcqa
+python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-context
+python -m stemtune recommend --task sft --gpu-memory-gb 16
+```
+
+This makes the repository usable as a lightweight framework rather than as a static code drop.
+
 ## Repository Layout
 
 ```text
@@ -31,6 +72,7 @@ The scripts were originally developed in the context of a graduate NLP project, 
 ├── docs/         project notes and historical provenance
 ├── reports/      selected write-ups and deliverables
 ├── retrieval/    knowledge-base preparation scripts
+├── stemtune/     model selection and operational guidance layer
 └── training/     SFT, DPO, MCQA, quantization, and RAG recipes
 ```
 
@@ -43,6 +85,11 @@ flowchart LR
     A --> D["training/dpo"]
     A --> E["training/quantization"]
     A --> F["training/rag"]
+    S["stemtune/"] --> B
+    S --> C
+    S --> D
+    S --> E
+    S --> F
     G["retrieval/knowledge_base"] --> F
     H["configs/model_configs"] --> B
     H --> D
@@ -84,6 +131,16 @@ Preparation utilities for external corpora used in retrieval-oriented experiment
 
 See [retrieval/README.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/retrieval/README.md).
 
+### `stemtune/`
+
+The operator-facing layer of the repository:
+
+- `select_stack.py`: choose a model family and recipe from task and hardware constraints;
+- `model_catalog.json`: curated open-source model profiles;
+- `README.md`: quickstart and selection guidance.
+
+This is the shortest path from “I have a task” to “I know which recipe to run”.
+
 ### `configs/`
 
 Structured configuration snapshots for different model variants and submission stages. These files are useful as a reference when reproducing model packaging or checking the exact Hugging Face repository naming used during experiments.
@@ -99,12 +156,36 @@ Contains selected written artifacts that complement the code. The repository is 
 ```mermaid
 flowchart TD
     A["External datasets<br/>MathQA / GPQA / SciQ / custom MCQA"] --> B["datasets/builders"]
-    B --> C["training/sft or training/mcqa"]
+    S["python -m stemtune"] --> B
+    S --> C["training/sft or training/mcqa"]
     C --> D["training/dpo or training/quantization"]
     E["retrieval/knowledge_base"] --> F["training/rag"]
     D --> G["Model artifacts and Hub-ready configs"]
     F --> G
 ```
+
+## Operational Quickstart
+
+If your goal is to align an open-source model to one of the tasks covered here:
+
+1. Pick a task: `sft`, `mcqa`, `dpo`, `quantization`, or `rag`.
+2. Run `python -m stemtune show-task <task>` to confirm that the recipe matches your use case.
+3. Run `python -m stemtune --task <task> --gpu-memory-gb <budget>` to choose a model.
+4. Place large local datasets under `datasets/external/`.
+5. Start from the recommended recipe folder under `training/`.
+
+The practical playbook is in [docs/open-source-alignment-playbook.md](/Users/emanuelerimoldi/Documents/GitHub/MNLP/docs/open-source-alignment-playbook.md).
+
+## Model Selection Heuristics
+
+Use this as the default routing logic before you specialize further:
+
+| If you need... | Default choice | Why |
+|---|---|---|
+| Cheap debugging and smoke tests | `Qwen/Qwen3-0.6B` | Small enough to validate data pipelines and training code quickly |
+| Best default single-GPU post-training base | `Qwen/Qwen3-8B` | Strong general-purpose open-source starting point for SFT, MCQA, and DPO |
+| Mature assistant-style ecosystem and long context | `meta-llama/Meta-Llama-3.1-8B-Instruct` | Strong tooling ecosystem and 128k context window |
+| Heavier retrieval or tool-rich local serving | `mistralai/Mistral-Small-3.1-24B-Instruct-2503` | Better fit for long-context, tool-aware, retrieval-heavy setups |
 
 ## Environment Variables
 
