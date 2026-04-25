@@ -1,0 +1,89 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dataset_id": "allenai/sciq",
+  "device": "cpu",
+  "condition": "plain",
+  "limit": 24,
+  "seeds": [
+    7,
+    11,
+    13
+  ],
+  "per_seed": [
+    {
+      "seed": 7,
+      "full_precision": {
+        "condition": "plain",
+        "num_examples": 24,
+        "accuracy": 0.6666666666666666,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.2971448541769253,
+        "median_latency_s": 0.28543668749625795
+      },
+      "dynamic_int8": {
+        "condition": "plain",
+        "num_examples": 24,
+        "accuracy": 0.08333333333333333,
+        "valid_rate": 0.375,
+        "avg_latency_s": 1.2470370277903082,
+        "median_latency_s": 1.2109641665010713
+      }
+    },
+    {
+      "seed": 11,
+      "full_precision": {
+        "condition": "plain",
+        "num_examples": 24,
+        "accuracy": 0.7083333333333334,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.28236993394966703,
+        "median_latency_s": 0.2872394374862779
+      },
+      "dynamic_int8": {
+        "condition": "plain",
+        "num_examples": 24,
+        "accuracy": 0.16666666666666666,
+        "valid_rate": 0.5,
+        "avg_latency_s": 1.1502887326593434,
+        "median_latency_s": 1.0150015834951773
+      }
+    },
+    {
+      "seed": 13,
+      "full_precision": {
+        "condition": "plain",
+        "num_examples": 24,
+        "accuracy": 0.7083333333333334,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.23228584724953785,
+        "median_latency_s": 0.22954814598779194
+      },
+      "dynamic_int8": {
+        "condition": "plain",
+        "num_examples": 24,
+        "accuracy": 0.375,
+        "valid_rate": 0.6666666666666666,
+        "avg_latency_s": 0.7515884653354684,
+        "median_latency_s": 0.7356689374719281
+      }
+    }
+  ],
+  "aggregate": {
+    "full_precision": {
+      "accuracy_mean": 0.6944444444444444,
+      "accuracy_stdev": 0.02405626121623445,
+      "valid_rate_mean": 1.0,
+      "valid_rate_stdev": 0.0,
+      "avg_latency_s_mean": 0.2706002117920434,
+      "avg_latency_s_stdev": 0.03399363859095502
+    },
+    "dynamic_int8": {
+      "accuracy_mean": 0.20833333333333331,
+      "accuracy_stdev": 0.1502313031443329,
+      "valid_rate_mean": 0.5138888888888888,
+      "valid_rate_stdev": 0.1463285243451769,
+      "avg_latency_s_mean": 1.0496380752617067,
+      "avg_latency_s_stdev": 0.2626123295574185
+    }
+  }
+}

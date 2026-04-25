@@ -19,10 +19,13 @@ python -m stemtune recommend --task dpo --gpu-memory-gb 24
 python -m stemtune list-models --task rag --gpu-memory-gb 48 --prefer-long-context --prefer-tool-use
 python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
 python -m stemtune smoke-mcqa --limit 12 --output-dir artifacts/evals/smoke_mcqa
-python -m stemtune posttrain-mcqa --train-limit 32 --eval-limit 24 --epochs 2 --batch-size 4 --learning-rate 5e-5 --max-new-tokens 64
+python -m stemtune posttrain-mcqa --train-limit 32 --eval-limit 24 --epochs 4 --batch-size 4 --learning-rate 5e-5 --max-new-tokens 64
 python -m stemtune benchmark-mcqa --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 python -m stemtune study-mcqa --models Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
 python -m stemtune study-support-budget --model-id Qwen/Qwen2.5-0.5B-Instruct --limit 24 --seeds 7,11,13,17,23
+python -m stemtune study-rag --limit 24 --seeds 7,11,13 --corpus-size 500
+python -m stemtune dpo-mcqa --train-limit 32 --eval-limit 24 --epochs 2 --batch-size 2 --learning-rate 5e-5 --max-new-tokens 64
+python -m stemtune study-quantization --condition plain --limit 24 --seeds 7,11,13
 ```
 
 ## What The Selector Returns
@@ -44,6 +47,9 @@ python -m stemtune study-support-budget --model-id Qwen/Qwen2.5-0.5B-Instruct --
 - `python -m stemtune benchmark-mcqa ...`: run a multi-seed MCQA benchmark and emit aggregate metrics plus a benchmark plot.
 - `python -m stemtune study-mcqa ...`: run the support relevance ablation with correct vs mismatched evidence.
 - `python -m stemtune study-support-budget ...`: measure how much support text is actually needed.
+- `python -m stemtune study-rag ...`: test whether simple retrieval materially lifts answer accuracy.
+- `python -m stemtune dpo-mcqa ...`: run a tiny DPO preference-alignment smoke test.
+- `python -m stemtune study-quantization ...`: test whether dynamic int8 quantization preserves behavior.
 
 For compatibility, the original entrypoint still works:
 
@@ -107,6 +113,14 @@ The tracked results live in:
 
 - [docs/results/mcqa_evidence_study](../docs/results/mcqa_evidence_study/report.md)
 - [docs/results/mcqa_support_budget_qwen25_0p5b](../docs/results/mcqa_support_budget_qwen25_0p5b/report.md)
+
+## Retrieval, DPO, and Quantization
+
+Additional tracked studies live in:
+
+- [docs/results/mcqa_rag_retrieval](../docs/results/mcqa_rag_retrieval/report.md): TF-IDF retrieval lifts accuracy from `0.694` to `0.958`.
+- [docs/results/mcqa_dpo_smoke](../docs/results/mcqa_dpo_smoke/report.md): tiny DPO improves weighted score from `0.567` to `0.646`.
+- [docs/results/mcqa_quantization_retention](../docs/results/mcqa_quantization_retention/report.md): local dynamic int8 does not preserve quality on this backend, which is itself a useful deployment finding.
 
 ## Project Bootstrap
 

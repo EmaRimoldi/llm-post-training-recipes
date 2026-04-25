@@ -11,7 +11,10 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from stemtune.benchmark_mcqa import run_benchmark
+from stemtune.dpo_mcqa import run_dpo_smoke
 from stemtune.posttrain_mcqa import run_posttrain_smoke
+from stemtune.quantization_mcqa import run_quantization_study
+from stemtune.rag_mcqa import run_rag_study
 from stemtune.scaffold import TASK_BLUEPRINTS, create_project_scaffold
 from stemtune.smoke_mcqa import run_smoke_test
 from stemtune.support_budget_mcqa import run_budget_study
@@ -457,6 +460,63 @@ def build_posttrain_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
     parser.set_defaults(handler=handle_posttrain_mcqa)
 
 
+def build_quantization_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser(
+        "study-quantization",
+        help="Test whether dynamic int8 quantization preserves MCQA behavior.",
+    )
+    parser.add_argument("--model-id", default="Qwen/Qwen2.5-0.5B-Instruct")
+    parser.add_argument("--condition", choices=["plain", "grounded"], default="plain")
+    parser.add_argument("--limit", type=int, default=24)
+    parser.add_argument("--seeds", default="7,11,13")
+    parser.add_argument("--max-new-tokens", type=int, default=8)
+    parser.add_argument("--output-dir", default="docs/results/mcqa_quantization_retention")
+    parser.add_argument("--output", choices=["text", "json"], default="text")
+    parser.set_defaults(handler=handle_quantization_mcqa)
+
+
+def build_rag_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser(
+        "study-rag",
+        help="Run a simple TF-IDF retrieval study for MCQA.",
+    )
+    parser.add_argument("--model-id", default="Qwen/Qwen2.5-0.5B-Instruct")
+    parser.add_argument("--device", choices=["cpu", "mps", "cuda"], default="mps")
+    parser.add_argument("--limit", type=int, default=24)
+    parser.add_argument("--seeds", default="7,11,13")
+    parser.add_argument("--corpus-size", type=int, default=500)
+    parser.add_argument("--max-new-tokens", type=int, default=8)
+    parser.add_argument("--output-dir", default="docs/results/mcqa_rag_retrieval")
+    parser.add_argument("--output", choices=["text", "json"], default="text")
+    parser.set_defaults(handler=handle_rag_mcqa)
+
+
+def build_dpo_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
+    parser = subparsers.add_parser(
+        "dpo-mcqa",
+        help="Run a tiny DPO smoke test on MCQA contract preferences.",
+    )
+    parser.add_argument("--model-id", default="Qwen/Qwen2.5-0.5B-Instruct")
+    parser.add_argument("--train-limit", type=int, default=32)
+    parser.add_argument("--eval-limit", type=int, default=24)
+    parser.add_argument("--seed", type=int, default=7)
+    parser.add_argument("--device", choices=["cpu", "cuda", "mps"])
+    parser.add_argument("--batch-size", type=int, default=2)
+    parser.add_argument("--epochs", type=int, default=2)
+    parser.add_argument("--learning-rate", type=float, default=5e-5)
+    parser.add_argument("--gradient-accumulation-steps", type=int, default=1)
+    parser.add_argument("--beta", type=float, default=0.1)
+    parser.add_argument("--lora-rank", type=int, default=8)
+    parser.add_argument("--lora-alpha", type=int, default=16)
+    parser.add_argument("--lora-dropout", type=float, default=0.05)
+    parser.add_argument("--target-modules", default="q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj")
+    parser.add_argument("--max-length", type=int, default=256)
+    parser.add_argument("--max-new-tokens", type=int, default=64)
+    parser.add_argument("--output-dir", default="docs/results/mcqa_dpo_smoke")
+    parser.add_argument("--output", choices=["text", "json"], default="text")
+    parser.set_defaults(handler=handle_dpo_mcqa)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Select open-source models and alignment recipes for STEMTune tasks."
@@ -472,6 +532,9 @@ def build_parser() -> argparse.ArgumentParser:
     build_study_mcqa_parser(subparsers)
     build_support_budget_mcqa_parser(subparsers)
     build_posttrain_mcqa_parser(subparsers)
+    build_quantization_mcqa_parser(subparsers)
+    build_rag_mcqa_parser(subparsers)
+    build_dpo_mcqa_parser(subparsers)
     return parser
 
 
@@ -672,6 +735,67 @@ def handle_posttrain_mcqa(args: argparse.Namespace) -> str:
     return "\n".join(lines)
 
 
+def handle_quantization_mcqa(args: argparse.Namespace) -> str:
+    payload = run_quantization_study(args)
+    if args.output == "json":
+        return json.dumps(payload, indent=2)
+    fp = payload["aggregate"]["full_precision"]
+    q = payload["aggregate"]["dynamic_int8"]
+    lines = [
+        "STEMTune MCQA quantization study",
+        f"Model: {payload['model_id']}",
+        f"Condition: {payload['condition']}",
+        f"Seeds: {', '.join(str(seed) for seed in payload['seeds'])}",
+        "",
+        f"Full precision accuracy: {fp['accuracy_mean']:.3f}",
+        f"Dynamic int8 accuracy: {q['accuracy_mean']:.3f}",
+        f"Accuracy delta: {q['accuracy_mean'] - fp['accuracy_mean']:+.3f}",
+        "",
+        f"Artifacts: {args.output_dir}",
+    ]
+    return "\n".join(lines)
+
+
+def handle_rag_mcqa(args: argparse.Namespace) -> str:
+    payload = run_rag_study(args)
+    if args.output == "json":
+        return json.dumps(payload, indent=2)
+    aggregate = payload["aggregate"]
+    lines = [
+        "STEMTune MCQA retrieval study",
+        f"Model: {payload['model_id']}",
+        f"Retrieval hit@1: {payload['retrieval_hit_rate']:.3f}",
+        f"Plain accuracy: {aggregate['plain']['accuracy_mean']:.3f}",
+        f"Retrieved accuracy: {aggregate['retrieved']['accuracy_mean']:.3f}",
+        f"Oracle accuracy: {aggregate['oracle']['accuracy_mean']:.3f}",
+        "",
+        f"Artifacts: {args.output_dir}",
+    ]
+    return "\n".join(lines)
+
+
+def handle_dpo_mcqa(args: argparse.Namespace) -> str:
+    payload = run_dpo_smoke(args)
+    if args.output == "json":
+        return json.dumps(payload, indent=2)
+    baseline = payload["summary"]["baseline"]
+    adapted = payload["summary"]["adapted"]
+    lines = [
+        "STEMTune MCQA DPO smoke test",
+        f"Model: {payload['model_id']}",
+        f"Device: {payload['device']}",
+        f"Train examples: {payload['train_limit']}",
+        f"Eval examples: {payload['eval_limit']}",
+        "",
+        f"Baseline weighted score: {baseline['weighted_score']:.3f}",
+        f"DPO weighted score: {adapted['weighted_score']:.3f}",
+        f"Weighted score gain: {adapted['weighted_score'] - baseline['weighted_score']:+.3f}",
+        "",
+        f"Artifacts: {args.output_dir}",
+    ]
+    return "\n".join(lines)
+
+
 def normalize_argv(argv: list[str]) -> list[str]:
     commands = {
         "recommend",
@@ -684,6 +808,9 @@ def normalize_argv(argv: list[str]) -> list[str]:
         "study-mcqa",
         "study-support-budget",
         "posttrain-mcqa",
+        "study-quantization",
+        "study-rag",
+        "dpo-mcqa",
         "-h",
         "--help",
     }

@@ -1,0 +1,119 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dataset_id": "allenai/sciq",
+  "device": "mps",
+  "limit": 24,
+  "seeds": [
+    7,
+    11,
+    13
+  ],
+  "corpus_size": 524,
+  "retrieval_hit_rate": 0.8472222222222222,
+  "per_seed": [
+    {
+      "seed": 7,
+      "plain": {
+        "condition": "plain",
+        "num_examples": 24,
+        "accuracy": 0.6666666666666666,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.20759709891232583,
+        "median_latency_s": 0.19246881248545833
+      },
+      "retrieved": {
+        "condition": "retrieved",
+        "num_examples": 24,
+        "accuracy": 1.0,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.2620672968720707,
+        "median_latency_s": 0.21631287498166785
+      },
+      "oracle": {
+        "condition": "oracle",
+        "num_examples": 24,
+        "accuracy": 1.0,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.2975416788394796,
+        "median_latency_s": 0.28489081253064796
+      },
+      "retrieval_hit_rate": 0.8333333333333334
+    },
+    {
+      "seed": 11,
+      "plain": {
+        "condition": "plain",
+        "num_examples": 24,
+        "accuracy": 0.7083333333333334,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.1603841857528702,
+        "median_latency_s": 0.14472622948233038
+      },
+      "retrieved": {
+        "condition": "retrieved",
+        "num_examples": 24,
+        "accuracy": 0.9583333333333334,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.24977872221158273,
+        "median_latency_s": 0.23470706251100637
+      },
+      "oracle": {
+        "condition": "oracle",
+        "num_examples": 24,
+        "accuracy": 1.0,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.2859574827477142,
+        "median_latency_s": 0.2977878959791269
+      },
+      "retrieval_hit_rate": 0.8333333333333334
+    },
+    {
+      "seed": 13,
+      "plain": {
+        "condition": "plain",
+        "num_examples": 24,
+        "accuracy": 0.7083333333333334,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.1534406440866102,
+        "median_latency_s": 0.13052712500211783
+      },
+      "retrieved": {
+        "condition": "retrieved",
+        "num_examples": 24,
+        "accuracy": 0.9166666666666666,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.2953871614590753,
+        "median_latency_s": 0.26059649998205714
+      },
+      "oracle": {
+        "condition": "oracle",
+        "num_examples": 24,
+        "accuracy": 0.9583333333333334,
+        "valid_rate": 1.0,
+        "avg_latency_s": 0.30802995850293274,
+        "median_latency_s": 0.2943598125129938
+      },
+      "retrieval_hit_rate": 0.875
+    }
+  ],
+  "aggregate": {
+    "plain": {
+      "accuracy_mean": 0.6944444444444444,
+      "accuracy_stdev": 0.02405626121623445,
+      "avg_latency_s_mean": 0.17380730958393542,
+      "avg_latency_s_stdev": 0.029468043536355234
+    },
+    "retrieved": {
+      "accuracy_mean": 0.9583333333333334,
+      "accuracy_stdev": 0.041666666666666685,
+      "avg_latency_s_mean": 0.26907772684757625,
+      "avg_latency_s_stdev": 0.023598559892060254
+    },
+    "oracle": {
+      "accuracy_mean": 0.9861111111111112,
+      "accuracy_stdev": 0.024056261216234387,
+      "avg_latency_s_mean": 0.2971763733633755,
+      "avg_latency_s_stdev": 0.011040771375195269
+    }
+  }
+}

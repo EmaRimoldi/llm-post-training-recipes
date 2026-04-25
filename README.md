@@ -1,46 +1,33 @@
 # STEMTune
 
-`STEMTune` is a lightweight framework for selecting, adapting, and evaluating open-source LLMs for STEM-style QA tasks.
+`STEMTune` is a lightweight framework for selecting, adapting, and evaluating open-source LLMs for task-specific QA systems.
 
-It exists for a simple reason: open models are often good enough to be useful, but not yet specialized enough to be reliable. In practice, they need one or more of these steps:
+It is useful when a base model is close to usable, but still needs one of these steps before deployment:
 
-- the right model choice for the task and hardware budget;
-- light post-training for the target behavior;
-- evidence-aware prompting or retrieval;
-- evaluation that shows whether the adaptation actually helped.
+- post-training to learn a target behavior
+- retrieval to answer with external evidence
+- preference alignment to shape outputs
+- deployment checks to see whether quantization is safe
 
-STEMTune packages those steps into one repo.
+## What It Lets You Do
 
-## What It Does
+- choose a model for `sft`, `mcqa`, `dpo`, `quantization`, or `rag`
+- scaffold a clean project with configs and manifests
+- run small public-dataset studies before committing real GPU budget
+- reuse the underlying training, retrieval, and compression recipes
 
-- recommends an open model for `sft`, `mcqa`, `dpo`, `quantization`, or `rag`
-- scaffolds a clean project with configs and manifests
-- runs small public-dataset studies to verify improvement
-- exposes the underlying training, retrieval, and compression recipes
+## When It Is Useful
 
-## Why It Is Useful
+- you need structured outputs from an open model and want to verify that post-training really fixes the behavior
+- you want to know whether RAG will help before building a larger retrieval stack
+- you want to test whether a quantized deployment still preserves task quality
+- you want to compare SFT-style adaptation vs preference alignment on the same task
 
-Most LLM repos stop at recipes. STEMTune is opinionated about the operational path:
+## Fastest Demo
 
-1. choose a model that fits the job
-2. adapt it to the task
-3. measure whether it improved
-4. keep only the changes that survive evaluation
+The main smoke test is `posttrain-mcqa`.
 
-## Quickstart
-
-```bash
-python -m stemtune list-tasks
-python -m stemtune show-task mcqa
-python -m stemtune recommend --task mcqa --gpu-memory-gb 24
-python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
-```
-
-## Smoke Test: Tiny Post-Training That Improves the Model
-
-The fastest end-to-end demo is `posttrain-mcqa`.
-
-It runs a tiny LoRA post-training job on the public [allenai/sciq](https://hf.co/datasets/allenai/sciq) dataset and evaluates the same model before and after adaptation on a strict machine-readable MCQA contract:
+It runs a tiny LoRA post-training job on the public [allenai/sciq](https://hf.co/datasets/allenai/sciq) dataset and evaluates a strict machine-readable MCQA contract:
 
 ```text
 <final>
@@ -55,23 +42,19 @@ Run:
 python -m stemtune posttrain-mcqa \
   --train-limit 32 \
   --eval-limit 24 \
-  --epochs 2 \
+  --epochs 4 \
   --batch-size 4 \
   --learning-rate 5e-5 \
   --max-new-tokens 64 \
   --output-dir docs/results/mcqa_posttrain_smoke
 ```
 
-Tracked result in this repo:
+Tracked result:
 
-- baseline letter accuracy: `0.667`
-- post-trained letter accuracy: `0.750`
-- baseline strict accuracy: `0.000`
-- post-trained strict accuracy: `0.750`
-- baseline contract-valid rate: `0.000`
-- post-trained contract-valid rate: `1.000`
-- baseline weighted score: `0.567`
-- post-trained weighted score: `0.788`
+- letter accuracy: `0.667 -> 0.750`
+- strict accuracy: `0.000 -> 0.750`
+- contract valid rate: `0.000 -> 1.000`
+- weighted score: `0.567 -> 0.788`
 
 Artifacts:
 
@@ -80,14 +63,73 @@ Artifacts:
 
 ![STEMTune MCQA Post-Training Smoke Test](docs/results/mcqa_posttrain_smoke/comparison.png)
 
-## Other Built-In Evidence
+## Built-In Studies
 
-- grounding benchmark: [docs/results/mcqa_grounding_qwen25_0p5b/report.md](docs/results/mcqa_grounding_qwen25_0p5b/report.md)
-  `73.3% -> 95.8%` with relevant support passages
-- evidence ablation: [docs/results/mcqa_evidence_study/report.md](docs/results/mcqa_evidence_study/report.md)
-  mismatched support does not help, correct support does
-- support budget study: [docs/results/mcqa_support_budget_qwen25_0p5b/report.md](docs/results/mcqa_support_budget_qwen25_0p5b/report.md)
-  `48` support words recover full-support accuracy with lower latency
+### RAG Lift
+
+```bash
+python -m stemtune study-rag --limit 24 --seeds 7,11,13 --corpus-size 500
+```
+
+Tracked result:
+
+- question only: `0.694`
+- retrieved support: `0.958`
+- oracle support: `0.986`
+- retriever hit@1: `0.847`
+
+[docs/results/mcqa_rag_retrieval/report.md](docs/results/mcqa_rag_retrieval/report.md)
+
+![STEMTune MCQA Retrieval Study](docs/results/mcqa_rag_retrieval/study.png)
+
+### DPO Smoke
+
+```bash
+python -m stemtune dpo-mcqa --train-limit 32 --eval-limit 24 --epochs 2 --batch-size 2 --learning-rate 5e-5 --max-new-tokens 64
+```
+
+Tracked result:
+
+- weighted score: `0.567 -> 0.646`
+- contract valid rate: `0.000 -> 1.000`
+
+[docs/results/mcqa_dpo_smoke/report.md](docs/results/mcqa_dpo_smoke/report.md)
+
+![STEMTune MCQA DPO Smoke Test](docs/results/mcqa_dpo_smoke/comparison.png)
+
+### Quantization Check
+
+```bash
+python -m stemtune study-quantization --condition plain --limit 24 --seeds 7,11,13
+```
+
+Tracked local result on this backend:
+
+- full precision accuracy: `0.694`
+- dynamic int8 accuracy: `0.208`
+- latency worsened instead of improving
+
+This is still a useful result: STEMTune is meant to catch unsafe deployment shortcuts, not just confirm positive ones.
+
+[docs/results/mcqa_quantization_retention/report.md](docs/results/mcqa_quantization_retention/report.md)
+
+![STEMTune MCQA Quantization Retention Study](docs/results/mcqa_quantization_retention/study.png)
+
+## Quickstart
+
+```bash
+python -m stemtune list-tasks
+python -m stemtune show-task mcqa
+python -m stemtune recommend --task mcqa --gpu-memory-gb 24
+python -m stemtune init-project --name "Biomedical MCQA" --task mcqa --base-model Qwen/Qwen3-8B --hf-namespace your-name --output-dir ./workspaces
+```
+
+## Practical Cases
+
+- structured medical or scientific assistants that must emit parseable answers
+- QA systems that need retrieval before full RAG engineering
+- small-model deployment where quantization risk must be measured, not assumed
+- alignment experiments where you want to compare post-training and DPO on one task
 
 ## Repo Map
 
