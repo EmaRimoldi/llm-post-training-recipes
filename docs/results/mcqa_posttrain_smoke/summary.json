@@ -8,27 +8,39 @@
   "training_history": [
     {
       "epoch": 1,
-      "loss_mean": 0.26826165802776814
+      "loss_mean": 0.255649724509567
     },
     {
       "epoch": 2,
-      "loss_mean": 0.04532565317640547
+      "loss_mean": 0.045020693680271506
+    },
+    {
+      "epoch": 3,
+      "loss_mean": 0.012003582436591387
+    },
+    {
+      "epoch": 4,
+      "loss_mean": 0.0014273901069827843
     }
   ],
   "summary": {
     "baseline": {
       "num_examples": 24,
-      "accuracy": 0.0,
+      "strict_accuracy": 0.0,
+      "letter_accuracy": 0.6666666666666666,
       "valid_rate": 0.0,
-      "avg_latency_s": 0.3136688263790954,
-      "median_latency_s": 0.2797241664957255
+      "weighted_score": 0.5666666666666667,
+      "avg_latency_s": 0.31871404683382326,
+      "median_latency_s": 0.2803186244855169
     },
     "adapted": {
       "num_examples": 24,
-      "accuracy": 0.7083333333333334,
+      "strict_accuracy": 0.75,
+      "letter_accuracy": 0.75,
       "valid_rate": 1.0,
-      "avg_latency_s": 1.7398442430809762,
-      "median_latency_s": 1.7384774794918485
+      "weighted_score": 0.7875,
+      "avg_latency_s": 2.011051885296183,
+      "median_latency_s": 2.002605562505778
     }
   }
 }

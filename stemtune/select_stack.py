@@ -452,6 +452,7 @@ def build_posttrain_mcqa_parser(subparsers: argparse._SubParsersAction) -> None:
     parser.add_argument("--max-length", type=int, default=256)
     parser.add_argument("--max-new-tokens", type=int, default=64)
     parser.add_argument("--output-dir", default="docs/results/mcqa_posttrain_smoke")
+    parser.add_argument("--save-adapter", action="store_true")
     parser.add_argument("--output", choices=["text", "json"], default="text")
     parser.set_defaults(handler=handle_posttrain_mcqa)
 
@@ -655,11 +656,16 @@ def handle_posttrain_mcqa(args: argparse.Namespace) -> str:
         f"Train examples: {payload['train_limit']}",
         f"Eval examples: {payload['eval_limit']}",
         "",
-        f"Baseline strict accuracy: {baseline['accuracy']:.3f}",
-        f"Post-trained strict accuracy: {adapted['accuracy']:.3f}",
-        f"Strict accuracy gain: {adapted['accuracy'] - baseline['accuracy']:+.3f}",
+        f"Baseline letter accuracy: {baseline['letter_accuracy']:.3f}",
+        f"Post-trained letter accuracy: {adapted['letter_accuracy']:.3f}",
+        f"Letter accuracy gain: {adapted['letter_accuracy'] - baseline['letter_accuracy']:+.3f}",
+        f"Baseline strict accuracy: {baseline['strict_accuracy']:.3f}",
+        f"Post-trained strict accuracy: {adapted['strict_accuracy']:.3f}",
+        f"Strict accuracy gain: {adapted['strict_accuracy'] - baseline['strict_accuracy']:+.3f}",
         f"Baseline valid rate: {baseline['valid_rate']:.3f}",
         f"Post-trained valid rate: {adapted['valid_rate']:.3f}",
+        f"Baseline weighted score: {baseline['weighted_score']:.3f}",
+        f"Post-trained weighted score: {adapted['weighted_score']:.3f}",
         "",
         f"Artifacts: {args.output_dir}",
     ]

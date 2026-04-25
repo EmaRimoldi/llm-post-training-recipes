@@ -25,6 +25,9 @@ CONTRACT_PATTERN = re.compile(
     r"^<final>\s*choice=([A-D])\s*source=question_only\s*</final>$",
     re.IGNORECASE | re.MULTILINE,
 )
+LETTER_PATTERN = re.compile(r"\b([A-D])\b", re.IGNORECASE)
+LETTER_WEIGHT = 0.85
+CONTRACT_WEIGHT = 0.15
 
 
 @dataclass
@@ -139,6 +142,16 @@ def parse_contract(text: str) -> tuple[bool, str | None]:
     return True, match.group(1).upper()
 
 
+def parse_letter_any(text: str) -> str | None:
+    match = LETTER_PATTERN.search(text.strip().upper())
+    if match:
+        return match.group(1).upper()
+    cleaned = text.strip().upper()
+    if cleaned[:1] in {"A", "B", "C", "D"}:
+        return cleaned[:1]
+    return None
+
+
 def generate_contract(tokenizer, model, device: str, prompt: str, max_new_tokens: int) -> tuple[str, bool, str | None, float]:
     messages = build_messages(prompt)
     rendered = render_chat(tokenizer, messages, add_generation_prompt=True)
@@ -182,6 +195,9 @@ def evaluate_phase(phase: str, examples, tokenizer, model, device: str, max_new_
             make_contract_prompt(example),
             max_new_tokens,
         )
+        letter_prediction = prediction if prediction is not None else parse_letter_any(raw_text)
+        letter_correct = letter_prediction == example.correct_letter
+        weighted_score = (LETTER_WEIGHT * float(letter_correct)) + (CONTRACT_WEIGHT * float(is_valid))
         rows.append(
             {
                 "phase": phase,
@@ -189,8 +205,11 @@ def evaluate_phase(phase: str, examples, tokenizer, model, device: str, max_new_
                 "question": example.question,
                 "correct_letter": example.correct_letter,
                 "prediction": prediction,
+                "letter_prediction": letter_prediction,
+                "letter_correct": letter_correct,
                 "is_correct": is_valid and prediction == example.correct_letter,
                 "is_valid": is_valid,
+                "weighted_score": weighted_score,
                 "latency_s": latency,
                 "raw_output": raw_text,
             }
@@ -202,11 +221,15 @@ def summarize(rows: list[dict]) -> dict:
     total = len(rows)
     correct = sum(1 for row in rows if row["is_correct"])
     valid = sum(1 for row in rows if row["is_valid"])
+    letter_correct = sum(1 for row in rows if row["letter_correct"])
+    weighted_scores = [row["weighted_score"] for row in rows]
     latencies = [row["latency_s"] for row in rows]
     return {
         "num_examples": total,
-        "accuracy": correct / total if total else 0.0,
+        "strict_accuracy": correct / total if total else 0.0,
+        "letter_accuracy": letter_correct / total if total else 0.0,
         "valid_rate": valid / total if total else 0.0,
+        "weighted_score": statistics.mean(weighted_scores) if weighted_scores else 0.0,
         "avg_latency_s": statistics.mean(latencies) if latencies else 0.0,
         "median_latency_s": statistics.median(latencies) if latencies else 0.0,
     }
@@ -261,8 +284,11 @@ def save_rows_csv(path: Path, rows: list[dict]) -> None:
         "question",
         "correct_letter",
         "prediction",
+        "letter_prediction",
+        "letter_correct",
         "is_correct",
         "is_valid",
+        "weighted_score",
         "latency_s",
         "raw_output",
     ]
@@ -290,13 +316,15 @@ def save_report_markdown(path: Path, payload: dict) -> None:
         f"- Train examples: `{payload['train_limit']}`",
         f"- Eval examples: `{payload['eval_limit']}`",
         "",
-        "| Phase | Strict Accuracy | Contract Valid Rate | Avg Latency (s) |",
-        "|---|---:|---:|---:|",
-        f"| Baseline | {baseline['accuracy']:.3f} | {baseline['valid_rate']:.3f} | {baseline['avg_latency_s']:.3f} |",
-        f"| After tiny LoRA post-training | {adapted['accuracy']:.3f} | {adapted['valid_rate']:.3f} | {adapted['avg_latency_s']:.3f} |",
+        "| Phase | Letter Accuracy | Contract Valid Rate | Strict Accuracy | Weighted Score | Avg Latency (s) |",
+        "|---|---:|---:|---:|---:|---:|",
+        f"| Baseline | {baseline['letter_accuracy']:.3f} | {baseline['valid_rate']:.3f} | {baseline['strict_accuracy']:.3f} | {baseline['weighted_score']:.3f} | {baseline['avg_latency_s']:.3f} |",
+        f"| After tiny LoRA post-training | {adapted['letter_accuracy']:.3f} | {adapted['valid_rate']:.3f} | {adapted['strict_accuracy']:.3f} | {adapted['weighted_score']:.3f} | {adapted['avg_latency_s']:.3f} |",
         "",
-        f"- Strict accuracy gain: `{adapted['accuracy'] - baseline['accuracy']:+.3f}`",
+        f"- Letter accuracy gain: `{adapted['letter_accuracy'] - baseline['letter_accuracy']:+.3f}`",
         f"- Contract-valid gain: `{adapted['valid_rate'] - baseline['valid_rate']:+.3f}`",
+        f"- Strict accuracy gain: `{adapted['strict_accuracy'] - baseline['strict_accuracy']:+.3f}`",
+        f"- Weighted score gain: `{adapted['weighted_score'] - baseline['weighted_score']:+.3f}`",
     ]
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -306,13 +334,13 @@ def save_plot(path: Path, payload: dict) -> None:
     adapted = payload["summary"]["adapted"]
     history = payload["training_history"]
 
-    fig, axes = plt.subplots(1, 3, figsize=(15, 4.8), constrained_layout=True)
+    fig, axes = plt.subplots(1, 4, figsize=(18, 4.8), constrained_layout=True)
     fig.patch.set_facecolor("#f8fafc")
     colors = ["#1d4ed8", "#0f766e"]
 
-    axes[0].bar(["Baseline", "Post-trained"], [baseline["accuracy"], adapted["accuracy"]], color=colors)
+    axes[0].bar(["Baseline", "Post-trained"], [baseline["letter_accuracy"], adapted["letter_accuracy"]], color=colors)
     axes[0].set_ylim(0, 1.05)
-    axes[0].set_title("Strict Accuracy", fontsize=13, fontweight="bold")
+    axes[0].set_title("Letter Accuracy", fontsize=13, fontweight="bold")
     axes[0].set_ylabel("Accuracy")
 
     axes[1].bar(["Baseline", "Post-trained"], [baseline["valid_rate"], adapted["valid_rate"]], color=colors)
@@ -320,10 +348,15 @@ def save_plot(path: Path, payload: dict) -> None:
     axes[1].set_title("Contract Valid Rate", fontsize=13, fontweight="bold")
     axes[1].set_ylabel("Valid outputs")
 
-    axes[2].plot([item["epoch"] for item in history], [item["loss_mean"] for item in history], marker="o", color="#b45309")
-    axes[2].set_title("Training Loss", fontsize=13, fontweight="bold")
-    axes[2].set_xlabel("Epoch")
-    axes[2].set_ylabel("Loss")
+    axes[2].bar(["Baseline", "Post-trained"], [baseline["weighted_score"], adapted["weighted_score"]], color=colors)
+    axes[2].set_ylim(0, 1.05)
+    axes[2].set_title("Weighted Task Score", fontsize=13, fontweight="bold")
+    axes[2].set_ylabel("0.85 * letter + 0.15 * contract")
+
+    axes[3].plot([item["epoch"] for item in history], [item["loss_mean"] for item in history], marker="o", color="#b45309")
+    axes[3].set_title("Training Loss", fontsize=13, fontweight="bold")
+    axes[3].set_xlabel("Epoch")
+    axes[3].set_ylabel("Loss")
 
     for ax in axes:
         ax.spines["top"].set_visible(False)

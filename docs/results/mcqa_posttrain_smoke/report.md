@@ -8,10 +8,12 @@ This smoke test measures contract-compliant task behavior, not just raw answer a
 - Train examples: `32`
 - Eval examples: `24`
 
-| Phase | Strict Accuracy | Contract Valid Rate | Avg Latency (s) |
-|---|---:|---:|---:|
-| Baseline | 0.000 | 0.000 | 0.314 |
-| After tiny LoRA post-training | 0.708 | 1.000 | 1.740 |
+| Phase | Letter Accuracy | Contract Valid Rate | Strict Accuracy | Weighted Score | Avg Latency (s) |
+|---|---:|---:|---:|---:|---:|
+| Baseline | 0.667 | 0.000 | 0.000 | 0.567 | 0.319 |
+| After tiny LoRA post-training | 0.750 | 1.000 | 0.750 | 0.787 | 2.011 |
 
-- Strict accuracy gain: `+0.708`
+- Letter accuracy gain: `+0.083`
 - Contract-valid gain: `+1.000`
+- Strict accuracy gain: `+0.750`
+- Weighted score gain: `+0.221`

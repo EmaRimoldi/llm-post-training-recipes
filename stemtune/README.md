@@ -77,8 +77,10 @@ It fine-tunes a tiny LoRA adapter on `allenai/sciq` and evaluates whether the ad
 
 In the current tracked result:
 
-- strict accuracy moves from `0.000` to `0.708`
+- letter accuracy moves from `0.667` to `0.750`
+- strict accuracy moves from `0.000` to `0.750`
 - contract-valid rate moves from `0.000` to `1.000`
+- weighted score moves from `0.567` to `0.788`
 
 ## Multi-Seed Benchmark
 

@@ -64,10 +64,14 @@ python -m stemtune posttrain-mcqa \
 
 Tracked result in this repo:
 
+- baseline letter accuracy: `0.667`
+- post-trained letter accuracy: `0.750`
 - baseline strict accuracy: `0.000`
-- post-trained strict accuracy: `0.708`
+- post-trained strict accuracy: `0.750`
 - baseline contract-valid rate: `0.000`
 - post-trained contract-valid rate: `1.000`
+- baseline weighted score: `0.567`
+- post-trained weighted score: `0.788`
 
 Artifacts:
 
